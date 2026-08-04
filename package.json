@@ -8,7 +8,7 @@
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "db:init": "wrangler d1 migrations apply modelmap --remote",
-    "test": "node scripts/test-scoring.mjs && node scripts/test-request.mjs && node scripts/test-terminalbench.mjs && node scripts/test-quota.mjs && node scripts/test-bot.mjs && node scripts/test-registry.mjs",
+    "test": "node scripts/test-scoring.mjs && node scripts/test-request.mjs && node scripts/test-terminalbench.mjs && node scripts/test-quota.mjs && node scripts/test-bot.mjs && node scripts/test-registry.mjs && node scripts/test-groq.mjs",
     "cpu:check": "node scripts/cpu-check.mjs",
     "typecheck": "tsc --noEmit"
   },

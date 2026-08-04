@@ -26,6 +26,7 @@ import type {
   ScraperCategory,
 } from './types';
 import { BaseScraper } from './base';
+import { GroqScraper } from './groq';
 
 export {
   type Scraper,
@@ -35,6 +36,7 @@ export {
   type SourceHealth,
   type ScraperCategory,
   BaseScraper,
+  GroqScraper,
 };
 
 export class ScraperRegistry {
