@@ -1,0 +1,42 @@
+name = "modelmap"
+main = "src/index.ts"
+compatibility_date = "2026-07-01"
+
+# 6-hourly sync. Cron invocations are subject to the same 10ms CPU limit on
+# Workers Free, which is why the producer only fans out and never parses.
+[triggers]
+crons = ["0 */6 * * *"]
+
+[vars]
+SLICE_SIZE = "25"
+# Public origin, used to build magic links. Set after first deploy.
+PUBLIC_URL = "https://modelmap.solarsizer.workers.dev"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "modelmap"
+database_id = "63d1e027-3174-4e7d-b8df-92ad04594eb7"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "f8979d13b1c747938ef31604a6360333"
+
+[[queues.producers]]
+binding = "SYNC_QUEUE"
+queue = "modelmap-sync"
+
+[[queues.consumers]]
+queue = "modelmap-sync"
+# Small batches keep per-invocation CPU low.
+max_batch_size = 1
+max_batch_timeout = 5
+max_retries = 3
+dead_letter_queue = "modelmap-sync-dlq"
+
+# Secret, set out of band:
+#   wrangler secret put OPENROUTER_API_KEY
+
+# Additional secrets, set out of band:
+#   wrangler secret put ADMIN_SECRET
+#   wrangler secret put TELEGRAM_BOT_TOKEN
+#   wrangler secret put TELEGRAM_WEBHOOK_SECRET

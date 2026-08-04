@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Wrangler local state (Miniflare caches, temp bundles)
+.wrangler/
+
+# Local env/secrets — never commit real credentials
+.dev.vars
+*.local
+
+# OS cruft
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log

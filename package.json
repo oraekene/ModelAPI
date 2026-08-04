@@ -1,0 +1,23 @@
+{
+  "name": "modelmap",
+  "version": "2.0.0",
+  "private": true,
+  "description": "ModelMap — which model, in which harness, at what quota",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "db:init": "wrangler d1 migrations apply modelmap --remote",
+    "test": "node scripts/test-scoring.mjs && node scripts/test-request.mjs && node scripts/test-terminalbench.mjs && node scripts/test-quota.mjs && node scripts/test-bot.mjs",
+    "cpu:check": "node scripts/cpu-check.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260730.1",
+    "typescript": "^5.5.0",
+    "wrangler": "^4.118.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
