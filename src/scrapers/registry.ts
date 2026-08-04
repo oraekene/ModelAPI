@@ -25,8 +25,17 @@ import type {
   SourceHealth,
   ScraperCategory,
 } from './types';
+import { BaseScraper } from './base';
 
-export { type Scraper, type ScraperMessage, type ScraperResult, type ScraperEnv, type SourceHealth, type ScraperCategory };
+export {
+  type Scraper,
+  type ScraperMessage,
+  type ScraperResult,
+  type ScraperEnv,
+  type SourceHealth,
+  type ScraperCategory,
+  BaseScraper,
+};
 
 export class ScraperRegistry {
   private scrapers = new Map<string, Scraper>();
