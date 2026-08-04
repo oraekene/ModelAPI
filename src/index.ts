@@ -30,6 +30,7 @@ import { syncPool, assignPools, type QuotaPool } from './quota';
 import { handleUpdate, verifyWebhook, redeemLinkToken, ensureUser, type TelegramUpdate } from './telegram';
 import { maybeAlert } from './alerts';
 import { INDEX_HTML, SETTINGS_HTML } from './ui';
+import { ScraperRegistry, type Scraper, type ScraperMessage, type ScraperResult, type ScraperEnv } from './scrapers/registry';
 
 export interface Env {
   DB: D1Database;
@@ -46,6 +47,8 @@ export interface Env {
   PUBLIC_URL?: string;
   /** Models normalised per queue invocation. Lower if CPU budget is exceeded. */
   SLICE_SIZE?: string;
+  /** Scraper registry — built-in scrapers + any dynamically registered ones. */
+  registry?: ScraperRegistry;
 }
 
 type SyncMessage =
@@ -223,6 +226,19 @@ export default {
       return Response.json({ pools: results });
     }
 
+    // Scraper health: status of all registered scrapers.
+    if (url.pathname === '/admin/sources') {
+      // From D1 scraper_health table.
+      const { results: dbHealth } = await env.DB.prepare(
+        `SELECT scraper_id, last_run_at, last_status, last_error,
+                consecutive_failures, models_found, scores_written
+           FROM scraper_health ORDER BY scraper_id`,
+      ).all();
+      // From in-memory registry (for scrapers not yet writing to D1).
+      const registryHealth = env.registry?.healthAll() ?? [];
+      return Response.json({ db: dbHealth, registry: registryHealth });
+    }
+
     // Inspect a computed answer blob without going through the UI.
     if (url.pathname === '/admin/answer') {
       const category = url.searchParams.get('category') ?? 'coding';
@@ -317,6 +333,19 @@ async function startSync(env: Env): Promise<string> {
 // ---------------------------------------------------------------------------
 
 async function handleMessage(msg: SyncMessage, env: Env): Promise<void> {
+  // Check the registry first — new scrapers register here.
+  if (env.registry?.canHandle(msg.kind)) {
+    const scraperEnv: ScraperEnv = { DB: env.DB, CACHE: env.CACHE };
+    const result = await env.registry.handle(
+      { kind: msg.kind, runId: msg.runId, payload: msg } as ScraperMessage,
+      scraperEnv,
+    );
+    console.log(`registry ${msg.kind}: ${result.offerings} offerings, ${result.scores} scores`);
+    await bumpProgress(msg.runId, env);
+    return;
+  }
+
+  // Fall back to built-in handlers for backward compatibility.
   switch (msg.kind) {
     case 'models_slice':
       return ingestModelSlice(msg.models, msg.runId, env);
