@@ -30,7 +30,53 @@ import { syncPool, assignPools, type QuotaPool } from './quota';
 import { handleUpdate, verifyWebhook, redeemLinkToken, ensureUser, type TelegramUpdate } from './telegram';
 import { maybeAlert } from './alerts';
 import { INDEX_HTML, SETTINGS_HTML } from './ui';
-import { ScraperRegistry, type Scraper, type ScraperMessage, type ScraperResult, type ScraperEnv } from './scrapers/registry';
+import {
+  ScraperRegistry,
+  createRegistry,
+  type Scraper,
+  type ScraperMessage,
+  type ScraperResult,
+  type ScraperEnv,
+  // Phase 1
+  GroqScraper, TogetherScraper, FireworksScraper, CerebrasScraper, SambaNovaScraper,
+  DeepInfraScraper, NovitaScraper, HyperbolicScraper, SiliconFlowScraper, NvidiaNimScraper,
+  // Phase 2
+  ReplicateScraper, BasetenScraper, ModalScraper, LeptonScraper, OctoAIScraper,
+  AnyscaleScraper, RunPodScraper, LambdaScraper, HfInferenceScraper, CloudflareScraper,
+  FalScraper, PuterScraper, NebiusScraper, ScalewayScraper, CoreWeaveScraper,
+  BeamScraper, VastScraper, CrusoeScraper, InfercomScraper, LyceumScraper,
+  BergetScraper, NscaleScraper, OvhcloudScraper, LibertAIScraper, TokenwareScraper,
+  IonRouterScraper, FerryAPIScraper, HfHubScraper,
+  // Phase 3
+  OpenAIScraper, AnthropicScraper, GeminiScraper, LlamaScraper, MistralScraper,
+  XAIScraper, CohereScraper, DeepSeekScraper, QwenScraper, MoonshotScraper,
+  ZhipuGLMScraper, DoubaoScraper, MiniMaxScraper, ErnieScraper, YiScraper,
+  StabilityAIScraper, MidjourneyScraper, HunyuanScraper, NovaScraper, PhiScraper,
+  AI21Scraper, PerplexityScraper, StepFunScraper, ZhipuAIScraper,
+  // Phase 4
+  CursorScraper, WindsurfScraper, CopilotScraper, ClineScraper, AiderScraper,
+  ContinueScraper, CodyScraper, TabnineScraper, AmazonQScraper, JetBrainsScraper,
+  ReplitScraper, V0Scraper, BoltScraper, LovableScraper, DevinScraper,
+  ZedScraper, AugmentScraper, FactoryScraper, KiroScraper, WarpScraper,
+  JulesScraper, CodexScraper, VoidScraper,
+  // Phase 5
+  OpenClawScraper, OpenCodeScraper, HermesScraper, AmpScraper, GooseScraper,
+  CrushScraper, CodexAgentScraper, NemoClawScraper, CursorAgentScraper,
+  GeminiCLIScraper, GrokBuildScraper,
+  // Phase 6
+  AWSBedrockScraper, AzureOpenAIScraper, GoogleVertexAIScraper, IBMWatsonxScraper,
+  OracleCloudAIScraper, CloudflareAIGatewayScraper, PuterImageScraper, LiteLLMScraper,
+  PortkeyScraper, LangSmithScraper, PerplexitySearchScraper, YouComScraper,
+  CharacterAIScraper, DoubaoChatScraper, KimiChatScraper, TongyiScraper,
+  ERNIEChatScraper, GLMChatScraper, DeepSeekChatScraper, SWEAgentScraper,
+  OpenHandsScraper, OnaScraper, NxCodeScraper, MastraScraper,
+  CanvaAIScraper, NotionAIScraper, GrammarlyScraper, JasperScraper, LinearScraper,
+  RunwayScraper, PikaScraper, KlingAIScraper, LumaScraper, SoraScraper,
+  SynthesiaScraper, HeyGenScraper, DIDScraper, SeedanceScraper, ElevenLabsScraper,
+  SunoScraper, UdioScraper, StabilityAudioScraper, DescriptScraper,
+  MidjourneyImageScraper, DALLEScraper, StableDiffusionScraper, IdeogramScraper,
+  LeonardoAIScraper, MagnificScraper, FalImageScraper,
+} from './scrapers/registry';
 
 export interface Env {
   DB: D1Database;
@@ -59,9 +105,75 @@ type SyncMessage =
   | { kind: 'quota'; runId: string; poolId: string }
   | { kind: 'rank'; runId: string; category: string; tier: Tier }
   | { kind: 'finalise'; runId: string }
-  | { kind: 'tally'; runId: string };
+  | { kind: 'tally'; runId: string }
+  | { kind: string; runId: string };
+
+type KnownSyncKind = SyncMessage['kind'] extends infer K ? Extract<K, string> : never;
 
 const DEFAULT_SLICE = 25;
+
+/** Create a registry with all built-in scrapers pre-registered. */
+function createDefaultRegistry(): ScraperRegistry {
+  return createRegistry(
+    // Phase 1 — High-value inference
+    new GroqScraper(), new TogetherScraper(), new FireworksScraper(),
+    new CerebrasScraper(), new SambaNovaScraper(), new DeepInfraScraper(),
+    new NovitaScraper(), new HyperbolicScraper(), new SiliconFlowScraper(),
+    new NvidiaNimScraper(),
+    // Phase 2 — Remaining inference
+    new ReplicateScraper(), new BasetenScraper(), new ModalScraper(),
+    new LeptonScraper(), new OctoAIScraper(), new AnyscaleScraper(),
+    new RunPodScraper(), new LambdaScraper(), new HfInferenceScraper(),
+    new CloudflareScraper(), new FalScraper(), new PuterScraper(),
+    new NebiusScraper(), new ScalewayScraper(), new CoreWeaveScraper(),
+    new BeamScraper(), new VastScraper(), new CrusoeScraper(),
+    new InfercomScraper(), new LyceumScraper(), new BergetScraper(),
+    new NscaleScraper(), new OvhcloudScraper(), new LibertAIScraper(),
+    new TokenwareScraper(), new IonRouterScraper(), new FerryAPIScraper(),
+    new HfHubScraper(),
+    // Phase 3 — AI labs
+    new OpenAIScraper(), new AnthropicScraper(), new GeminiScraper(),
+    new LlamaScraper(), new MistralScraper(), new XAIScraper(),
+    new CohereScraper(), new DeepSeekScraper(), new QwenScraper(),
+    new MoonshotScraper(), new ZhipuGLMScraper(), new DoubaoScraper(),
+    new MiniMaxScraper(), new ErnieScraper(), new YiScraper(),
+    new StabilityAIScraper(), new MidjourneyScraper(), new HunyuanScraper(),
+    new NovaScraper(), new PhiScraper(), new AI21Scraper(),
+    new PerplexityScraper(), new StepFunScraper(), new ZhipuAIScraper(),
+    // Phase 4 — IDEs and coding tools
+    new CursorScraper(), new WindsurfScraper(), new CopilotScraper(),
+    new ClineScraper(), new AiderScraper(), new ContinueScraper(),
+    new CodyScraper(), new TabnineScraper(), new AmazonQScraper(),
+    new JetBrainsScraper(), new ReplitScraper(), new V0Scraper(),
+    new BoltScraper(), new LovableScraper(), new DevinScraper(),
+    new ZedScraper(), new AugmentScraper(), new FactoryScraper(),
+    new KiroScraper(), new WarpScraper(), new JulesScraper(),
+    new CodexScraper(), new VoidScraper(),
+    // Phase 5 — Agent harnesses
+    new OpenClawScraper(), new OpenCodeScraper(), new HermesScraper(),
+    new AmpScraper(), new GooseScraper(), new CrushScraper(),
+    new CodexAgentScraper(), new NemoClawScraper(), new CursorAgentScraper(),
+    new GeminiCLIScraper(), new GrokBuildScraper(),
+    // Phase 6 — AI tools & SaaS
+    new AWSBedrockScraper(), new AzureOpenAIScraper(), new GoogleVertexAIScraper(),
+    new IBMWatsonxScraper(), new OracleCloudAIScraper(), new CloudflareAIGatewayScraper(),
+    new PuterImageScraper(), new LiteLLMScraper(), new PortkeyScraper(),
+    new LangSmithScraper(), new PerplexitySearchScraper(), new YouComScraper(),
+    new CharacterAIScraper(), new DoubaoChatScraper(), new KimiChatScraper(),
+    new TongyiScraper(), new ERNIEChatScraper(), new GLMChatScraper(),
+    new DeepSeekChatScraper(), new SWEAgentScraper(), new OpenHandsScraper(),
+    new OnaScraper(), new NxCodeScraper(), new MastraScraper(),
+    new CanvaAIScraper(), new NotionAIScraper(), new GrammarlyScraper(),
+    new JasperScraper(), new LinearScraper(), new RunwayScraper(),
+    new PikaScraper(), new KlingAIScraper(), new LumaScraper(),
+    new SoraScraper(), new SynthesiaScraper(), new HeyGenScraper(),
+    new DIDScraper(), new SeedanceScraper(), new ElevenLabsScraper(),
+    new SunoScraper(), new UdioScraper(), new StabilityAudioScraper(),
+    new DescriptScraper(), new MidjourneyImageScraper(), new DALLEScraper(),
+    new StableDiffusionScraper(), new IdeogramScraper(), new LeonardoAIScraper(),
+    new MagnificScraper(), new FalImageScraper(),
+  );
+}
 
 /** Design Arena categories worth ingesting. AA needs no fan-out — one call covers it. */
 const DA_CATEGORIES = ['codecategories', 'uicomponent', 'gamedev', 'dataviz', 'svg'];
@@ -198,6 +310,34 @@ export default {
       }
     }
 
+    // Manual scraper trigger — runs all scrapers (or a subset via ?scrapers=id1,id2).
+    if (url.pathname === '/admin/scrape' && req.method === 'POST') {
+      try {
+        const runId = crypto.randomUUID();
+        const registry = env.registry ?? createDefaultRegistry();
+        const allMessages = registry.planMessages(runId);
+        // Optional: filter to specific scrapers via ?scrapers=groq,together
+        const filterParam = url.searchParams.get('scrapers');
+        const messages = filterParam
+          ? allMessages.filter((m) => filterParam.split(',').includes(m.kind))
+          : allMessages;
+        // Enqueue in batches of 50.
+        const SCRAPER_BATCH = 50;
+        for (let i = 0; i < messages.length; i += SCRAPER_BATCH) {
+          const batch = messages.slice(i, i + SCRAPER_BATCH);
+          await env.SYNC_QUEUE.sendBatch(batch.map((body) => ({ body })));
+        }
+        return Response.json({
+          started: runId,
+          scrapers: registry.size,
+          messages_enqueued: messages.length,
+          filter: filterParam ?? 'all',
+        });
+      } catch (e) {
+        return Response.json({ error: e instanceof Error ? e.message : String(e) }, { status: 500 });
+      }
+    }
+
     // What did the credentials actually return? Answers "what can my key see"
     // without ever needing a terminal.
     if (url.pathname === '/admin/capabilities') {
@@ -235,8 +375,22 @@ export default {
            FROM scraper_health ORDER BY scraper_id`,
       ).all();
       // From in-memory registry (for scrapers not yet writing to D1).
-      const registryHealth = env.registry?.healthAll() ?? [];
-      return Response.json({ db: dbHealth, registry: registryHealth });
+      const registry = env.registry ?? createDefaultRegistry();
+      const registryHealth = registry.healthAll();
+      return Response.json({ db: dbHealth, registry: registryHealth, count: registry.size });
+    }
+
+    // Scrape status summary — quick overview of scraper health.
+    if (url.pathname === '/admin/scrape/status') {
+      const { results } = await env.DB.prepare(
+        `SELECT last_status, COUNT(*) as count FROM scraper_health GROUP BY last_status`,
+      ).all();
+      const total = await env.DB.prepare(`SELECT COUNT(*) as count FROM scraper_health`).first();
+      const offerings = await env.DB.prepare(`SELECT COUNT(*) as count FROM offerings`).first();
+      return Response.json({
+        scrapers: { total: total?.count ?? 0, by_status: results },
+        offerings: offerings?.count ?? 0,
+      });
     }
 
     // Inspect a computed answer blob without going through the UI.
@@ -321,6 +475,17 @@ async function startSync(env: Env): Promise<string> {
   }
   await env.SYNC_QUEUE.sendBatch(benchmarkJobs.map((body) => ({ body })));
 
+  // --- Universal Scraper Network: fan out one message per scraper ---
+  const registry = env.registry ?? createDefaultRegistry();
+  const scraperMessages = registry.planMessages(runId);
+  // Send in batches of 50 to stay under the 256KB sendBatch limit.
+  const SCRAPER_BATCH = 50;
+  for (let i = 0; i < scraperMessages.length; i += SCRAPER_BATCH) {
+    const batch = scraperMessages.slice(i, i + SCRAPER_BATCH);
+    await env.SYNC_QUEUE.sendBatch(batch.map((body) => ({ body })));
+  }
+  console.log(`scrapers: ${scraperMessages.length} messages enqueued from ${registry.size} scrapers`);
+
   // Rank compute is delayed so ingestion has landed first. One message per
   // (category, tier) pair keeps each invocation's CPU bounded.
   await env.SYNC_QUEUE.send({ kind: 'finalise', runId }, { delaySeconds: 90 });
@@ -334,9 +499,12 @@ async function startSync(env: Env): Promise<string> {
 
 async function handleMessage(msg: SyncMessage, env: Env): Promise<void> {
   // Check the registry first — new scrapers register here.
-  if (env.registry?.canHandle(msg.kind)) {
+  // Scraper messages have kinds like 'groq', 'together', etc. — not in the
+  // built-in union, so we try the registry before the switch.
+  const registry = env.registry ?? createDefaultRegistry();
+  if (registry.canHandle(msg.kind)) {
     const scraperEnv: ScraperEnv = { DB: env.DB, CACHE: env.CACHE };
-    const result = await env.registry.handle(
+    const result = await registry.handle(
       { kind: msg.kind, runId: msg.runId, payload: msg } as ScraperMessage,
       scraperEnv,
     );
@@ -348,17 +516,21 @@ async function handleMessage(msg: SyncMessage, env: Env): Promise<void> {
   // Fall back to built-in handlers for backward compatibility.
   switch (msg.kind) {
     case 'models_slice':
-      return ingestModelSlice(msg.models, msg.runId, env);
-    case 'benchmarks':
-      return ingestBenchmarks(msg.source, msg.category, msg.runId, env);
+      return ingestModelSlice((msg as { models: ORModel[] }).models, msg.runId, env);
+    case 'benchmarks': {
+      const b = msg as { source: 'artificial-analysis' | 'design-arena'; category?: string };
+      return ingestBenchmarks(b.source, b.category, msg.runId, env);
+    }
     case 'usage':
       return ingestUsage(msg.runId, env);
     case 'terminalbench':
-      return ingestTerminalBench(msg.versionIndex, msg.runId, env);
+      return ingestTerminalBench((msg as { versionIndex: number }).versionIndex, msg.runId, env);
     case 'quota':
-      return syncQuotaPool(msg.poolId, msg.runId, env);
-    case 'rank':
-      return rankSlice(msg.category, msg.tier, msg.runId, env);
+      return syncQuotaPool((msg as { poolId: string }).poolId, msg.runId, env);
+    case 'rank': {
+      const r = msg as { category: string; tier: Tier };
+      return rankSlice(r.category, r.tier, msg.runId, env);
+    }
     case 'finalise':
       return finalise(msg.runId, env);
     case 'tally':
