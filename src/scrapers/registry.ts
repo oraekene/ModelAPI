@@ -151,6 +151,27 @@ import { NotionAIScraper } from './notion';
 import { GrammarlyScraper } from './grammarly';
 import { JasperScraper } from './jasper';
 import { LinearScraper } from './linear';
+import { RunwayScraper } from './runway';
+import { PikaScraper } from './pika';
+import { KlingAIScraper } from './kling';
+import { LumaScraper } from './luma';
+import { SoraScraper } from './sora';
+import { SynthesiaScraper } from './synthesia';
+import { HeyGenScraper } from './heygen';
+import { DIDScraper } from './did';
+import { SeedanceScraper } from './seedance';
+import { ElevenLabsScraper } from './elevenlabs';
+import { SunoScraper } from './suno';
+import { UdioScraper } from './udio';
+import { StabilityAudioScraper } from './stability-audio';
+import { DescriptScraper } from './descript';
+import { MidjourneyImageScraper } from './midjourney-image';
+import { DALLEScraper } from './dall-e';
+import { StableDiffusionScraper } from './stable-diffusion';
+import { IdeogramScraper } from './ideogram';
+import { LeonardoAIScraper } from './leonardo';
+import { MagnificScraper } from './magnific';
+import { FalImageScraper } from './fal-image';
 
 export {
   type Scraper,
@@ -285,6 +306,27 @@ export {
   GrammarlyScraper,
   JasperScraper,
   LinearScraper,
+  RunwayScraper,
+  PikaScraper,
+  KlingAIScraper,
+  LumaScraper,
+  SoraScraper,
+  SynthesiaScraper,
+  HeyGenScraper,
+  DIDScraper,
+  SeedanceScraper,
+  ElevenLabsScraper,
+  SunoScraper,
+  UdioScraper,
+  StabilityAudioScraper,
+  DescriptScraper,
+  MidjourneyImageScraper,
+  DALLEScraper,
+  StableDiffusionScraper,
+  IdeogramScraper,
+  LeonardoAIScraper,
+  MagnificScraper,
+  FalImageScraper,
 };
 
 export class ScraperRegistry {
