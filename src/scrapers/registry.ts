@@ -122,6 +122,35 @@ import { NemoClawScraper } from './nemoclaw';
 import { CursorAgentScraper } from './cursor-agent';
 import { GeminiCLIScraper } from './gemini-cli';
 import { GrokBuildScraper } from './grok-build';
+import { AWSBedrockScraper } from './aws-bedrock';
+import { AzureOpenAIScraper } from './azure-openai';
+import { GoogleVertexAIScraper } from './google-vertex';
+import { IBMWatsonxScraper } from './ibm-watsonx';
+import { OracleCloudAIScraper } from './oracle-cloud';
+import { CloudflareAIGatewayScraper } from './cloudflare-ai-gateway';
+import { PuterImageScraper } from './puter-image';
+import { LiteLLMScraper } from './litellm';
+import { PortkeyScraper } from './portkey';
+import { LangSmithScraper } from './langsmith';
+import { PerplexitySearchScraper } from './perplexity-search';
+import { YouComScraper } from './you';
+import { CharacterAIScraper } from './character-ai';
+import { DoubaoChatScraper } from './doubao-chat';
+import { KimiChatScraper } from './kimi-chat';
+import { TongyiScraper } from './tongyi';
+import { ERNIEChatScraper } from './ernie-chat';
+import { GLMChatScraper } from './glm-chat';
+import { DeepSeekChatScraper } from './deepseek-chat';
+import { SWEAgentScraper } from './swe-agent';
+import { OpenHandsScraper } from './openhands';
+import { OnaScraper } from './ona';
+import { NxCodeScraper } from './nxcode';
+import { MastraScraper } from './mastra';
+import { CanvaAIScraper } from './canva';
+import { NotionAIScraper } from './notion';
+import { GrammarlyScraper } from './grammarly';
+import { JasperScraper } from './jasper';
+import { LinearScraper } from './linear';
 
 export {
   type Scraper,
@@ -227,6 +256,35 @@ export {
   CursorAgentScraper,
   GeminiCLIScraper,
   GrokBuildScraper,
+  AWSBedrockScraper,
+  AzureOpenAIScraper,
+  GoogleVertexAIScraper,
+  IBMWatsonxScraper,
+  OracleCloudAIScraper,
+  CloudflareAIGatewayScraper,
+  PuterImageScraper,
+  LiteLLMScraper,
+  PortkeyScraper,
+  LangSmithScraper,
+  PerplexitySearchScraper,
+  YouComScraper,
+  CharacterAIScraper,
+  DoubaoChatScraper,
+  KimiChatScraper,
+  TongyiScraper,
+  ERNIEChatScraper,
+  GLMChatScraper,
+  DeepSeekChatScraper,
+  SWEAgentScraper,
+  OpenHandsScraper,
+  OnaScraper,
+  NxCodeScraper,
+  MastraScraper,
+  CanvaAIScraper,
+  NotionAIScraper,
+  GrammarlyScraper,
+  JasperScraper,
+  LinearScraper,
 };
 
 export class ScraperRegistry {
