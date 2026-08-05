@@ -28,6 +28,14 @@ import type {
 import { BaseScraper } from './base';
 import { GroqScraper } from './groq';
 import { TogetherScraper } from './together';
+import { FireworksScraper } from './fireworks';
+import { CerebrasScraper } from './cerebras';
+import { SambaNovaScraper } from './sambanova';
+import { DeepInfraScraper } from './deepinfra';
+import { NovitaScraper } from './novita';
+import { HyperbolicScraper } from './hyperbolic';
+import { SiliconFlowScraper } from './siliconflow';
+import { NvidiaNimScraper } from './nvidia-nim';
 
 export {
   type Scraper,
@@ -39,6 +47,14 @@ export {
   BaseScraper,
   GroqScraper,
   TogetherScraper,
+  FireworksScraper,
+  CerebrasScraper,
+  SambaNovaScraper,
+  DeepInfraScraper,
+  NovitaScraper,
+  HyperbolicScraper,
+  SiliconFlowScraper,
+  NvidiaNimScraper,
 };
 
 export class ScraperRegistry {
