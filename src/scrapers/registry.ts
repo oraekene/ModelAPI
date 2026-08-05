@@ -27,6 +27,7 @@ import type {
 } from './types';
 import { BaseScraper } from './base';
 import { GroqScraper } from './groq';
+import { TogetherScraper } from './together';
 
 export {
   type Scraper,
@@ -37,6 +38,7 @@ export {
   type ScraperCategory,
   BaseScraper,
   GroqScraper,
+  TogetherScraper,
 };
 
 export class ScraperRegistry {
