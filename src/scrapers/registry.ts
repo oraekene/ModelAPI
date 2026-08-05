@@ -88,6 +88,29 @@ import { AI21Scraper } from './ai21';
 import { PerplexityScraper } from './perplexity';
 import { StepFunScraper } from './stepfun';
 import { ZhipuAIScraper } from './zhipu-ai';
+import { CursorScraper } from './cursor';
+import { WindsurfScraper } from './windsurf';
+import { CopilotScraper } from './copilot';
+import { ClineScraper } from './cline';
+import { AiderScraper } from './aider';
+import { ContinueScraper } from './continue';
+import { CodyScraper } from './cody';
+import { TabnineScraper } from './tabnine';
+import { AmazonQScraper } from './amazon-q';
+import { JetBrainsScraper } from './jetbrains';
+import { ReplitScraper } from './replit';
+import { V0Scraper } from './v0';
+import { BoltScraper } from './bolt';
+import { LovableScraper } from './lovable';
+import { DevinScraper } from './devin';
+import { ZedScraper } from './zed';
+import { AugmentScraper } from './augment';
+import { FactoryScraper } from './factory';
+import { KiroScraper } from './kiro';
+import { WarpScraper } from './warp';
+import { JulesScraper } from './jules';
+import { CodexScraper } from './codex';
+import { VoidScraper } from './void';
 
 export {
   type Scraper,
@@ -159,6 +182,29 @@ export {
   PerplexityScraper,
   StepFunScraper,
   ZhipuAIScraper,
+  CursorScraper,
+  WindsurfScraper,
+  CopilotScraper,
+  ClineScraper,
+  AiderScraper,
+  ContinueScraper,
+  CodyScraper,
+  TabnineScraper,
+  AmazonQScraper,
+  JetBrainsScraper,
+  ReplitScraper,
+  V0Scraper,
+  BoltScraper,
+  LovableScraper,
+  DevinScraper,
+  ZedScraper,
+  AugmentScraper,
+  FactoryScraper,
+  KiroScraper,
+  WarpScraper,
+  JulesScraper,
+  CodexScraper,
+  VoidScraper,
 };
 
 export class ScraperRegistry {
