@@ -111,6 +111,17 @@ import { WarpScraper } from './warp';
 import { JulesScraper } from './jules';
 import { CodexScraper } from './codex';
 import { VoidScraper } from './void';
+import { OpenClawScraper } from './openclaw';
+import { OpenCodeScraper } from './opencode';
+import { HermesScraper } from './hermes';
+import { AmpScraper } from './amp';
+import { GooseScraper } from './goose';
+import { CrushScraper } from './crush';
+import { CodexAgentScraper } from './codex-agent';
+import { NemoClawScraper } from './nemoclaw';
+import { CursorAgentScraper } from './cursor-agent';
+import { GeminiCLIScraper } from './gemini-cli';
+import { GrokBuildScraper } from './grok-build';
 
 export {
   type Scraper,
@@ -205,6 +216,17 @@ export {
   JulesScraper,
   CodexScraper,
   VoidScraper,
+  OpenClawScraper,
+  OpenCodeScraper,
+  HermesScraper,
+  AmpScraper,
+  GooseScraper,
+  CrushScraper,
+  CodexAgentScraper,
+  NemoClawScraper,
+  CursorAgentScraper,
+  GeminiCLIScraper,
+  GrokBuildScraper,
 };
 
 export class ScraperRegistry {

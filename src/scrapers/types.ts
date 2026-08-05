@@ -12,7 +12,7 @@ import type { D1Database } from '@cloudflare/workers-types';
 // Categories
 // ---------------------------------------------------------------------------
 
-export type ScraperCategory = 'inference' | 'lab' | 'ide' | 'harness' | 'tool';
+export type ScraperCategory = 'inference' | 'lab' | 'ide' | 'harness' | 'tool' | 'agent';
 
 // ---------------------------------------------------------------------------
 // Messages
