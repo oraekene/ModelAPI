@@ -36,6 +36,34 @@ import { NovitaScraper } from './novita';
 import { HyperbolicScraper } from './hyperbolic';
 import { SiliconFlowScraper } from './siliconflow';
 import { NvidiaNimScraper } from './nvidia-nim';
+import { ReplicateScraper } from './replicate';
+import { BasetenScraper } from './baseten';
+import { ModalScraper } from './modal';
+import { LeptonScraper } from './lepton';
+import { OctoAIScraper } from './octoai';
+import { AnyscaleScraper } from './anyscale';
+import { RunPodScraper } from './runpod';
+import { LambdaScraper } from './lambda';
+import { HfInferenceScraper } from './hf-inference';
+import { CloudflareScraper } from './cloudflare';
+import { FalScraper } from './fal';
+import { PuterScraper } from './puter';
+import { NebiusScraper } from './nebius';
+import { ScalewayScraper } from './scaleway';
+import { CoreWeaveScraper } from './coreweave';
+import { BeamScraper } from './beam';
+import { VastScraper } from './vast';
+import { CrusoeScraper } from './crusoe';
+import { InfercomScraper } from './infercom';
+import { LyceumScraper } from './lyceum';
+import { BergetScraper } from './berget';
+import { NscaleScraper } from './nscale';
+import { OvhcloudScraper } from './ovhcloud';
+import { LibertAIScraper } from './libert';
+import { TokenwareScraper } from './tokenware';
+import { IonRouterScraper } from './ionrouter';
+import { FerryAPIScraper } from './ferry';
+import { HfHubScraper } from './hf-hub';
 
 export {
   type Scraper,
@@ -55,6 +83,34 @@ export {
   HyperbolicScraper,
   SiliconFlowScraper,
   NvidiaNimScraper,
+  ReplicateScraper,
+  BasetenScraper,
+  ModalScraper,
+  LeptonScraper,
+  OctoAIScraper,
+  AnyscaleScraper,
+  RunPodScraper,
+  LambdaScraper,
+  HfInferenceScraper,
+  CloudflareScraper,
+  FalScraper,
+  PuterScraper,
+  NebiusScraper,
+  ScalewayScraper,
+  CoreWeaveScraper,
+  BeamScraper,
+  VastScraper,
+  CrusoeScraper,
+  InfercomScraper,
+  LyceumScraper,
+  BergetScraper,
+  NscaleScraper,
+  OvhcloudScraper,
+  LibertAIScraper,
+  TokenwareScraper,
+  IonRouterScraper,
+  FerryAPIScraper,
+  HfHubScraper,
 };
 
 export class ScraperRegistry {
