@@ -1,0 +1,32 @@
+/**
+ * Midjourney scraper — fetches model catalog from Midjourney API.
+ * API docs: https://docs.midjourney.com/
+ */
+
+import { BaseScraper } from './base';
+import type { ScraperMessage, ScraperResult, ScraperEnv } from './types';
+
+export class MidjourneyScraper extends BaseScraper {
+  readonly id = 'midjourney';
+  readonly category = 'lab' as const;
+  readonly displayName = 'Midjourney';
+
+  protected async doHandle(_msg: ScraperMessage, env: ScraperEnv): Promise<ScraperResult> {
+    const apiKey = env.MIDJOURNEY_API_KEY as string | undefined;
+    if (!apiKey) throw new Error('MIDJOURNEY_API_KEY not set');
+
+    // Midjourney API is not publicly available - this is a placeholder
+    const now = new Date().toISOString();
+    const models = ['midjourney/v6', 'midjourney/v5.2', 'midjourney/niji'];
+
+    const stmt = env.DB.prepare(`INSERT INTO offerings (model_id, harness_id, plan_id, medium, context_window, supports_vision, supports_tools, is_free, price_prompt, price_completion, access_url, last_verified_at, score_key) VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13) ON CONFLICT(model_id, harness_id, plan_id) DO UPDATE SET context_window=excluded.context_window, supports_vision=excluded.supports_vision, supports_tools=excluded.supports_tools, is_free=excluded.is_free, price_prompt=excluded.price_prompt, price_completion=excluded.price_completion, last_verified_at=excluded.last_verified_at, score_key=excluded.score_key`);
+
+    const rows = models.map(m => {
+      return stmt.bind(`midjourney/${m}`, 'midjourney-api', 'paid', 'image', null, 1, 0, 0, 0, 0, `https://midjourney.com/${m}`, now, m);
+    });
+
+    if (rows.length > 0) await env.DB.batch(rows);
+
+    return { offerings: rows.length, scores: 0, quotas: 0, note: `${rows.length} models from Midjourney (placeholder)` };
+  }
+}

@@ -64,6 +64,30 @@ import { TokenwareScraper } from './tokenware';
 import { IonRouterScraper } from './ionrouter';
 import { FerryAPIScraper } from './ferry';
 import { HfHubScraper } from './hf-hub';
+import { OpenAIScraper } from './openai';
+import { AnthropicScraper } from './anthropic';
+import { GeminiScraper } from './gemini';
+import { LlamaScraper } from './llama';
+import { MistralScraper } from './mistral';
+import { XAIScraper } from './xai';
+import { CohereScraper } from './cohere';
+import { DeepSeekScraper } from './deepseek';
+import { QwenScraper } from './qwen';
+import { MoonshotScraper } from './moonshot';
+import { ZhipuGLMScraper } from './zhipu-glm';
+import { DoubaoScraper } from './doubao';
+import { MiniMaxScraper } from './minimax';
+import { ErnieScraper } from './ernie';
+import { YiScraper } from './yi';
+import { StabilityAIScraper } from './stability';
+import { MidjourneyScraper } from './midjourney';
+import { HunyuanScraper } from './hunyuan';
+import { NovaScraper } from './nova';
+import { PhiScraper } from './phi';
+import { AI21Scraper } from './ai21';
+import { PerplexityScraper } from './perplexity';
+import { StepFunScraper } from './stepfun';
+import { ZhipuAIScraper } from './zhipu-ai';
 
 export {
   type Scraper,
@@ -111,6 +135,30 @@ export {
   IonRouterScraper,
   FerryAPIScraper,
   HfHubScraper,
+  OpenAIScraper,
+  AnthropicScraper,
+  GeminiScraper,
+  LlamaScraper,
+  MistralScraper,
+  XAIScraper,
+  CohereScraper,
+  DeepSeekScraper,
+  QwenScraper,
+  MoonshotScraper,
+  ZhipuGLMScraper,
+  DoubaoScraper,
+  MiniMaxScraper,
+  ErnieScraper,
+  YiScraper,
+  StabilityAIScraper,
+  MidjourneyScraper,
+  HunyuanScraper,
+  NovaScraper,
+  PhiScraper,
+  AI21Scraper,
+  PerplexityScraper,
+  StepFunScraper,
+  ZhipuAIScraper,
 };
 
 export class ScraperRegistry {
