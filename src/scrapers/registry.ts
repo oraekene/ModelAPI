@@ -172,6 +172,14 @@ import { IdeogramScraper } from './ideogram';
 import { LeonardoAIScraper } from './leonardo';
 import { MagnificScraper } from './magnific';
 import { FalImageScraper } from './fal-image';
+// Web crawlers (no API key needed)
+import { OpenRouterCrawler } from './openrouter-crawl';
+import { GroqCrawler } from './groq-crawl';
+import { TogetherCrawler } from './together-crawl';
+import { FireworksCrawler } from './fireworks-crawl';
+import { DeepSeekCrawler } from './deepseek-crawl';
+import { HuggingFaceCrawler } from './hf-crawl';
+import { GenericCrawler } from './generic-crawl';
 
 export {
   type Scraper,
@@ -327,6 +335,14 @@ export {
   LeonardoAIScraper,
   MagnificScraper,
   FalImageScraper,
+  // Web crawlers
+  OpenRouterCrawler,
+  GroqCrawler,
+  TogetherCrawler,
+  FireworksCrawler,
+  DeepSeekCrawler,
+  HuggingFaceCrawler,
+  GenericCrawler,
 };
 
 export class ScraperRegistry {

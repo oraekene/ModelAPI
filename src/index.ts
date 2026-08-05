@@ -75,7 +75,10 @@ import {
   SynthesiaScraper, HeyGenScraper, DIDScraper, SeedanceScraper, ElevenLabsScraper,
   SunoScraper, UdioScraper, StabilityAudioScraper, DescriptScraper,
   MidjourneyImageScraper, DALLEScraper, StableDiffusionScraper, IdeogramScraper,
-  LeonardoAIScraper, MagnificScraper, FalImageScraper,
+  LeonardoAIScraper,   MagnificScraper, FalImageScraper,
+  // Web crawlers (no API key needed)
+  OpenRouterCrawler, GroqCrawler, TogetherCrawler, FireworksCrawler,
+  DeepSeekCrawler, HuggingFaceCrawler, GenericCrawler,
 } from './scrapers/registry';
 
 export interface Env {
@@ -172,6 +175,10 @@ function createDefaultRegistry(): ScraperRegistry {
     new DescriptScraper(), new MidjourneyImageScraper(), new DALLEScraper(),
     new StableDiffusionScraper(), new IdeogramScraper(), new LeonardoAIScraper(),
     new MagnificScraper(), new FalImageScraper(),
+    // Web crawlers (no API key needed)
+    new OpenRouterCrawler(), new GroqCrawler(), new TogetherCrawler(),
+    new FireworksCrawler(), new DeepSeekCrawler(), new HuggingFaceCrawler(),
+    new GenericCrawler(),
   );
 }
 
@@ -332,6 +339,52 @@ export default {
           scrapers: registry.size,
           messages_enqueued: messages.length,
           filter: filterParam ?? 'all',
+        });
+      } catch (e) {
+        return Response.json({ error: e instanceof Error ? e.message : String(e) }, { status: 500 });
+      }
+    }
+
+    // Manual web crawl — crawl specific URLs for model data (no API keys needed).
+    // POST /admin/crawl with JSON body: { urls: [...], platform: "name", baseUrl: "..." }
+    // Or GET /admin/crawl?url=https://example.com/models&platform=example
+    if (url.pathname === '/admin/crawl') {
+      try {
+        const runId = crypto.randomUUID();
+        let urls: string[];
+        let platform: string;
+        let baseUrl: string;
+
+        if (req.method === 'POST') {
+          const body = await req.json() as { urls?: string[]; platform?: string; baseUrl?: string };
+          urls = body.urls ?? [];
+          platform = body.platform ?? 'generic';
+          baseUrl = body.baseUrl ?? '';
+        } else {
+          // GET — use query params for quick testing
+          const u = url.searchParams.get('url');
+          urls = u ? [u] : [];
+          platform = url.searchParams.get('platform') ?? 'generic';
+          baseUrl = url.searchParams.get('base_url') ?? '';
+        }
+
+        if (urls.length === 0) {
+          return Response.json({ error: 'urls_required', usage: 'POST { urls: [...], platform: "name" } or GET ?url=...' }, { status: 400 });
+        }
+
+        // Configure and run the generic crawler
+        const crawler = new GenericCrawler();
+        crawler.configure(urls, platform, baseUrl);
+
+        const scraperEnv: ScraperEnv = { DB: env.DB, CACHE: env.CACHE };
+        const msg: ScraperMessage = { kind: 'generic-crawl', runId, payload: {} };
+        const result = await crawler.handle(msg, scraperEnv);
+
+        return Response.json({
+          runId,
+          platform,
+          urls,
+          ...result,
         });
       } catch (e) {
         return Response.json({ error: e instanceof Error ? e.message : String(e) }, { status: 500 });
