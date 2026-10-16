@@ -1,10 +1,14 @@
 /**
  * WebCrawlerScraper — base class for API-free web crawling.
  *
- * Instead of calling official APIs (which need keys), this scraper:
- *   1. Fetches public web pages (model catalogs, pricing pages)
- *   2. Parses HTML to extract structured model data
- *   3. Writes offerings to D1 just like API scrapers
+ * Enhanced with techniques borrowed from Scrapling, Camoufox, and QMD:
+ * - Browser-realistic header profiles (Camoufox consistency)
+ * - AutoThrottle with latency-based delays (Scrapling)
+ * - Retry-After handling and block detection (Scrapling)
+ * - Content hashing for dedup (QMD)
+ * - Resilient parsing with fallback chains (Scrapling)
+ * - robots.txt compliance
+ * - Request timing jitter
  *
  * Subclasses implement:
  *   - crawlUrls() — list of URLs to fetch
@@ -13,6 +17,19 @@
 
 import { BaseScraper } from './base';
 import type { ScraperMessage, ScraperResult, ScraperEnv } from './types';
+import {
+  AutoThrottle,
+  smartFetch,
+  contentHash,
+  extractJsonFromScripts,
+  extractJsonLd,
+  findModelJsonArrays,
+  extractText,
+  extractContextWindow,
+  detectCapabilities,
+  parsePricePerToken,
+  normalizeUrl,
+} from './crawl-utils';
 
 export interface CrawledModel {
   /** Platform-prefixed model ID, e.g. "groq/llama-3.3-70b-versatile" */
@@ -49,10 +66,15 @@ export abstract class WebCrawlerScraper extends BaseScraper {
   protected maxConcurrency = 3;
 
   /**
-   * User-Agent header to use for requests.
-   * Some sites block non-browser UAs.
+   * Shared throttle instance for rate limiting.
+   * Subclasses can override startDelay/maxDelay.
    */
-  protected userAgent = 'Mozilla/5.0 (compatible; ModelMap/1.0; +https://modelmap.dev)';
+  protected throttle = new AutoThrottle(2, 30, this.maxConcurrency);
+
+  /**
+   * Content hashes seen this run (for dedup).
+   */
+  protected seenHashes = new Set<string>();
 
   // -----------------------------------------------------------------------
   // Subclass hooks
@@ -81,14 +103,23 @@ export abstract class WebCrawlerScraper extends BaseScraper {
   protected async doHandle(_msg: ScraperMessage, env: ScraperEnv): Promise<ScraperResult> {
     const urls = this.crawlUrls();
     const allModels: CrawledModel[] = [];
+    this.seenHashes.clear();
 
     // Fetch and parse each URL (with concurrency limit).
     for (let i = 0; i < urls.length; i += this.maxConcurrency) {
       const batch = urls.slice(i, i + this.maxConcurrency);
       const results = await Promise.allSettled(
         batch.map(async (url) => {
-          const html = await this.fetchPage(url);
-          return this.parseHtml(url, html);
+          const result = await smartFetch(url, this.throttle);
+          if (!result.ok) {
+            console.warn(`${this.displayName}: fetch failed for ${url}: ${result.status}`);
+            return [];
+          }
+          if (result.blocked) {
+            console.warn(`${this.displayName}: blocked by ${url}`);
+            return [];
+          }
+          return this.parseHtml(url, result.body);
         }),
       );
       for (const r of results) {
@@ -96,14 +127,17 @@ export abstract class WebCrawlerScraper extends BaseScraper {
       }
     }
 
-    if (allModels.length === 0) {
+    // Dedup by content hash
+    const uniqueModels = this.dedupModels(allModels);
+
+    if (uniqueModels.length === 0) {
       return { offerings: 0, scores: 0, quotas: 0, note: `${this.displayName}: no models found` };
     }
 
     // Write to D1.
     const now = new Date().toISOString();
     const stmt = env.DB.prepare(OFFERING_SQL);
-    const rows = allModels.map((m) =>
+    const rows = uniqueModels.map((m) =>
       stmt.bind(
         m.modelId,
         m.harnessId,
@@ -135,136 +169,82 @@ export abstract class WebCrawlerScraper extends BaseScraper {
   }
 
   /**
-   * Fetch a page with retry and rate-limit handling.
+   * Dedup models by content hash (QMD pattern).
    */
-  protected async fetchPage(url: string, retries = 2): Promise<string> {
-    for (let attempt = 0; attempt <= retries; attempt++) {
-      try {
-        const res = await fetch(url, {
-          headers: {
-            'User-Agent': this.userAgent,
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.5',
-          },
-          redirect: 'follow',
-        });
-
-        if (res.status === 429) {
-          // Rate limited — wait and retry.
-          const retryAfter = Number(res.headers.get('Retry-After') ?? '5');
-          await new Promise((r) => setTimeout(r, retryAfter * 1000));
-          continue;
-        }
-
-        if (!res.ok) {
-          throw new Error(`HTTP ${res.status} for ${url}`);
-        }
-
-        return await res.text();
-      } catch (err) {
-        if (attempt === retries) throw err;
-        await new Promise((r) => setTimeout(r, 1000 * (attempt + 1)));
+  protected dedupModels(models: CrawledModel[]): CrawledModel[] {
+    const unique: CrawledModel[] = [];
+    for (const m of models) {
+      const hash = contentHash(`${m.modelId}:${m.planId}:${m.medium}`);
+      if (!this.seenHashes.has(hash)) {
+        this.seenHashes.add(hash);
+        unique.push(m);
       }
     }
-    throw new Error(`Failed to fetch ${url} after ${retries + 1} attempts`);
+    return unique;
   }
 
   // -----------------------------------------------------------------------
-  // HTML parsing utilities
+  // Enhanced parsing utilities (borrowed from Scrapling/QMD)
   // -----------------------------------------------------------------------
 
   /**
-   * Extract text content from an HTML string (strip tags).
+   * Find model objects in embedded JSON arrays (React/Next.js pages).
+   * Scrapling pattern: look for arrays with model-like objects.
    */
-  protected stripTags(html: string): string {
-    return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  protected findModelJsonArrays(html: string): Record<string, unknown>[][] {
+    return findModelJsonArrays(html);
   }
 
   /**
-   * Extract content between two markers.
-   * Case-insensitive, supports regex patterns.
+   * Extract JSON from script tags.
    */
-  protected extractBetween(html: string, start: string | RegExp, end: string | RegExp): string {
-    const startMatch = typeof start === 'string'
-      ? html.indexOf(start)
-      : html.search(start);
-    if (startMatch === -1) return '';
-    const from = typeof start === 'string' ? startMatch + start.length : startMatch;
-    const endMatch = typeof end === 'string'
-      ? html.indexOf(end, from)
-      : html.slice(from).search(end);
-    if (endMatch === -1) return html.slice(from);
-    return html.slice(from, from + endMatch);
+  protected extractJsonFromScripts(html: string, keyPattern?: RegExp): unknown[] {
+    return extractJsonFromScripts(html, keyPattern);
   }
 
   /**
-   * Find all JSON-LD structured data in the page.
-   * Many sites embed model info as JSON-LD.
+   * Extract JSON-LD structured data.
    */
   protected extractJsonLd(html: string): unknown[] {
-    const results: unknown[] = [];
-    const regex = /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
-    let match;
-    while ((match = regex.exec(html)) !== null) {
-      try {
-        results.push(JSON.parse(match[1]));
-      } catch { /* skip malformed JSON-LD */ }
-    }
-    return results;
+    return extractJsonLd(html);
   }
 
   /**
-   * Find all JSON objects in the page that match a key pattern.
-   * Useful for finding model data embedded in Next.js/React pages.
+   * Extract all visible text from HTML.
    */
-  protected extractJsonByPattern(html: string, keyPattern: RegExp): unknown[] {
-    const results: unknown[] = [];
-    // Match JSON objects in <script> tags (Next.js __NEXT_DATA__, etc.)
-    const scriptRegex = /<script[^>]*>([\s\S]*?)<\/script>/gi;
-    let scriptMatch;
-    while ((scriptMatch = scriptRegex.exec(html)) !== null) {
-      const content = scriptMatch[1];
-      if (keyPattern.test(content)) {
-        // Try to extract JSON objects from the script content.
-        const jsonRegex = /(\{[\s\S]*?\})\s*[;,]/g;
-        let jsonMatch;
-        while ((jsonMatch = jsonRegex.exec(content)) !== null) {
-          try {
-            const obj = JSON.parse(jsonMatch[1]);
-            if (typeof obj === 'object' && obj !== null) {
-              results.push(obj);
-            }
-          } catch { /* not valid JSON */ }
-        }
-      }
-    }
-    return results;
+  protected extractText(html: string): string {
+    return extractText(html);
   }
 
   /**
-   * Parse a price string like "$0.50/1M tokens" or "€1.20 per million".
-   * Returns price per token, or null if unparseable.
+   * Extract context window from text near a model name.
+   */
+  protected extractContextWindow(text: string, modelName: string): number | null {
+    return extractContextWindow(text, modelName);
+  }
+
+  /**
+   * Detect model capabilities from text.
+   */
+  protected detectCapabilities(text: string): {
+    supportsVision: number;
+    supportsTools: number;
+    isFree: number;
+  } {
+    return detectCapabilities(text);
+  }
+
+  /**
+   * Parse price per token.
    */
   protected parsePricePerToken(priceStr: string): number | null {
-    if (!priceStr) return null;
-    const normalized = priceStr.toLowerCase().replace(/[,\s]/g, '');
+    return parsePricePerToken(priceStr);
+  }
 
-    // Match patterns like "$0.50/1m", "$0.50 per million", "0.50/1M tokens"
-    const match = normalized.match(/\$?([\d.]+)\s*\/?\s*(?:per\s+)?(\d+[km]?)\s*(?:tokens?|input|output)?/);
-    if (!match) return null;
-
-    const price = parseFloat(match[1]);
-    if (isNaN(price)) return null;
-
-    let divisor = 1_000_000; // default: per million
-    const unit = match[2];
-    if (unit.endsWith('k')) {
-      divisor = 1_000;
-    } else if (!unit.includes('m') && !unit.includes('million')) {
-      // Might be a flat price or per-token
-      divisor = 1;
-    }
-
-    return price / divisor;
+  /**
+   * Normalize URL for dedup.
+   */
+  protected normalizeUrl(url: string): string {
+    return normalizeUrl(url);
   }
 }

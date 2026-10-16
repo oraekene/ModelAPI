@@ -95,7 +95,7 @@ export class GenericCrawler extends WebCrawlerScraper {
       while ((rowMatch = rowRegex.exec(tableHtml)) !== null) {
         const cells = rowMatch[1].match(/<td[^>]*>([\s\S]*?)<\/td>/gi);
         if (cells && cells.length >= 2) {
-          const firstCell = this.stripTags(cells[0]);
+          const firstCell = this.extractText(cells[0]);
           if (firstCell.length > 3 && firstCell.length < 100 && !seen.has(firstCell)) {
             // Check if it looks like a model name
             if (/[a-z]/.test(firstCell) && /\d/.test(firstCell)) {

@@ -1,0 +1,4 @@
+# OpenCode Ignore
+node_modules/
+.wrangler/
+*.log
