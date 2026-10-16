@@ -463,8 +463,25 @@ stays quiet, a 14% change fires.
 
 ### Tests
 
-`npm test` runs five suites — 25 scoring, 33 request-path, 37 Terminal-Bench, 25 quota,
-34 bot/identity/alerts — **154 assertions**, plain Node, no framework.
+`npm test` runs eight suites — 25 scoring, 33 request-path, 37 Terminal-Bench, 25 quota,
+34 bot/identity/alerts, registry, Groq, and 23 blocklist — **plain Node, no framework**.
+
+### Scraper blocklist — probe, block, expire
+
+Dead sources prune themselves. `scraper_health` already records every scraper's
+consecutive failures; `reconcileBlocklist` (src/scrapers/blocklist.ts) runs before each
+cron sync and each `/admin/scrape`:
+
+- **block** — a scraper with 3+ consecutive failures moves to `scraper_blocklist` and is
+  skipped by the fan-out, so a dead endpoint costs one queue message a week instead of
+  140.
+- **expire** — the block expires after 7 days. The scraper runs once more, which means
+  adding a missing API key revives it with no manual edit.
+- **unblock** — a re-probe that succeeds clears the row automatically. A re-probe that
+  fails again refreshes the expiry (weekly retry).
+
+`GET /admin/scrapers` returns `scraper-index.json` — every registered scraper with
+health and block state. `node scripts/export-scraper-index.mjs` saves it to disk.
 
 ---
 

@@ -80,6 +80,13 @@ import {
   OpenRouterCrawler, GroqCrawler, TogetherCrawler, FireworksCrawler,
   DeepSeekCrawler, HuggingFaceCrawler, GenericCrawler,
 } from './scrapers/registry';
+import {
+  reconcileBlocklist,
+  loadBlockedIds,
+  isBlockedNow,
+  type BlockedRow,
+  type HealthRow,
+} from './scrapers/blocklist';
 
 export interface Env {
   DB: D1Database;
@@ -322,12 +329,19 @@ export default {
       try {
         const runId = crypto.randomUUID();
         const registry = env.registry ?? createDefaultRegistry();
+        // Prune dead sources first: reconciling keeps the blocklist honest for
+        // both this trigger and the cron.
+        const blockCounts = await reconcileBlocklist(env.DB);
+        const blocked = url.searchParams.get('include_blocked') === '1'
+          ? new Set<string>()
+          : await loadBlockedIds(env.DB);
         const allMessages = registry.planMessages(runId);
         // Optional: filter to specific scrapers via ?scrapers=groq,together
         const filterParam = url.searchParams.get('scrapers');
-        const messages = filterParam
+        const filteredByParam = filterParam
           ? allMessages.filter((m) => filterParam.split(',').includes(m.kind))
           : allMessages;
+        const messages = filteredByParam.filter((m) => !blocked.has(m.kind));
         // Enqueue in batches of 50.
         const SCRAPER_BATCH = 50;
         for (let i = 0; i < messages.length; i += SCRAPER_BATCH) {
@@ -338,6 +352,8 @@ export default {
           started: runId,
           scrapers: registry.size,
           messages_enqueued: messages.length,
+          blocked_skipped: filteredByParam.length - messages.length,
+          blocklist: blockCounts,
           filter: filterParam ?? 'all',
         });
       } catch (e) {
@@ -446,6 +462,45 @@ export default {
       });
     }
 
+    // scraper-index.json (blueprint #43): every registered scraper with its
+    // health and blocklist state. This is the machine-readable index the app
+    // and the export script consume.
+    if (url.pathname === '/admin/scrapers') {
+      const registry = env.registry ?? createDefaultRegistry();
+      const health = await env.DB.prepare(
+        `SELECT scraper_id, last_status, last_error, consecutive_failures, models_found FROM scraper_health`,
+      ).all<HealthRow & { models_found: number }>();
+      const blocked = await env.DB.prepare(
+        `SELECT scraper_id, blocked_at, reason, failures, expires_at FROM scraper_blocklist`,
+      ).all<BlockedRow>();
+      const healthById = new Map((health.results ?? []).map((r) => [r.scraper_id, r]));
+      const blockedById = new Map((blocked.results ?? []).map((r) => [r.scraper_id, r]));
+      const now = new Date();
+      const scrapers = registry.all().map((s) => {
+        const h = healthById.get(s.id);
+        const b = blockedById.get(s.id);
+        const blockedNow = isBlockedNow(b, now);
+        return {
+          id: s.id,
+          category: s.category,
+          displayName: s.displayName,
+          last_status: h?.last_status ?? 'never_run',
+          last_error: h?.last_error ?? null,
+          consecutive_failures: h?.consecutive_failures ?? 0,
+          models_found: h?.models_found ?? 0,
+          blocked: blockedNow,
+          blocked_until: blockedNow ? b?.expires_at ?? null : null,
+          block_reason: blockedNow ? b?.reason ?? null : null,
+        };
+      });
+      return Response.json({
+        generated_at: now.toISOString(),
+        count: scrapers.length,
+        blocked_count: scrapers.filter((s) => s.blocked).length,
+        scrapers,
+      });
+    }
+
     // Inspect a computed answer blob without going through the UI.
     if (url.pathname === '/admin/answer') {
       const category = url.searchParams.get('category') ?? 'coding';
@@ -529,15 +584,19 @@ async function startSync(env: Env): Promise<string> {
   await env.SYNC_QUEUE.sendBatch(benchmarkJobs.map((body) => ({ body })));
 
   // --- Universal Scraper Network: fan out one message per scraper ---
+  // Dead sources are pruned first (probe/block/expire, blueprint #43): the
+  // blocklist is refreshed from health, then blocked scrapers are skipped.
+  const blockCounts = await reconcileBlocklist(env.DB);
+  const blocked = await loadBlockedIds(env.DB);
   const registry = env.registry ?? createDefaultRegistry();
-  const scraperMessages = registry.planMessages(runId);
+  const scraperMessages = registry.planMessages(runId).filter((m) => !blocked.has(m.kind));
   // Send in batches of 50 to stay under the 256KB sendBatch limit.
   const SCRAPER_BATCH = 50;
   for (let i = 0; i < scraperMessages.length; i += SCRAPER_BATCH) {
     const batch = scraperMessages.slice(i, i + SCRAPER_BATCH);
     await env.SYNC_QUEUE.sendBatch(batch.map((body) => ({ body })));
   }
-  console.log(`scrapers: ${scraperMessages.length} messages enqueued from ${registry.size} scrapers`);
+  console.log(`scrapers: ${scraperMessages.length} messages enqueued from ${registry.size} scrapers, ${blocked.size} blocked (${JSON.stringify(blockCounts)})`);
 
   // Rank compute is delayed so ingestion has landed first. One message per
   // (category, tier) pair keeps each invocation's CPU bounded.
