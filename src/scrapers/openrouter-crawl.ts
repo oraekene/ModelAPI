@@ -34,6 +34,7 @@ export class OpenRouterCrawler extends WebCrawlerScraper {
 
         const promptPrice = parseFloat(m.pricing?.prompt ?? '0');
         const completionPrice = parseFloat(m.pricing?.completion ?? '0');
+        const cacheReadPrice = parseFloat(m.pricing?.input_cache_read ?? '0');
         const isFree = promptPrice === 0 && completionPrice === 0;
 
         const modality = m.architecture?.modality ?? '';
@@ -52,6 +53,7 @@ export class OpenRouterCrawler extends WebCrawlerScraper {
           isFree: isFree ? 1 : 0,
           pricePrompt: promptPrice || null,
           priceCompletion: completionPrice || null,
+          priceCacheRead: cacheReadPrice || null,
           accessUrl: `https://openrouter.ai/${id}`,
         });
       }

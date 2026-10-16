@@ -52,11 +52,13 @@ export interface CrawledModel {
   pricePrompt: number | null;
   /** Price per token (completion), null if unknown */
   priceCompletion: number | null;
+  /** Price per cached-input token, null if unknown */
+  priceCacheRead?: number | null;
   /** URL to access the model */
   accessUrl: string;
 }
 
-const OFFERING_SQL = `INSERT INTO offerings (model_id, harness_id, plan_id, medium, context_window, supports_vision, supports_tools, is_free, price_prompt, price_completion, access_url, last_verified_at, score_key) VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13) ON CONFLICT(model_id, harness_id, plan_id) DO UPDATE SET context_window=excluded.context_window, supports_vision=excluded.supports_vision, supports_tools=excluded.supports_tools, is_free=excluded.is_free, price_prompt=excluded.price_prompt, price_completion=excluded.price_completion, last_verified_at=excluded.last_verified_at, score_key=excluded.score_key`;
+const OFFERING_SQL = `INSERT INTO offerings (model_id, harness_id, plan_id, medium, context_window, supports_vision, supports_tools, is_free, price_prompt, price_completion, price_cache_read, access_url, last_verified_at, score_key) VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14) ON CONFLICT(model_id, harness_id, plan_id) DO UPDATE SET context_window=excluded.context_window, supports_vision=excluded.supports_vision, supports_tools=excluded.supports_tools, is_free=excluded.is_free, price_prompt=excluded.price_prompt, price_completion=excluded.price_completion, price_cache_read=excluded.price_cache_read, last_verified_at=excluded.last_verified_at, score_key=excluded.score_key`;
 
 export abstract class WebCrawlerScraper extends BaseScraper {
   /**
@@ -149,6 +151,7 @@ export abstract class WebCrawlerScraper extends BaseScraper {
         m.isFree,
         m.pricePrompt,
         m.priceCompletion,
+        m.priceCacheRead ?? null,
         m.accessUrl,
         now,
         m.modelId.split('/')[1] ?? m.modelId,
