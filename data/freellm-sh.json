@@ -1,0 +1,3478 @@
+[
+ {
+  "id": "openrouter",
+  "name": "OpenRouter :free",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image",
+   "audio",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared across :free models (20 RPM); 1,000/day after $10 credits",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/models?max_price=0"
+ },
+ {
+  "id": "opencode-zen",
+  "name": "OpenCode Zen free tier",
+  "provider": "OpenCode Zen",
+  "providerSlug": "opencode",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Rotating free models inside OpenCode only — anonymous API is blocked",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://opencode.ai/zen"
+ },
+ {
+  "id": "pollinations",
+  "name": "Pollinations anonymous GET",
+  "provider": "Pollinations",
+  "providerSlug": "pollinations",
+  "type": [
+   "text",
+   "image"
+  ],
+  "access": [
+   "free-forever",
+   "no-signup"
+  ],
+  "status": "operational",
+  "freeLimit": "No key: GET text.pollinations.ai and image.pollinations.ai. Named chat on gen.pollinations.ai needs a key",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://enter.pollinations.ai/models"
+ },
+ {
+  "id": "huggingface-inference",
+  "name": "Hugging Face Inference Providers",
+  "provider": "Hugging Face",
+  "providerSlug": "huggingface",
+  "type": [
+   "text",
+   "image",
+   "audio",
+   "code",
+   "embedding"
+  ],
+  "access": [
+   "signup-credits",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "$$0.10/month routed credits (subject to change). Hub listings are not a free catalog",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://huggingface.co/docs/inference-providers/en/index"
+ },
+ {
+  "id": "google-gemini",
+  "name": "Gemini API free tier",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "image",
+   "audio",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on eligible Flash/Lite/Gemma models; Pro image models are paid. Data used to improve Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://aistudio.google.com/"
+ },
+ {
+  "id": "groq",
+  "name": "GroqCloud free tier",
+  "provider": "Groq",
+  "providerSlug": "groq",
+  "type": [
+   "text",
+   "audio",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free API key, rate-limited. Llama 3.1/3.3 are now Enterprise. Limits vary per model on the Free plan",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://console.groq.com/docs/models"
+ },
+ {
+  "id": "cerebras",
+  "name": "Cerebras Inference trial",
+  "provider": "Cerebras",
+  "providerSlug": "cerebras",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "signup-credits",
+   "card-required"
+  ],
+  "status": "operational",
+  "freeLimit": "$$5 credits for 30 days after a verified card. No permanently free tier. 5 RPM / 1M tokens/day on trial",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://inference-docs.cerebras.ai/models/overview"
+ },
+ {
+  "id": "zenmux",
+  "name": "Zenmux $0 models",
+  "provider": "Zenmux",
+  "providerSlug": "zenmux",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "Six $0 models; still needs a Zenmux API key (anonymous chat returns 403)",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://zenmux.ai"
+ },
+ {
+  "id": "orcarouter",
+  "name": "OrcaRouter free routes",
+  "provider": "OrcaRouter",
+  "providerSlug": "orcarouter",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "orcarouter/free plus a few $0 model IDs. API key required; offers often need a deposit",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://www.orcarouter.ai/models"
+ },
+ {
+  "id": "kiosapi",
+  "name": "KiosAPI",
+  "provider": "KiosAPI",
+  "providerSlug": "kiosapi",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "degraded",
+  "freeLimit": "Public /v1/models returns 401 without a token. No verified free model list — skip until a key works",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://kiosapi.com"
+ },
+ {
+  "id": "clawlabs-free-ai-models",
+  "name": "ClawLabs free-ai-models",
+  "provider": "ClawLabs",
+  "providerSlug": "github",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "open-source",
+   "no-signup"
+  ],
+  "status": "operational",
+  "freeLimit": "Live JSON of OpenRouter :free + Pollinations, updated 2026-09-14",
+  "tags": [
+   "collection"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://github.com/ClawLabsAI/free-ai-models"
+ },
+ {
+  "id": "openai-fast",
+  "name": "openai-fast (anonymous)",
+  "provider": "Pollinations",
+  "providerSlug": "pollinations",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-forever",
+   "no-signup"
+  ],
+  "status": "operational",
+  "freeLimit": "Only anonymous text model on text.pollinations.ai. Aliases: openai, gpt-oss, gpt-oss-20b",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://text.pollinations.ai/models"
+ },
+ {
+  "id": "sana",
+  "name": "Sana (anonymous image)",
+  "provider": "Pollinations",
+  "providerSlug": "pollinations",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-forever",
+   "no-signup"
+  ],
+  "status": "operational",
+  "freeLimit": "Only anonymous image model on image.pollinations.ai. GET /prompt/{text} returns JPEG",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://image.pollinations.ai/models"
+ },
+ {
+  "id": "big-pickle",
+  "name": "Big Pickle",
+  "provider": "OpenCode Zen",
+  "providerSlug": "opencode",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Stealth model, free for a limited time. Data may be used to improve the model. Works in OpenCode, not as a public anonymous API",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://opencode.ai/docs/zen/"
+ },
+ {
+  "id": "mimo-v2.5-free",
+  "name": "MiMo-V2.5 Free",
+  "provider": "OpenCode Zen",
+  "providerSlug": "opencode",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "OpenCode-only free tier. Data may be used to improve the model. Works in OpenCode, not as a public anonymous API",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://opencode.ai/docs/zen/"
+ },
+ {
+  "id": "ling-3.0-flash-fin-free",
+  "name": "Ling 3.0 Flash Fin Free",
+  "provider": "OpenCode Zen",
+  "providerSlug": "opencode",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "OpenCode-only free tier. Data may be used to improve the model. Works in OpenCode, not as a public anonymous API",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://opencode.ai/docs/zen/"
+ },
+ {
+  "id": "nemotron-3-ultra-free",
+  "name": "Nemotron 3 Ultra Free",
+  "provider": "OpenCode Zen",
+  "providerSlug": "opencode",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "NVIDIA trial endpoint via OpenCode. Do not send confidential data. Works in OpenCode, not as a public anonymous API",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://opencode.ai/docs/zen/"
+ },
+ {
+  "id": "nemotron-3.5-lightning-free",
+  "name": "Nemotron 3.5 Lightning Free",
+  "provider": "OpenCode Zen",
+  "providerSlug": "opencode",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "NVIDIA trial endpoint via OpenCode. Do not send confidential data. Works in OpenCode, not as a public anonymous API",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://opencode.ai/docs/zen/"
+ },
+ {
+  "id": "muse-spark-1.3-contributor-free",
+  "name": "Muse Spark 1.3 Contributor Free",
+  "provider": "OpenCode Zen",
+  "providerSlug": "opencode",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Prompts/completions may train future Meta models. Works in OpenCode, not as a public anonymous API",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://opencode.ai/docs/zen/"
+ },
+ {
+  "id": "muse-spark-1.2-contributor-free",
+  "name": "Muse Spark 1.2 Contributor Free",
+  "provider": "OpenCode Zen",
+  "providerSlug": "opencode",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Listed on zen/v1/models as free contributor. Works in OpenCode, not as a public anonymous API",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://opencode.ai/docs/zen/"
+ },
+ {
+  "id": "thinkingmachines/inkling-small:free",
+  "name": "Thinking Machines: Inkling Small",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image",
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "1M context. 50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/thinkingmachines/inkling-small:free"
+ },
+ {
+  "id": "thinkingmachines/inkling:free",
+  "name": "Thinking Machines: Inkling",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image",
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "1M context. 50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/thinkingmachines/inkling:free"
+ },
+ {
+  "id": "google/lyria-3-pro-preview",
+  "name": "Google: Lyria 3 Pro Preview",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Music gen. $0 on OpenRouter. 50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/google/lyria-3-pro-preview"
+ },
+ {
+  "id": "google/lyria-3-clip-preview",
+  "name": "Google: Lyria 3 Clip Preview",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Music gen. $0 on OpenRouter. 50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/google/lyria-3-clip-preview"
+ },
+ {
+  "id": "nvidia/nemotron-3.5-lightning:free",
+  "name": "NVIDIA: Nemotron 3.5 Lightning",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "40 RPM provider cap; 50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/nvidia/nemotron-3.5-lightning:free"
+ },
+ {
+  "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "name": "NVIDIA: Nemotron 3 Ultra",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "40 RPM provider cap; 50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free"
+ },
+ {
+  "id": "dots-studio/dots-3-note-preview:free",
+  "name": "Dots Studio: Dots3-Note Preview",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/dots-studio/dots-3-note-preview:free"
+ },
+ {
+  "id": "inclusionai/ling-3.0-flash-vl:free",
+  "name": "inclusionAI: Ling 3.0 Flash VL",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image",
+   "video"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/inclusionai/ling-3.0-flash-vl:free"
+ },
+ {
+  "id": "nex-agi/nex-n2.5-mini:free",
+  "name": "Nex AGI: Nex-N2.5-Mini",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/nex-agi/nex-n2.5-mini:free"
+ },
+ {
+  "id": "nex-agi/nex-n2.5-pro:free",
+  "name": "Nex AGI: Nex-N2.5-Pro",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/nex-agi/nex-n2.5-pro:free"
+ },
+ {
+  "id": "inclusionai/ling-3.0-flash-sante:free",
+  "name": "inclusionAI: Ling 3.0 Flash Sante",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/inclusionai/ling-3.0-flash-sante:free"
+ },
+ {
+  "id": "inclusionai/ling-3.0-flash-fin:free",
+  "name": "inclusionAI: Ling 3.0 Flash Fin",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/inclusionai/ling-3.0-flash-fin:free"
+ },
+ {
+  "id": "poolside/laguna-s-2.1:free",
+  "name": "Poolside: Laguna S 2.1",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/poolside/laguna-s-2.1:free"
+ },
+ {
+  "id": "poolside/laguna-xs-2.1:free",
+  "name": "Poolside: Laguna XS 2.1",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/poolside/laguna-xs-2.1:free"
+ },
+ {
+  "id": "google/gemma-4-26b-a4b-it:free",
+  "name": "Google: Gemma 4 26B A4B",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image",
+   "video"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it:free"
+ },
+ {
+  "id": "google/gemma-4-31b-it:free",
+  "name": "Google: Gemma 4 31B",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image",
+   "video"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/google/gemma-4-31b-it:free"
+ },
+ {
+  "id": "nvidia/nemotron-3-super-120b-a12b:free",
+  "name": "NVIDIA: Nemotron 3 Super",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "40 RPM provider cap; 50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b:free"
+ },
+ {
+  "id": "cohere/north-mini-code:free",
+  "name": "Cohere: North Mini Code",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/cohere/north-mini-code:free"
+ },
+ {
+  "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+  "name": "NVIDIA: Nemotron 3 Nano Omni",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image",
+   "audio",
+   "video"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "40 RPM provider cap; 50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free"
+ },
+ {
+  "id": "openrouter/free",
+  "name": "OpenRouter Free Models Router",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Auto-picks a :free model. 50 req/day shared",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/openrouter/free"
+ },
+ {
+  "id": "nvidia/nemotron-3.5-content-safety:free",
+  "name": "NVIDIA: Nemotron 3.5 Content Safety",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "40 RPM provider cap; 50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/nvidia/nemotron-3.5-content-safety:free"
+ },
+ {
+  "id": "liquid/lfm-2.5-2.6b:free",
+  "name": "LiquidAI: LFM2.5-2.6B",
+  "provider": "OpenRouter",
+  "providerSlug": "openrouter",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "10 RPM provider cap; 50 req/day shared :free",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://openrouter.ai/liquid/lfm-2.5-2.6b:free"
+ },
+ {
+  "id": "gemini-3.8-flash",
+  "name": "Gemini 3.8 Flash",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image",
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-3.7-flash",
+  "name": "Gemini 3.7 Flash",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image",
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-3.6-flash",
+  "name": "Gemini 3.6 Flash",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image",
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-3.5-flash",
+  "name": "Gemini 3.5 Flash",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image",
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-3.5-flash-lite",
+  "name": "Gemini 3.5 Flash Lite",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image",
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-3.1-flash-lite",
+  "name": "Gemini 3.1 Flash Lite",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image",
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-3-flash-preview",
+  "name": "Gemini 3 Flash Preview",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image",
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-2.5-pro",
+  "name": "Gemini 2.5 Pro",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-2.5-flash",
+  "name": "Gemini 2.5 Flash",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image",
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-2.5-flash-lite",
+  "name": "Gemini 2.5 Flash Lite",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image",
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-2.5-computer-use-preview-10-2025",
+  "name": "Gemini 2.5 Computer Use Preview",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-3.5-live-translate-preview",
+  "name": "Gemini 3.5 Live Translate",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-3.5-transcribe-live",
+  "name": "Gemini 3.5 Transcribe Live",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-3.5-transcribe",
+  "name": "Gemini 3.5 Transcribe",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-3.1-flash-live-preview",
+  "name": "Gemini 3.1 Flash Live Preview",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "audio",
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-3.1-flash-tts-preview",
+  "name": "Gemini 3.1 Flash TTS Preview",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-2.5-flash-native-audio-preview-12-2025",
+  "name": "Gemini 2.5 Flash Native Audio",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemini-embedding-2",
+  "name": "Gemini Embedding 2",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "embedding"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemma-4-31b-it",
+  "name": "Gemma 4 31B IT",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "gemma-4-26b-a4b-it",
+  "name": "Gemma 4 26B A4B IT",
+  "provider": "Google AI Studio",
+  "providerSlug": "google",
+  "type": [
+   "text",
+   "code",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Free of charge on the Gemini API free tier. Rate limits apply. Prompts may train Google products",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://ai.google.dev/gemini-api/docs/models"
+ },
+ {
+  "id": "openai/gpt-oss-20b",
+  "name": "GPT OSS 20B",
+  "provider": "Groq",
+  "providerSlug": "groq",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free-plan rate limits; ~1k RPD / 8k TPM on published tables",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://console.groq.com/docs/models"
+ },
+ {
+  "id": "openai/gpt-oss-120b",
+  "name": "GPT OSS 120B",
+  "provider": "Groq",
+  "providerSlug": "groq",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free-plan rate limits; ~1k RPD / 8k TPM on published tables",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://console.groq.com/docs/models"
+ },
+ {
+  "id": "openai/gpt-oss-safeguard-20b",
+  "name": "Safety GPT OSS 20B",
+  "provider": "Groq",
+  "providerSlug": "groq",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Preview. Free-plan rate limits similar to GPT OSS 20B",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://console.groq.com/docs/models"
+ },
+ {
+  "id": "qwen/qwen3.6-27b",
+  "name": "Qwen3.6 27B",
+  "provider": "Groq",
+  "providerSlug": "groq",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Preview. ~1k RPD / 8k TPM on published tables",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://console.groq.com/docs/models"
+ },
+ {
+  "id": "qwen/qwen3.8-27b",
+  "name": "Qwen3.8 27B",
+  "provider": "Groq",
+  "providerSlug": "groq",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Preview. ~1k RPD / 8k TPM on published tables",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://console.groq.com/docs/models"
+ },
+ {
+  "id": "groq/compound",
+  "name": "Groq Compound",
+  "provider": "Groq",
+  "providerSlug": "groq",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "~250 RPD / 70k TPM on published tables",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://console.groq.com/docs/models"
+ },
+ {
+  "id": "groq/compound-mini",
+  "name": "Groq Compound Mini",
+  "provider": "Groq",
+  "providerSlug": "groq",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "~250 RPD / 70k TPM on published tables",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://console.groq.com/docs/models"
+ },
+ {
+  "id": "whisper-large-v3",
+  "name": "Whisper Large V3",
+  "provider": "Groq",
+  "providerSlug": "groq",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "~2k audio req/day on published tables",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://console.groq.com/docs/models"
+ },
+ {
+  "id": "whisper-large-v3-turbo",
+  "name": "Whisper Large V3 Turbo",
+  "provider": "Groq",
+  "providerSlug": "groq",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "~2k audio req/day on published tables",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://console.groq.com/docs/models"
+ },
+ {
+  "id": "gpt-oss-120b",
+  "name": "GPT OSS 120B",
+  "provider": "Cerebras",
+  "providerSlug": "cerebras",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "signup-credits",
+   "card-required"
+  ],
+  "status": "operational",
+  "freeLimit": "Trial: 5 RPM, 1M tokens/day, 65k context. Card + $5 credits / 30 days",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://inference-docs.cerebras.ai/models/overview"
+ },
+ {
+  "id": "qwen-3.8-27b",
+  "name": "Qwen 3.8 27B",
+  "provider": "Cerebras",
+  "providerSlug": "cerebras",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "signup-credits",
+   "card-required"
+  ],
+  "status": "operational",
+  "freeLimit": "Trial: 5 RPM, 1M tokens/day, 64k context. Card + $5 credits / 30 days",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://inference-docs.cerebras.ai/models/overview"
+ },
+ {
+  "id": "atria-asi/atria-dawn-preview",
+  "name": "Atria Dawn Preview",
+  "provider": "Zenmux",
+  "providerSlug": "zenmux",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "$$0/M tokens on Zenmux. API key required",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://zenmux.ai"
+ },
+ {
+  "id": "dots-studio/dots3-note-prev",
+  "name": "Dots3-Note Preview",
+  "provider": "Zenmux",
+  "providerSlug": "zenmux",
+  "type": [
+   "text",
+   "image",
+   "video",
+   "audio"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "$$0/M tokens on Zenmux. API key required",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://zenmux.ai"
+ },
+ {
+  "id": "sapiens-ai/agnes-2.5-flash",
+  "name": "Agnes 2.5 Flash",
+  "provider": "Zenmux",
+  "providerSlug": "zenmux",
+  "type": [
+   "text",
+   "image"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "$$0/M tokens on Zenmux. API key required",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://zenmux.ai"
+ },
+ {
+  "id": "inclusionai/ling-3.0-tiny",
+  "name": "Ling-3.0-tiny",
+  "provider": "Zenmux",
+  "providerSlug": "zenmux",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "$$0/M tokens on Zenmux. API key required",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://zenmux.ai"
+ },
+ {
+  "id": "z-ai/glm-4.7-flash-free",
+  "name": "GLM 4.7 Flash",
+  "provider": "Zenmux",
+  "providerSlug": "zenmux",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "$$0/M tokens on Zenmux. API key required",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://zenmux.ai"
+ },
+ {
+  "id": "z-ai/glm-4.6v-flash-free",
+  "name": "GLM 4.6V Flash",
+  "provider": "Zenmux",
+  "providerSlug": "zenmux",
+  "type": [
+   "text",
+   "image",
+   "video"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "$$0/M tokens on Zenmux. API key required",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://zenmux.ai"
+ },
+ {
+  "id": "orcarouter/free",
+  "name": "OrcaRouter Free Router",
+  "provider": "OrcaRouter",
+  "providerSlug": "orcarouter",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "Routes to free capacity. API key required",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://www.orcarouter.ai/models"
+ },
+ {
+  "id": "deepseek/deepseek-v4-flash-free",
+  "name": "DeepSeek V4 Flash (Free)",
+  "provider": "OrcaRouter",
+  "providerSlug": "orcarouter",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "$$0 per request on OrcaRouter. API key required",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://www.orcarouter.ai/models"
+ },
+ {
+  "id": "tencent/hy3-free",
+  "name": "Tencent Hy3 (Free)",
+  "provider": "OrcaRouter",
+  "providerSlug": "orcarouter",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "$$0 per request on OrcaRouter. API key required",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://www.orcarouter.ai/models"
+ },
+ {
+  "id": "z-ai/glm-5.3-flash-free",
+  "name": "GLM 5.3 Flash (Free)",
+  "provider": "OrcaRouter",
+  "providerSlug": "orcarouter",
+  "type": [
+   "text",
+   "image",
+   "code"
+  ],
+  "access": [
+   "free-tier"
+  ],
+  "status": "operational",
+  "freeLimit": "$$0 per request on OrcaRouter. API key required",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://www.orcarouter.ai/models"
+ },
+ {
+  "id": "freeai",
+  "name": "Free.ai Chat",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text",
+   "image",
+   "audio",
+   "video",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Web chat works without signup. Anon pool ~2.5K–6K tokens/day (docs disagree). Email signup, no card: 30K/day. Free caps: 5 images, 2 songs, 1 video/day. Chat/TTS/STT/OCR uncapped within the pool. API POST /v1/chat/ returned 200 without a key. 447 external GPT/Claude/Gemini IDs are paid — not listed.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "deepseek-r1",
+  "name": "DeepSeek-R1 7B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. Shared pool: anon ~2.5K–6K tokens/day, email signup 30K/day, no card. Chat listed ~100/msg; a 1-word call used ~1.5K with system prompt. POST /v1/chat/ worked without a key. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "deepseek-r1-7b",
+  "name": "DeepSeek R1 7B Distill",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. Shared pool: anon ~2.5K–6K tokens/day, email signup 30K/day, no card. Chat listed ~100/msg; a 1-word call used ~1.5K with system prompt. POST /v1/chat/ worked without a key. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "mistral",
+  "name": "Mistral 7B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. Shared pool: anon ~2.5K–6K tokens/day, email signup 30K/day, no card. Chat listed ~100/msg; a 1-word call used ~1.5K with system prompt. POST /v1/chat/ worked without a key. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "qwen3-8b",
+  "name": "Qwen 3 8B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. Shared pool: anon ~2.5K–6K tokens/day, email signup 30K/day, no card. Chat listed ~100/msg; a 1-word call used ~1.5K with system prompt. POST /v1/chat/ worked without a key. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "qwen7b",
+  "name": "Qwen 2.5 7B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. Shared pool: anon ~2.5K–6K tokens/day, email signup 30K/day, no card. Chat listed ~100/msg; a 1-word call used ~1.5K with system prompt. POST /v1/chat/ worked without a key. API id qwen7b currently served Qwen3-30B-A3B. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "qwen-coder",
+  "name": "Qwen 2.5 Coder 7B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted coder. Same daily token pool as Free.ai chat (anon ~2.5K–6K, signup 30K). Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "qwen3-coder",
+  "name": "Qwen3-Coder 7B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted coder. Same daily token pool as Free.ai chat (anon ~2.5K–6K, signup 30K). Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "moondream2",
+  "name": "Moondream 2",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted vision. Shared daily token pool (anon ~2.5K–6K, signup 30K). Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "qwen-vl",
+  "name": "Qwen2.5-VL 7B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted vision. Shared daily token pool (anon ~2.5K–6K, signup 30K). Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "qwen25-vl",
+  "name": "Qwen2.5-VL 7B v2",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted vision. Shared daily token pool (anon ~2.5K–6K, signup 30K). Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "lance-3b",
+  "name": "Lance 3B (unified)",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted multimodal. Shared daily token pool (anon ~2.5K–6K, signup 30K). Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/chat/"
+ },
+ {
+  "id": "controlnet-union-sdxl-promax",
+  "name": "ControlNet-Union SDXL ProMax",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. ~1,000 tokens/image. Free accounts capped at 5 images/day. Shared 30K/day signup pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "flux2-klein",
+  "name": "FLUX.2 Klein 4B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. ~1,000 tokens/image. Free accounts capped at 5 images/day. Shared 30K/day signup pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "sdxl",
+  "name": "Stable Diffusion XL",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. ~1,000 tokens/image. Free accounts capped at 5 images/day. Shared 30K/day signup pool. OpenRAIL++.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "deoldify",
+  "name": "DeOldify",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted image edit. Free accounts capped at 5 image edits/day. Shared daily token pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "qwen-image-edit",
+  "name": "Qwen-Image-Edit 2511",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted image edit. Free accounts capped at 5 image edits/day. Shared daily token pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "sam",
+  "name": "Segment Anything",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted image edit. Free accounts capped at 5 image edits/day. Shared daily token pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "step1x-edit",
+  "name": "Step1X-Edit v1p2",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted image edit. Free accounts capped at 5 image edits/day. Shared daily token pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "realesrgan",
+  "name": "Real-ESRGAN",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted upscale. ~500 tokens/image. Shared daily token pool. BSD.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "rmbg",
+  "name": "Background Remover (u2net)",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. ~500 tokens/image. Shared daily token pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "cogvideox",
+  "name": "CogVideoX-2B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "video"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. ~15,000 tokens/clip. Free accounts capped at 1 video/day. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "hunyuan-video",
+  "name": "HunyuanVideo 1.5",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "video"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. ~15,000 tokens/clip. Free accounts capped at 1 video/day. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "wan22-ti2v-5b",
+  "name": "Wan 2.2 TI2V-5B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "video"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. ~15,000 tokens/clip. Free accounts capped at 1 video/day. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "chatterbox",
+  "name": "Chatterbox",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "chatterbox-multi",
+  "name": "Chatterbox Multilingual",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "cosyvoice2",
+  "name": "CosyVoice 2",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "csm-1b",
+  "name": "Sesame CSM-1B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "dia",
+  "name": "Dia",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "f5-tts",
+  "name": "F5-TTS",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "kokoro",
+  "name": "Kokoro",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "melotts",
+  "name": "MeloTTS",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "openvoice",
+  "name": "OpenVoice",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "piper",
+  "name": "Piper",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "qwen3-tts",
+  "name": "Qwen3-TTS 0.6B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "vibevoice",
+  "name": "VibeVoice (long-form)",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted TTS. ~100 tokens (or 1 token / 4 chars). Uncapped within the daily pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "parakeet",
+  "name": "Parakeet TDT",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted STT. ~4 tokens/second of audio. Uncapped within the daily pool. CC BY-4.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "whisper",
+  "name": "faster-whisper large-v3",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted STT. ~4 tokens/second of audio. Uncapped within the daily pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "ace-step",
+  "name": "ACE-Step 3.5B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. ~5,000 tokens/track. Free accounts capped at 2 songs/day. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "demucs",
+  "name": "Demucs",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "audio"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted stem split. ~500 tokens/track. Shared daily token pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "got-ocr2",
+  "name": "GOT-OCR 2.0",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image",
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted OCR. Uncapped within the daily token pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "paddleocr-vl",
+  "name": "PaddleOCR-VL",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image",
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted OCR. Uncapped within the daily token pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "tesseract",
+  "name": "Tesseract OCR",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image",
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted OCR. Uncapped within the daily token pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "unlimited-ocr",
+  "name": "Unlimited-OCR 3B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image",
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted OCR. Uncapped within the daily token pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "madlad",
+  "name": "MadLAD-400 3B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "text"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted. ~100 tokens/request. Uncapped within the daily pool. Apache 2.0.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "bge-m3",
+  "name": "BGE-M3",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "embedding"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted embeddings. Shared daily token pool. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "trellis2-4b",
+  "name": "TRELLIS.2 4B",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted 3D. Shared daily token pool; heavier than chat. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "triposr",
+  "name": "TripoSR",
+  "provider": "Free.ai",
+  "providerSlug": "freeai",
+  "type": [
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Self-hosted 3D. Shared daily token pool; heavier than chat. MIT.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-14T00:00:00.000Z",
+  "gated": false,
+  "url": "https://free.ai/models/"
+ },
+ {
+  "id": "duckai",
+  "name": "Duck.ai",
+  "provider": "Duck.ai",
+  "providerSlug": "duckai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-forever",
+   "no-signup",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Private browser chat. Six models are free; Plus/Pro SKUs are not listed.",
+  "tags": [
+   "website",
+   "collection"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://duck.ai"
+ },
+ {
+  "id": "duckai-claude-4.5-haiku",
+  "name": "Claude 4.5 Haiku",
+  "provider": "Duck.ai",
+  "providerSlug": "duckai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-forever",
+   "no-signup",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in Duck.ai. Claude Sonnet/Opus on Duck are Plus/Pro only — not listed.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://duck.ai"
+ },
+ {
+  "id": "duckai-mistral-small-4",
+  "name": "Mistral Small 4",
+  "provider": "Duck.ai",
+  "providerSlug": "duckai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-forever",
+   "no-signup",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in Duck.ai web chat. No Duck account required.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://duck.ai"
+ },
+ {
+  "id": "duckai-gpt-5.4-nano",
+  "name": "GPT-5.4 nano",
+  "provider": "Duck.ai",
+  "providerSlug": "duckai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-forever",
+   "no-signup",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in Duck.ai. Full GPT-5.4 is Plus-only — not listed.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://duck.ai"
+ },
+ {
+  "id": "duckai-gpt-5.4-mini",
+  "name": "GPT-5.4 mini",
+  "provider": "Duck.ai",
+  "providerSlug": "duckai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-forever",
+   "no-signup",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in Duck.ai. Full GPT-5.4 is Plus-only — not listed.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://duck.ai"
+ },
+ {
+  "id": "duckai-gpt-oss-120b",
+  "name": "gpt-oss-120B",
+  "provider": "Duck.ai",
+  "providerSlug": "duckai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-forever",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in Duck.ai. Hosted by Tinfoil.sh.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://duck.ai"
+ },
+ {
+  "id": "duckai-gemma-4-31b",
+  "name": "Gemma 4 31B",
+  "provider": "Duck.ai",
+  "providerSlug": "duckai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-forever",
+   "no-signup",
+   "no-card",
+   "open-source"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in Duck.ai. Hosted by Tinfoil.sh.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://duck.ai"
+ },
+ {
+  "id": "v0",
+  "name": "v0 by Vercel",
+  "provider": "v0",
+  "providerSlug": "v0",
+  "type": [
+   "text",
+   "code",
+   "image"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "$$5 monthly credits and 7 messages/day on the Free plan. Needs a Vercel login. Plus 'all models' SKUs are not listed.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://v0.app"
+ },
+ {
+  "id": "v0-mini",
+  "name": "v0 Mini",
+  "provider": "v0",
+  "providerSlug": "v0",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Runs on Free-plan credits ($5/mo, 7 msgs/day). Cheapest v0 model. v0 Max / Max Fast / third-party picker models need Plus.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://v0.app"
+ },
+ {
+  "id": "zai",
+  "name": "Z.ai Chat",
+  "provider": "Z.ai",
+  "providerSlug": "zai",
+  "type": [
+   "text",
+   "image",
+   "code"
+  ],
+  "access": [
+   "free-forever",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "GLM Flash SKUs are $0 on Z.ai. Paid GLM-5.x API rates are not listed.",
+  "tags": [
+   "website",
+   "collection"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://chat.z.ai"
+ },
+ {
+  "id": "zai-glm-4.7-flash",
+  "name": "GLM-4.7-Flash",
+  "provider": "Z.ai",
+  "providerSlug": "zai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-forever",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Documented $0 input/output on Z.ai. Use chat.z.ai or the API.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://chat.z.ai"
+ },
+ {
+  "id": "zai-glm-4.5-flash",
+  "name": "GLM-4.5-Flash",
+  "provider": "Z.ai",
+  "providerSlug": "zai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-forever",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Documented $0 input/output on Z.ai. Use chat.z.ai or the API.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://chat.z.ai"
+ },
+ {
+  "id": "zai-glm-4.6v-flash",
+  "name": "GLM-4.6V-Flash",
+  "provider": "Z.ai",
+  "providerSlug": "zai",
+  "type": [
+   "text",
+   "image",
+   "code"
+  ],
+  "access": [
+   "free-forever",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Documented $0 vision Flash SKU on Z.ai. Use chat.z.ai or the API.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://chat.z.ai"
+ },
+ {
+  "id": "zcode",
+  "name": "ZCode",
+  "provider": "ZCode",
+  "providerSlug": "zcode",
+  "type": [
+   "text",
+   "code",
+   "image"
+  ],
+  "access": [
+   "signup-credits",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "New Z.ai accounts get a GLM coding trial (no card). Lite/Pro/Max after the trial are paid — not listed.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://zcode.z.ai/en"
+ },
+ {
+  "id": "bai",
+  "name": "B.AI Chat",
+  "provider": "B.AI",
+  "providerSlug": "bai",
+  "type": [
+   "text",
+   "image",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Six flagship models are free in chat.b.ai. No card.",
+  "tags": [
+   "website",
+   "collection"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://chat.b.ai/chat"
+ },
+ {
+  "id": "bai-glm-5.3-flash",
+  "name": "GLM-5.3-Flash",
+  "provider": "B.AI",
+  "providerSlug": "bai",
+  "type": [
+   "text",
+   "image",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in B.AI chat. 320B/18B MoE, 1M context. Z.ai's own API for this SKU is paid — not listed there.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://chat.b.ai/chat"
+ },
+ {
+  "id": "bai-deepseek-v4-flash",
+  "name": "DeepSeek-V4-Flash",
+  "provider": "B.AI",
+  "providerSlug": "bai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in B.AI chat.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://chat.b.ai/chat"
+ },
+ {
+  "id": "bai-deepseek-v4-flash-vision-exp",
+  "name": "DeepSeek-V4-Flash-Vision-Exp",
+  "provider": "B.AI",
+  "providerSlug": "bai",
+  "type": [
+   "text",
+   "image",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in B.AI chat. Experimental vision build.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://chat.b.ai/chat"
+ },
+ {
+  "id": "bai-hy3",
+  "name": "Hy3",
+  "provider": "B.AI",
+  "providerSlug": "bai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in B.AI chat. Tencent Hunyuan.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://chat.b.ai/chat"
+ },
+ {
+  "id": "bai-mimo-v2.5",
+  "name": "MiMo-V2.5",
+  "provider": "B.AI",
+  "providerSlug": "bai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in B.AI chat. Xiaomi MiMo.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://chat.b.ai/chat"
+ },
+ {
+  "id": "bai-qwen3.8-flash",
+  "name": "Qwen3.8-Flash",
+  "provider": "B.AI",
+  "providerSlug": "bai",
+  "type": [
+   "text",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card"
+  ],
+  "status": "operational",
+  "freeLimit": "Free in B.AI chat.",
+  "tags": [
+   "website"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://chat.b.ai/chat"
+ },
+ {
+  "id": "arena-direct",
+  "name": "Arena Direct",
+  "provider": "Arena",
+  "providerSlug": "arena",
+  "type": [
+   "text",
+   "image",
+   "code"
+  ],
+  "access": [
+   "free-tier",
+   "no-card",
+   "data-training"
+  ],
+  "status": "operational",
+  "freeLimit": "Direct chat with frontier models at no charge. Prompts may be disclosed to providers and used for public research. Individual picker SKUs rotate and are not mirrored here.",
+  "tags": [
+   "website",
+   "collection"
+  ],
+  "addedAt": "2026-09-16T00:00:00.000Z",
+  "gated": false,
+  "url": "https://arena.ai/direct"
+ }
+]

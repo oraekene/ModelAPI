@@ -56,9 +56,38 @@ export interface CrawledModel {
   priceCacheRead?: number | null;
   /** URL to access the model */
   accessUrl: string;
+  /**
+   * Benchmark/usage join key. Defaults to the second path segment of modelId
+   * (e.g. "groq/llama-3.3-70b" -> "llama-3.3-70b"). Override when the model ID
+   * has more segments than provider/model.
+   */
+  scoreKey?: string;
 }
 
-const OFFERING_SQL = `INSERT INTO offerings (model_id, harness_id, plan_id, medium, context_window, supports_vision, supports_tools, is_free, price_prompt, price_completion, price_cache_read, access_url, last_verified_at, score_key) VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14) ON CONFLICT(model_id, harness_id, plan_id) DO UPDATE SET context_window=excluded.context_window, supports_vision=excluded.supports_vision, supports_tools=excluded.supports_tools, is_free=excluded.is_free, price_prompt=excluded.price_prompt, price_completion=excluded.price_completion, price_cache_read=excluded.price_cache_read, last_verified_at=excluded.last_verified_at, score_key=excluded.score_key`;
+export const OFFERING_SQL = `INSERT INTO offerings (model_id, harness_id, plan_id, medium, context_window, supports_vision, supports_tools, is_free, price_prompt, price_completion, price_cache_read, access_url, last_verified_at, score_key) VALUES (?1,?2,?3,?4,?5,?6,?7,?8,?9,?10,?11,?12,?13,?14) ON CONFLICT(model_id, harness_id, plan_id) DO UPDATE SET context_window=excluded.context_window, supports_vision=excluded.supports_vision, supports_tools=excluded.supports_tools, is_free=excluded.is_free, price_prompt=excluded.price_prompt, price_completion=excluded.price_completion, price_cache_read=excluded.price_cache_read, last_verified_at=excluded.last_verified_at, score_key=excluded.score_key`;
+
+/** Bind one prepared statement per model. Shared by all crawlers that write offerings. */
+export function offeringStatements(env: ScraperEnv, models: CrawledModel[], now: string) {
+  const stmt = env.DB.prepare(OFFERING_SQL);
+  return models.map((m) =>
+    stmt.bind(
+      m.modelId,
+      m.harnessId,
+      m.planId,
+      m.medium,
+      m.contextWindow,
+      m.supportsVision,
+      m.supportsTools,
+      m.isFree,
+      m.pricePrompt,
+      m.priceCompletion,
+      m.priceCacheRead ?? null,
+      m.accessUrl,
+      now,
+      m.scoreKey ?? m.modelId.split('/')[1] ?? m.modelId,
+    ),
+  );
+}
 
 export abstract class WebCrawlerScraper extends BaseScraper {
   /**
@@ -137,26 +166,7 @@ export abstract class WebCrawlerScraper extends BaseScraper {
     }
 
     // Write to D1.
-    const now = new Date().toISOString();
-    const stmt = env.DB.prepare(OFFERING_SQL);
-    const rows = uniqueModels.map((m) =>
-      stmt.bind(
-        m.modelId,
-        m.harnessId,
-        m.planId,
-        m.medium,
-        m.contextWindow,
-        m.supportsVision,
-        m.supportsTools,
-        m.isFree,
-        m.pricePrompt,
-        m.priceCompletion,
-        m.priceCacheRead ?? null,
-        m.accessUrl,
-        now,
-        m.modelId.split('/')[1] ?? m.modelId,
-      ),
-    );
+    const rows = offeringStatements(env, uniqueModels, new Date().toISOString());
 
     // Batch in groups of 50 to stay under D1 limits.
     for (let i = 0; i < rows.length; i += 50) {

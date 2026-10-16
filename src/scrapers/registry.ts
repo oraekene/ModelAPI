@@ -180,6 +180,7 @@ import { FireworksCrawler } from './fireworks-crawl';
 import { DeepSeekCrawler } from './deepseek-crawl';
 import { HuggingFaceCrawler } from './hf-crawl';
 import { GenericCrawler } from './generic-crawl';
+import { ModelsDevCrawler } from './models-dev-crawl';
 
 export {
   type Scraper,
@@ -343,6 +344,7 @@ export {
   DeepSeekCrawler,
   HuggingFaceCrawler,
   GenericCrawler,
+  ModelsDevCrawler,
 };
 
 export class ScraperRegistry {

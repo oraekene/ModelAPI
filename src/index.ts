@@ -78,7 +78,7 @@ import {
   LeonardoAIScraper,   MagnificScraper, FalImageScraper,
   // Web crawlers (no API key needed)
   OpenRouterCrawler, GroqCrawler, TogetherCrawler, FireworksCrawler,
-  DeepSeekCrawler, HuggingFaceCrawler, GenericCrawler,
+  DeepSeekCrawler, HuggingFaceCrawler, GenericCrawler, ModelsDevCrawler,
 } from './scrapers/registry';
 import {
   reconcileBlocklist,
@@ -185,7 +185,7 @@ function createDefaultRegistry(): ScraperRegistry {
     // Web crawlers (no API key needed)
     new OpenRouterCrawler(), new GroqCrawler(), new TogetherCrawler(),
     new FireworksCrawler(), new DeepSeekCrawler(), new HuggingFaceCrawler(),
-    new GenericCrawler(),
+    new GenericCrawler(), new ModelsDevCrawler(),
   );
 }
 
@@ -392,7 +392,9 @@ export default {
         const crawler = new GenericCrawler();
         crawler.configure(urls, platform, baseUrl);
 
-        const scraperEnv: ScraperEnv = { DB: env.DB, CACHE: env.CACHE };
+    // SYNC_QUEUE lets multi-stage scrapers (e.g. models-dev-crawl) fan out
+    // their own follow-up messages without a message-per-slice planMessages.
+    const scraperEnv: ScraperEnv = { DB: env.DB, CACHE: env.CACHE, SYNC_QUEUE: env.SYNC_QUEUE };
         const msg: ScraperMessage = { kind: 'generic-crawl', runId, payload: {} };
         const result = await crawler.handle(msg, scraperEnv);
 

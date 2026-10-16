@@ -1,0 +1,659 @@
+{
+ "generated_at": "2026-10-16T18:50:14.445Z",
+ "source": "https://models.dev/api.json",
+ "provider_count": 232,
+ "model_count": 8983,
+ "slices": [
+  {
+   "file": "slice-000.json",
+   "models": 150,
+   "providers": [
+    "302ai",
+    "abacus"
+   ]
+  },
+  {
+   "file": "slice-001.json",
+   "models": 150,
+   "providers": [
+    "abacus",
+    "abliteration-ai",
+    "above",
+    "agentrouter",
+    "agnes",
+    "ai-router",
+    "ai21",
+    "aiand",
+    "aihubmix"
+   ]
+  },
+  {
+   "file": "slice-002.json",
+   "models": 150,
+   "providers": [
+    "aihubmix",
+    "aimlapi"
+   ]
+  },
+  {
+   "file": "slice-003.json",
+   "models": 150,
+   "providers": [
+    "aimlapi"
+   ]
+  },
+  {
+   "file": "slice-004.json",
+   "models": 150,
+   "providers": [
+    "aimlapi",
+    "ainetcafe",
+    "aixy",
+    "aki-io",
+    "alibaba",
+    "alibaba-cn"
+   ]
+  },
+  {
+   "file": "slice-005.json",
+   "models": 150,
+   "providers": [
+    "alibaba-cn",
+    "alibaba-coding-plan",
+    "alibaba-coding-plan-cn",
+    "alibaba-token-plan",
+    "alibaba-token-plan-cn",
+    "amazon-bedrock"
+   ]
+  },
+  {
+   "file": "slice-006.json",
+   "models": 150,
+   "providers": [
+    "amazon-bedrock",
+    "ambient"
+   ]
+  },
+  {
+   "file": "slice-007.json",
+   "models": 150,
+   "providers": [
+    "ambient",
+    "amd",
+    "anthropic",
+    "anyapi",
+    "arcee",
+    "atomic-chat",
+    "auriko",
+    "azure"
+   ]
+  },
+  {
+   "file": "slice-008.json",
+   "models": 150,
+   "providers": [
+    "azure",
+    "azure-cognitive-services",
+    "bailing",
+    "baseten"
+   ]
+  },
+  {
+   "file": "slice-009.json",
+   "models": 150,
+   "providers": [
+    "baseten",
+    "bee",
+    "berget",
+    "blueclaw",
+    "bothub",
+    "boundless",
+    "cerebras",
+    "chutes",
+    "clarifai",
+    "claudinio",
+    "cline-pass",
+    "cloudferro-sherlock",
+    "cloudflare-ai-gateway"
+   ]
+  },
+  {
+   "file": "slice-010.json",
+   "models": 150,
+   "providers": [
+    "cloudflare-ai-gateway",
+    "cloudflare-workers-ai",
+    "cohere",
+    "commandcode",
+    "coralbricks",
+    "cortecs"
+   ]
+  },
+  {
+   "file": "slice-011.json",
+   "models": 150,
+   "providers": [
+    "cortecs",
+    "crof",
+    "crossmodel"
+   ]
+  },
+  {
+   "file": "slice-012.json",
+   "models": 150,
+   "providers": [
+    "crossmodel",
+    "crusoe",
+    "daoxe",
+    "databricks",
+    "deepinfra"
+   ]
+  },
+  {
+   "file": "slice-013.json",
+   "models": 150,
+   "providers": [
+    "deepinfra",
+    "deepseek",
+    "digitalocean",
+    "dinference",
+    "drun",
+    "ebcloud",
+    "echo",
+    "edenai"
+   ]
+  },
+  {
+   "file": "slice-014.json",
+   "models": 150,
+   "providers": [
+    "edenai"
+   ]
+  },
+  {
+   "file": "slice-015.json",
+   "models": 150,
+   "providers": [
+    "edenai"
+   ]
+  },
+  {
+   "file": "slice-016.json",
+   "models": 150,
+   "providers": [
+    "edenai",
+    "empiriolabs",
+    "engy",
+    "evroc",
+    "fastrouter",
+    "fireworks-ai"
+   ]
+  },
+  {
+   "file": "slice-017.json",
+   "models": 150,
+   "providers": [
+    "fireworks-ai",
+    "freemodel",
+    "friendli",
+    "frogbot",
+    "github-copilot",
+    "gitlab",
+    "gmicloud",
+    "google"
+   ]
+  },
+  {
+   "file": "slice-018.json",
+   "models": 150,
+   "providers": [
+    "google",
+    "google-vertex",
+    "google-vertex-anthropic",
+    "greenpt",
+    "groq"
+   ]
+  },
+  {
+   "file": "slice-019.json",
+   "models": 150,
+   "providers": [
+    "groq",
+    "helicone",
+    "hetzner",
+    "hpc-ai",
+    "huggingface"
+   ]
+  },
+  {
+   "file": "slice-020.json",
+   "models": 150,
+   "providers": [
+    "huggingface",
+    "hyper",
+    "iflowcn",
+    "impossibl"
+   ]
+  },
+  {
+   "file": "slice-021.json",
+   "models": 150,
+   "providers": [
+    "impossibl",
+    "inception",
+    "inceptron",
+    "inco",
+    "infer",
+    "inference",
+    "inferx",
+    "infomaniak",
+    "io-net",
+    "iteracompute",
+    "jalapeno",
+    "jiekou"
+   ]
+  },
+  {
+   "file": "slice-022.json",
+   "models": 150,
+   "providers": [
+    "jiekou",
+    "kenari",
+    "kilo"
+   ]
+  },
+  {
+   "file": "slice-023.json",
+   "models": 150,
+   "providers": [
+    "kilo"
+   ]
+  },
+  {
+   "file": "slice-024.json",
+   "models": 150,
+   "providers": [
+    "kilo"
+   ]
+  },
+  {
+   "file": "slice-025.json",
+   "models": 150,
+   "providers": [
+    "kilo",
+    "kimi-code-plan-cn",
+    "kimi-code-plan-global",
+    "klokintegration",
+    "kosmik",
+    "kuae-cloud-coding-plan",
+    "lilac",
+    "llama",
+    "llmgateway"
+   ]
+  },
+  {
+   "file": "slice-026.json",
+   "models": 150,
+   "providers": [
+    "llmgateway",
+    "llmgateway-providers"
+   ]
+  },
+  {
+   "file": "slice-027.json",
+   "models": 150,
+   "providers": [
+    "llmgateway-providers"
+   ]
+  },
+  {
+   "file": "slice-028.json",
+   "models": 150,
+   "providers": [
+    "llmgateway-providers"
+   ]
+  },
+  {
+   "file": "slice-029.json",
+   "models": 150,
+   "providers": [
+    "llmgateway-providers",
+    "llmtech",
+    "llmtr",
+    "lmstudio",
+    "longcat",
+    "lowrouter"
+   ]
+  },
+  {
+   "file": "slice-030.json",
+   "models": 150,
+   "providers": [
+    "lowrouter",
+    "lucidquery",
+    "lynkr",
+    "meganova",
+    "melious",
+    "merge-gateway"
+   ]
+  },
+  {
+   "file": "slice-031.json",
+   "models": 150,
+   "providers": [
+    "merge-gateway",
+    "meta",
+    "minimax",
+    "minimax-cn",
+    "minimax-cn-coding-plan",
+    "minimax-coding-plan",
+    "mistral"
+   ]
+  },
+  {
+   "file": "slice-032.json",
+   "models": 150,
+   "providers": [
+    "mistral",
+    "mixlayer",
+    "moark",
+    "modal",
+    "model-oracle-ai",
+    "modelis",
+    "modelscope",
+    "moonshotai",
+    "moonshotai-cn",
+    "morph",
+    "nan",
+    "nano-gpt"
+   ]
+  },
+  {
+   "file": "slice-033.json",
+   "models": 150,
+   "providers": [
+    "nano-gpt"
+   ]
+  },
+  {
+   "file": "slice-034.json",
+   "models": 150,
+   "providers": [
+    "nano-gpt"
+   ]
+  },
+  {
+   "file": "slice-035.json",
+   "models": 150,
+   "providers": [
+    "nano-gpt"
+   ]
+  },
+  {
+   "file": "slice-036.json",
+   "models": 150,
+   "providers": [
+    "nano-gpt",
+    "nearai"
+   ]
+  },
+  {
+   "file": "slice-037.json",
+   "models": 150,
+   "providers": [
+    "nearai",
+    "nebius",
+    "neon",
+    "neosmith",
+    "neuralwatt",
+    "nova",
+    "novita-ai"
+   ]
+  },
+  {
+   "file": "slice-038.json",
+   "models": 150,
+   "providers": [
+    "novita-ai",
+    "nvidia"
+   ]
+  },
+  {
+   "file": "slice-039.json",
+   "models": 150,
+   "providers": [
+    "nvidia",
+    "oci",
+    "ofox"
+   ]
+  },
+  {
+   "file": "slice-040.json",
+   "models": 150,
+   "providers": [
+    "ofox",
+    "ollama-cloud",
+    "openai",
+    "opencode"
+   ]
+  },
+  {
+   "file": "slice-041.json",
+   "models": 150,
+   "providers": [
+    "opencode",
+    "opencode-go",
+    "openreason",
+    "openrouter"
+   ]
+  },
+  {
+   "file": "slice-042.json",
+   "models": 150,
+   "providers": [
+    "openrouter"
+   ]
+  },
+  {
+   "file": "slice-043.json",
+   "models": 150,
+   "providers": [
+    "openrouter"
+   ]
+  },
+  {
+   "file": "slice-044.json",
+   "models": 150,
+   "providers": [
+    "openrouter",
+    "opper",
+    "orcarouter"
+   ]
+  },
+  {
+   "file": "slice-045.json",
+   "models": 150,
+   "providers": [
+    "orcarouter",
+    "ovhcloud",
+    "pareto",
+    "pendra",
+    "perplexity",
+    "perplexity-agent",
+    "pioneer"
+   ]
+  },
+  {
+   "file": "slice-046.json",
+   "models": 150,
+   "providers": [
+    "pioneer",
+    "poe"
+   ]
+  },
+  {
+   "file": "slice-047.json",
+   "models": 150,
+   "providers": [
+    "poe",
+    "poolside",
+    "prime"
+   ]
+  },
+  {
+   "file": "slice-048.json",
+   "models": 150,
+   "providers": [
+    "prime",
+    "privatemode-ai",
+    "qihang-ai",
+    "qiniu-ai",
+    "qvac",
+    "reflection",
+    "regolo-ai"
+   ]
+  },
+  {
+   "file": "slice-049.json",
+   "models": 150,
+   "providers": [
+    "regolo-ai",
+    "requesty"
+   ]
+  },
+  {
+   "file": "slice-050.json",
+   "models": 150,
+   "providers": [
+    "requesty",
+    "routing-run",
+    "runinfra",
+    "sakana",
+    "salad-cloud",
+    "sambanova",
+    "sap-ai-core",
+    "sarvam",
+    "scaleway",
+    "scnet-token-plan"
+   ]
+  },
+  {
+   "file": "slice-051.json",
+   "models": 150,
+   "providers": [
+    "scnet-token-plan",
+    "scx-ai",
+    "sensenova",
+    "siliconflow",
+    "siliconflow-cn",
+    "snowflake-cortex",
+    "stackit"
+   ]
+  },
+  {
+   "file": "slice-052.json",
+   "models": 150,
+   "providers": [
+    "stackit",
+    "standardcompute",
+    "stepfun",
+    "stepfun-ai",
+    "stepfun-ai-step-plan",
+    "stepfun-step-plan",
+    "subconscious",
+    "submodel",
+    "synthetic",
+    "tempr",
+    "tencent-coding-plan",
+    "tencent-token-plan",
+    "tencent-tokenhub",
+    "tensorx"
+   ]
+  },
+  {
+   "file": "slice-053.json",
+   "models": 150,
+   "providers": [
+    "tensorx",
+    "the-grid-ai",
+    "thinkingmachines",
+    "tinfoil",
+    "togetherai",
+    "tokengo",
+    "tokenrouter",
+    "trustedrouter",
+    "umans-ai",
+    "umans-ai-coding-plan",
+    "unorouter",
+    "upstage",
+    "vancine",
+    "venice"
+   ]
+  },
+  {
+   "file": "slice-054.json",
+   "models": 150,
+   "providers": [
+    "venice",
+    "vercel"
+   ]
+  },
+  {
+   "file": "slice-055.json",
+   "models": 150,
+   "providers": [
+    "vercel"
+   ]
+  },
+  {
+   "file": "slice-056.json",
+   "models": 150,
+   "providers": [
+    "vercel"
+   ]
+  },
+  {
+   "file": "slice-057.json",
+   "models": 150,
+   "providers": [
+    "vercel",
+    "vispark",
+    "vivgrid",
+    "volcengine",
+    "volcengine-coding-plan",
+    "vultr"
+   ]
+  },
+  {
+   "file": "slice-058.json",
+   "models": 150,
+   "providers": [
+    "vultr",
+    "wafer.ai",
+    "wallaby",
+    "wandb",
+    "watsonx",
+    "xai",
+    "xiaomi",
+    "xiaomi-token-plan-ams",
+    "xiaomi-token-plan-cn",
+    "xiaomi-token-plan-sgp",
+    "xpersona",
+    "zai",
+    "zai-coding-plan",
+    "zeldoc",
+    "zenifra",
+    "zenmux"
+   ]
+  },
+  {
+   "file": "slice-059.json",
+   "models": 133,
+   "providers": [
+    "zenmux",
+    "zhipuai",
+    "zhipuai-coding-plan"
+   ]
+  }
+ ]
+}
