@@ -392,9 +392,7 @@ export default {
         const crawler = new GenericCrawler();
         crawler.configure(urls, platform, baseUrl);
 
-    // SYNC_QUEUE lets multi-stage scrapers (e.g. models-dev-crawl) fan out
-    // their own follow-up messages without a message-per-slice planMessages.
-    const scraperEnv: ScraperEnv = { DB: env.DB, CACHE: env.CACHE, SYNC_QUEUE: env.SYNC_QUEUE };
+        const scraperEnv: ScraperEnv = { DB: env.DB, CACHE: env.CACHE, SYNC_QUEUE: env.SYNC_QUEUE };
         const msg: ScraperMessage = { kind: 'generic-crawl', runId, payload: {} };
         const result = await crawler.handle(msg, scraperEnv);
 
@@ -617,7 +615,9 @@ async function handleMessage(msg: SyncMessage, env: Env): Promise<void> {
   // built-in union, so we try the registry before the switch.
   const registry = env.registry ?? createDefaultRegistry();
   if (registry.canHandle(msg.kind)) {
-    const scraperEnv: ScraperEnv = { DB: env.DB, CACHE: env.CACHE };
+    // SYNC_QUEUE lets multi-stage scrapers (e.g. models-dev-crawl) fan out
+    // their own follow-up messages without a message-per-slice planMessages.
+    const scraperEnv: ScraperEnv = { DB: env.DB, CACHE: env.CACHE, SYNC_QUEUE: env.SYNC_QUEUE };
     const result = await registry.handle(
       { kind: msg.kind, runId: msg.runId, payload: msg } as ScraperMessage,
       scraperEnv,
