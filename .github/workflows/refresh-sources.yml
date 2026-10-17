@@ -3,6 +3,9 @@ name: refresh-sources
 # Twice-weekly refresh of the committed source artifacts the Worker reads:
 #   data/models-dev/  — sliced models.dev/api.json (build-models-dev-slices.mjs)
 #   data/freellm-sh.json — freellm.sh directory snapshot (build-freellm-snapshot.mjs)
+#   data/awesome-ai-api.json — gateway probe results (build-awesome-ai-api-snapshot.mjs)
+#   data/freellm-net.json — freellm.net model table (build-freellm-net-snapshot.mjs)
+# (awesome-free-ai-coding is ingested live by its worker scraper, not here.)
 # Probe/block/expire cadence for the scraper network lives in the Worker itself
 # (migration 0008); this workflow only keeps the static artifacts fresh.
 
@@ -30,6 +33,12 @@ jobs:
       - name: Build freellm.sh snapshot
         run: node scripts/build-freellm-snapshot.mjs
 
+      - name: Build awesome-ai-api gateway snapshot
+        run: node scripts/build-awesome-ai-api-snapshot.mjs
+
+      - name: Build freellm.net snapshot
+        run: node scripts/build-freellm-net-snapshot.mjs
+
       - name: Commit changes if any
         run: |
           git config user.name "github-actions[bot]"
@@ -38,6 +47,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "no changes"
           else
-            git commit -m "refresh sources: models.dev slices + freellm.sh snapshot"
+            git commit -m "refresh sources: models.dev slices + freellm.sh, awesome-ai-api, freellm.net snapshots"
             git push
           fi

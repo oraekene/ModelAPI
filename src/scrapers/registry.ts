@@ -181,6 +181,7 @@ import { DeepSeekCrawler } from './deepseek-crawl';
 import { HuggingFaceCrawler } from './hf-crawl';
 import { GenericCrawler } from './generic-crawl';
 import { ModelsDevCrawler } from './models-dev-crawl';
+import { AwesomeFreeAiCodingCrawler } from './awesome-free-ai-coding';
 
 export {
   type Scraper,
@@ -345,6 +346,7 @@ export {
   HuggingFaceCrawler,
   GenericCrawler,
   ModelsDevCrawler,
+  AwesomeFreeAiCodingCrawler,
 };
 
 export class ScraperRegistry {

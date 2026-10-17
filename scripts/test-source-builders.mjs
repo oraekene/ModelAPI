@@ -7,6 +7,8 @@
 import assert from 'node:assert/strict';
 import { chunkProviders, buildIndex, SLICE_MODEL_CAP } from './build-models-dev-slices.mjs';
 import { extractFreellmEntries, joinFlightChunks, scanBalanced } from './build-freellm-snapshot.mjs';
+import { extractFreellmNetRows } from './build-freellm-net-snapshot.mjs';
+import { buildSnapshot } from './build-awesome-ai-api-snapshot.mjs';
 
 let passed = 0;
 const t = (name, fn) => {
@@ -137,6 +139,119 @@ t('ignores malformed chunks but still finds the payload', () => {
   const good = fakeHtml([entry('a')]);
   const withBad = good.replace('<script>self.__next_f.push([1,"2a:prefix"])</script>', '<script>self.__next_f.push([1,"trunc"...])</script>');
   assert.equal(extractFreellmEntries(withBad).length, 1);
+});
+
+// ---------------------------------------------------------------------------
+// freellm.net extractor (real helpers from the build script)
+// ---------------------------------------------------------------------------
+
+console.log('freellm.net extractor:');
+
+const netRow = (attrs = '') =>
+  `<tr class="model-row clickable-row" data-href="/models/nvidia-nim/z-ai-glm-5-3" data-name="z-ai/glm-5.3" data-provider="NVIDIA NIM" data-provider-slug="nvidia-nim" data-modality="text,reasoning" data-free="1" data-nocard="1" data-verified="1" data-nophone="0" data-score="95" data-context="1048576" data-released="1787011200000" data-tier-type="permanent" ${attrs}><td>x</td></tr>`;
+
+t('extracts attribute-encoded rows', () => {
+  const rows = extractFreellmNetRows(netRow());
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].name, 'z-ai/glm-5.3');
+  assert.equal(rows[0].providerSlug, 'nvidia-nim');
+  assert.deepEqual(rows[0].modality, ['text', 'reasoning']);
+  assert.equal(rows[0].free, true);
+  assert.equal(rows[0].nocard, true);
+  assert.equal(rows[0].nophone, false);
+  assert.equal(rows[0].score, 95);
+  assert.equal(rows[0].context, 1048576);
+  assert.equal(rows[0].tierType, 'permanent');
+});
+
+t('skips rows without name or provider', () => {
+  assert.equal(extractFreellmNetRows('<tr class="model-row" data-name="x"></tr>').length, 0);
+  assert.equal(extractFreellmNetRows(netRow().replace(' data-provider="NVIDIA NIM"', '')).length, 0);
+});
+
+t('decodes entities in attribute values', () => {
+  const rows = extractFreellmNetRows(netRow().replace('data-provider="NVIDIA NIM"', 'data-provider="A &amp; B"'));
+  assert.equal(rows[0].provider, 'A & B');
+});
+
+t('returns empty on a page without the table', () => {
+  assert.equal(extractFreellmNetRows('<html><body>nope</body></html>').length, 0);
+});
+
+// ---------------------------------------------------------------------------
+// awesome-ai-api snapshot narrowing (real helpers from the build script)
+// ---------------------------------------------------------------------------
+
+console.log('awesome-ai-api snapshot:');
+
+t('narrows gateways and drops slugless rows', () => {
+  const out = buildSnapshot({
+    gateways: [
+      { slug: 'buzzai-cc', name: 'BUZZ', url: 'https://buzzai.cc', payment: ['card'], reachable: true, uptime: { uptime_pct: 96.7 }, verdict: 'likely_relay', extra: 'dropped' },
+      { name: 'no slug here' },
+    ],
+  });
+  assert.equal(out.length, 1);
+  assert.equal(out[0].slug, 'buzzai-cc');
+  assert.equal(out[0].reachable, true);
+  assert.equal(out[0].verdict, 'likely_relay');
+  assert.equal(out[0].extra, undefined, 'unknown fields are dropped');
+});
+
+t('reachable is strictly boolean, never a truthy string', () => {
+  assert.equal(buildSnapshot([{ slug: 'x', reachable: 'true' }])[0].reachable, false);
+});
+
+// ---------------------------------------------------------------------------
+// awesome-free-ai-coding mapper (mirror of src/scrapers/awesome-free-ai-coding.ts)
+// ---------------------------------------------------------------------------
+
+function afacMap(entries) {
+  const out = [];
+  for (const e of entries) {
+    if (e.archived || typeof e.id !== 'string' || !e.id || typeof e.url !== 'string' || !e.url) continue;
+    const apiIds = Array.isArray(e.api?.model_ids)
+      ? e.api.model_ids.filter((m) => typeof m === 'string' && m.trim() !== '')
+      : [];
+    const families = (e.models ?? [])
+      .map((m) => (typeof m.aa_model === 'string' && m.aa_model ? m.aa_model : m.family))
+      .filter((m) => typeof m === 'string' && m.trim() !== '');
+    const ids = [...new Set((apiIds.length > 0 ? apiIds : families).map((m) => m.trim()))];
+    for (const id of ids) {
+      const scoreKey = id.split('/').pop()?.replace(/:free$/, '') ?? id;
+      out.push({ modelId: `${e.id}/${id}`, harnessId: 'awesome-free-ai-coding', isFree: 1, scoreKey, accessUrl: e.api?.base_url ?? e.url });
+    }
+  }
+  return out;
+}
+
+console.log('awesome-free-ai-coding mapper:');
+
+t('prefers exact api model ids over family names', () => {
+  const rows = afacMap([{ id: 'openrouter-free', url: 'https://openrouter.ai', api: { model_ids: ['a/b:free'] }, models: [{ family: 'b' }] }]);
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0].modelId, 'openrouter-free/a/b:free');
+  assert.equal(rows[0].scoreKey, 'b', ':free is stripped from the join key');
+  assert.equal(rows[0].isFree, 1);
+});
+
+t('falls back to family/aa_model names when there is no api list', () => {
+  const rows = afacMap([{ id: 'x', url: 'https://x', models: [{ family: 'f1' }, { family: 'f2', aa_model: 'f2-aa' }] }]);
+  assert.deepEqual(rows.map((r) => r.modelId), ['x/f1', 'x/f2-aa']);
+});
+
+t('dedupes repeated ids', () => {
+  const rows = afacMap([{ id: 'x', url: 'https://x', api: { model_ids: ['m', 'm', ' n '] } }]);
+  assert.deepEqual(rows.map((r) => r.modelId), ['x/m', 'x/n']);
+});
+
+t('skips archived entries and entries without id or url', () => {
+  const rows = afacMap([
+    { id: 'a', url: 'https://a', archived: true, api: { model_ids: ['m'] } },
+    { id: 'b', api: { model_ids: ['m'] } },
+    { url: 'https://c', api: { model_ids: ['m'] } },
+  ]);
+  assert.equal(rows.length, 0);
 });
 
 // ---------------------------------------------------------------------------

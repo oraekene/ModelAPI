@@ -6,7 +6,7 @@ compatibility_date = "2026-07-01"
 # Cron invocations are subject to the same 10ms CPU limit on Workers Free,
 # which is why the producer only fans out and never parses.
 [triggers]
-crons = ["0 */4 * * *"]
+crons = ["28 9 * * *"]
 
 [vars]
 SLICE_SIZE = "25"

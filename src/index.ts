@@ -89,6 +89,7 @@ import {
   // Web crawlers (no API key needed)
   OpenRouterCrawler, GroqCrawler, TogetherCrawler, FireworksCrawler,
   DeepSeekCrawler, HuggingFaceCrawler, GenericCrawler, ModelsDevCrawler,
+  AwesomeFreeAiCodingCrawler,
 } from './scrapers/registry';
 import {
   reconcileBlocklist,
@@ -195,7 +196,7 @@ function createDefaultRegistry(): ScraperRegistry {
     // Web crawlers (no API key needed)
     new OpenRouterCrawler(), new GroqCrawler(), new TogetherCrawler(),
     new FireworksCrawler(), new DeepSeekCrawler(), new HuggingFaceCrawler(),
-    new GenericCrawler(), new ModelsDevCrawler(),
+    new GenericCrawler(), new ModelsDevCrawler(), new AwesomeFreeAiCodingCrawler(),
   );
 }
 
