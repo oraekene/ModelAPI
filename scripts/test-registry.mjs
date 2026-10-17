@@ -234,7 +234,9 @@ console.log('BaseScraper — health state transitions');
       this.category = 'inference';
       this.displayName = id;
       this._health = {
-        scraperId: id,
+        // Like the real BaseScraper: the id is filled lazily, because abstract
+        // subclass fields are not set yet when the base initialiser runs.
+        scraperId: '',
         lastRunAt: null,
         lastStatus: 'never_run',
         lastError: null,
@@ -243,6 +245,10 @@ console.log('BaseScraper — health state transitions');
         scoresWritten: 0,
       };
       this._dbWrites = [];
+    }
+
+    _ensureHealthId() {
+      if (this._health.scraperId !== this.id) this._health.scraperId = this.id;
     }
 
     planMessages(runId) {
@@ -277,11 +283,14 @@ console.log('BaseScraper — health state transitions');
     }
 
     health() {
+      this._ensureHealthId();
       return { ...this._health };
     }
 
     async _updateHealth(db) {
-      // Mock D1 write — just record that it happened
+      // Mirror of the real updateHealth: must ensure the id itself, because
+      // handle() writes health without anyone calling health() first.
+      this._ensureHealthId();
       this._dbWrites.push({ ...this._health });
     }
   }
@@ -299,6 +308,7 @@ console.log('BaseScraper — health state transitions');
   check('health after success resets failures', tracker.health().consecutiveFailures === 0);
   check('health after success increments models', tracker.health().modelsFound === 1);
   check('health after success writes to DB', tracker._dbWrites.length === 1);
+  check('D1 write carries the scraper id, not an empty key', tracker._dbWrites[0].scraperId === 'groq');
 
   // Another successful run
   await tracker.handle({ kind: 'groq', runId: 'r2', payload: {} }, {});

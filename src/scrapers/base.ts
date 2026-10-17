@@ -111,6 +111,7 @@ export abstract class BaseScraper implements Scraper {
    * Uses UPSERT so first run creates, subsequent runs update.
    */
   protected async updateHealth(db: D1Database): Promise<void> {
+    this._ensureHealthId();
     await db
       .prepare(
         `INSERT INTO scraper_health (scraper_id, last_run_at, last_status, last_error,

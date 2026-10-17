@@ -79,9 +79,23 @@ export class ModelsDevCrawler extends BaseScraper {
    * full 5.6 MB api.json would not.
    */
   protected async doHandle(msg: ScraperMessage, env: ScraperEnv): Promise<ScraperResult> {
-    const sliceFile = (msg.payload as { sliceFile?: string } | undefined)?.sliceFile;
-    if (!sliceFile) return this.enqueueSlices(msg.runId, env);
-    return this.ingestSlice(sliceFile, env);
+    // The registry dispatcher wraps the whole queue message as `payload`
+    // (src/index.ts: { kind, runId, payload: msg }), so the fields we sent sit
+    // one level deeper. Read both shapes defensively.
+    const outer = msg.payload as { payload?: { sliceFile?: unknown }; sliceFile?: unknown } | undefined;
+    const sliceFile =
+      typeof outer?.payload?.sliceFile === 'string'
+        ? outer.payload.sliceFile
+        : typeof outer?.sliceFile === 'string'
+          ? outer.sliceFile
+          : null;
+
+    if (sliceFile) return this.ingestSlice(sliceFile, env);
+    // No sliceFile = the fan-out message. Refuse to fan out for any other
+    // message shape: re-enqueueing on an unexpected payload would loop forever.
+    const innerEmpty = !outer?.payload || Object.keys(outer.payload).length === 0;
+    if (!innerEmpty) throw new Error(`models-dev-crawl: message has neither sliceFile nor empty payload: ${JSON.stringify(msg.payload).slice(0, 200)}`);
+    return this.enqueueSlices(msg.runId, env);
   }
 
   private async enqueueSlices(runId: string, env: ScraperEnv): Promise<ScraperResult> {
