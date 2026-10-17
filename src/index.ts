@@ -23,6 +23,16 @@ import {
 } from './openrouter';
 import { observeFields, persistCapabilities } from './capabilities';
 import { requireAdmin } from './auth';
+import {
+  createKey,
+  listKeys,
+  revokeKey,
+  recordUsage,
+  userCaps,
+  normalisePlatform,
+  normaliseUsage,
+  utcDay,
+} from './caps';
 import { computeAndStore, answerKey, TIERS, type Tier } from './ranking';
 import { recommend, parseRequest } from './recommend';
 import { ingestLeaderboard, LEADERBOARD_COUNT } from './terminalbench';
@@ -298,6 +308,73 @@ export default {
       return Response.json(result, {
         headers: { 'cache-control': 'public, max-age=60' },
       });
+    }
+
+    // ---- per-key free-tier caps (identity = the mm_user cookie) -----------
+    if (
+      url.pathname === '/api/keys' ||
+      url.pathname === '/api/keys/revoke' ||
+      url.pathname === '/api/usage' ||
+      url.pathname === '/api/caps'
+    ) {
+      const userId = readUserId(req);
+      if (!userId) return notLinked();
+
+      if (url.pathname === '/api/keys' && req.method === 'GET') {
+        return Response.json({ keys: await listKeys(env.DB, userId) });
+      }
+
+      if (url.pathname === '/api/keys' && req.method === 'POST') {
+        const body = await readJson(req);
+        const platform = normalisePlatform(typeof body?.platform === 'string' ? body.platform : '');
+        if (!platform) {
+          return Response.json(
+            { error: 'platform_required', hint: 'lowercase platform id, e.g. "groq"' },
+            { status: 400 },
+          );
+        }
+        const label = typeof body?.label === 'string' ? body.label.trim().slice(0, 64) : '';
+        const keyId = await createKey(env.DB, userId, platform, label);
+        return Response.json({ key_id: keyId, platform, label }, { status: 201 });
+      }
+
+      if (url.pathname === '/api/keys/revoke' && req.method === 'POST') {
+        const body = await readJson(req);
+        const keyId = typeof body?.key_id === 'string' ? body.key_id : '';
+        if (!keyId) return Response.json({ error: 'key_id_required' }, { status: 400 });
+        const revoked = await revokeKey(env.DB, userId, keyId);
+        return Response.json({ revoked }, { status: revoked ? 200 : 404 });
+      }
+
+      if (url.pathname === '/api/usage' && req.method === 'POST') {
+        const body = await readJson(req);
+        const requests = normaliseUsage(body?.requests ?? 0);
+        const tokens = normaliseUsage(body?.tokens ?? 0);
+        if (
+          typeof body?.key_id !== 'string' ||
+          !body.key_id ||
+          requests === null ||
+          tokens === null ||
+          (requests === 0 && tokens === 0)
+        ) {
+          return Response.json(
+            { error: 'key_id_and_usage_required', hint: 'requests and/or tokens, non-negative integers' },
+            { status: 400 },
+          );
+        }
+        const day =
+          typeof body.day === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(body.day)
+            ? body.day
+            : utcDay();
+        const recorded = await recordUsage(env.DB, userId, body.key_id, requests, tokens, day);
+        return Response.json({ recorded, day }, { status: recorded ? 200 : 404 });
+      }
+
+      if (url.pathname === '/api/caps' && req.method === 'GET') {
+        return Response.json({ keys: await userCaps(env.DB, userId, readPrefs(req)) });
+      }
+
+      return new Response('method not allowed', { status: 405 });
     }
 
     if (url.pathname === '/health') {
@@ -966,6 +1043,30 @@ async function bumpProgress(runId: string, env: Env): Promise<void> {
   await env.DB.prepare(`UPDATE sync_runs SET slices_done = slices_done + 1 WHERE run_id = ?1`)
     .bind(runId)
     .run();
+}
+
+/** The mm_user cookie set by /link is the browser's proof of identity. */
+function readUserId(req: Request): string | null {
+  const m = /(?:^|;\s*)mm_user=([^;]+)/.exec(req.headers.get('cookie') ?? '');
+  if (!m) return null;
+  const id = decodeURIComponent(m[1]);
+  return /^[\w:.-]{1,64}$/.test(id) ? id : null;
+}
+
+function notLinked(): Response {
+  return Response.json(
+    { error: 'not_linked', hint: 'Open the /link?t=... URL from the bot to connect this browser.' },
+    { status: 401 },
+  );
+}
+
+async function readJson(req: Request): Promise<Record<string, unknown> | null> {
+  try {
+    const body = await req.json();
+    return body && typeof body === 'object' ? (body as Record<string, unknown>) : null;
+  } catch {
+    return null;
+  }
 }
 
 /** Parse the mm_prefs cookie into the boolean flags /api/recommend consumes. */
