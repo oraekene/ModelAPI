@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-16T18:50:14.445Z",
+ "generated_at": "2026-10-19T11:22:51.841Z",
  "source": "https://models.dev/api.json",
  "provider_count": 232,
- "model_count": 8983,
+ "model_count": 9058,
  "slices": [
   {
    "file": "slice-000.json",
@@ -70,8 +70,7 @@
    "file": "slice-006.json",
    "models": 150,
    "providers": [
-    "amazon-bedrock",
-    "ambient"
+    "amazon-bedrock"
    ]
   },
   {
@@ -210,14 +209,14 @@
     "google",
     "google-vertex",
     "google-vertex-anthropic",
-    "greenpt",
-    "groq"
+    "greenpt"
    ]
   },
   {
    "file": "slice-019.json",
    "models": 150,
    "providers": [
+    "greenpt",
     "groq",
     "helicone",
     "hetzner",
@@ -405,15 +404,14 @@
     "nebius",
     "neon",
     "neosmith",
-    "neuralwatt",
-    "nova",
-    "novita-ai"
+    "neuralwatt"
    ]
   },
   {
    "file": "slice-038.json",
    "models": 150,
    "providers": [
+    "nova",
     "novita-ai",
     "nvidia"
    ]
@@ -443,8 +441,7 @@
    "providers": [
     "opencode",
     "opencode-go",
-    "openreason",
-    "openrouter"
+    "openreason"
    ]
   },
   {
@@ -479,14 +476,14 @@
     "pareto",
     "pendra",
     "perplexity",
-    "perplexity-agent",
-    "pioneer"
+    "perplexity-agent"
    ]
   },
   {
    "file": "slice-046.json",
    "models": 150,
    "providers": [
+    "perplexity-agent",
     "pioneer",
     "poe"
    ]
@@ -508,15 +505,15 @@
     "privatemode-ai",
     "qihang-ai",
     "qiniu-ai",
-    "qvac",
-    "reflection",
-    "regolo-ai"
+    "qvac"
    ]
   },
   {
    "file": "slice-049.json",
    "models": 150,
    "providers": [
+    "qvac",
+    "reflection",
     "regolo-ai",
     "requesty"
    ]
@@ -533,27 +530,27 @@
     "sambanova",
     "sap-ai-core",
     "sarvam",
-    "scaleway",
-    "scnet-token-plan"
+    "scaleway"
    ]
   },
   {
    "file": "slice-051.json",
    "models": 150,
    "providers": [
+    "scaleway",
     "scnet-token-plan",
     "scx-ai",
     "sensenova",
     "siliconflow",
     "siliconflow-cn",
-    "snowflake-cortex",
-    "stackit"
+    "snowflake-cortex"
    ]
   },
   {
    "file": "slice-052.json",
    "models": 150,
    "providers": [
+    "snowflake-cortex",
     "stackit",
     "standardcompute",
     "stepfun",
@@ -563,22 +560,29 @@
     "subconscious",
     "submodel",
     "synthetic",
-    "tempr",
-    "tencent-coding-plan",
-    "tencent-token-plan",
-    "tencent-tokenhub",
-    "tensorx"
+    "tempr"
    ]
   },
   {
    "file": "slice-053.json",
    "models": 150,
    "providers": [
+    "tempr",
+    "tencent-coding-plan",
+    "tencent-token-plan",
+    "tencent-tokenhub",
     "tensorx",
     "the-grid-ai",
     "thinkingmachines",
     "tinfoil",
     "togetherai",
+    "tokengo"
+   ]
+  },
+  {
+   "file": "slice-054.json",
+   "models": 150,
+   "providers": [
     "tokengo",
     "tokenrouter",
     "trustedrouter",
@@ -591,17 +595,10 @@
    ]
   },
   {
-   "file": "slice-054.json",
-   "models": 150,
-   "providers": [
-    "venice",
-    "vercel"
-   ]
-  },
-  {
    "file": "slice-055.json",
    "models": 150,
    "providers": [
+    "venice",
     "vercel"
    ]
   },
@@ -616,18 +613,18 @@
    "file": "slice-057.json",
    "models": 150,
    "providers": [
-    "vercel",
-    "vispark",
-    "vivgrid",
-    "volcengine",
-    "volcengine-coding-plan",
-    "vultr"
+    "vercel"
    ]
   },
   {
    "file": "slice-058.json",
    "models": 150,
    "providers": [
+    "vercel",
+    "vispark",
+    "vivgrid",
+    "volcengine",
+    "volcengine-coding-plan",
     "vultr",
     "wafer.ai",
     "wallaby",
@@ -635,7 +632,13 @@
     "watsonx",
     "xai",
     "xiaomi",
-    "xiaomi-token-plan-ams",
+    "xiaomi-token-plan-ams"
+   ]
+  },
+  {
+   "file": "slice-059.json",
+   "models": 150,
+   "providers": [
     "xiaomi-token-plan-cn",
     "xiaomi-token-plan-sgp",
     "xpersona",
@@ -647,8 +650,8 @@
    ]
   },
   {
-   "file": "slice-059.json",
-   "models": 133,
+   "file": "slice-060.json",
+   "models": 58,
    "providers": [
     "zenmux",
     "zhipuai",
