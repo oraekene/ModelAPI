@@ -38,12 +38,7 @@ export class NovitaScraper extends BaseScraper {
     _msg: ScraperMessage,
     env: ScraperEnv,
   ): Promise<ScraperResult> {
-    const apiKey = env.NOVITA_API_KEY as string | undefined;
-    if (!apiKey) throw new Error('NOVITA_API_KEY not set');
-
-    const res = await fetch(`${NOVITA_API}/models`, {
-      headers: { Authorization: `Bearer ${apiKey}` },
-    });
+    const res = await fetch(`${NOVITA_API}/models`);
     if (!res.ok) throw new Error(`novita /models: HTTP ${res.status}`);
     const catalog = (await res.json()) as NovitaModelsResponse;
     const models = catalog.data ?? [];

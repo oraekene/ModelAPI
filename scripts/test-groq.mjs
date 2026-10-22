@@ -88,10 +88,19 @@ class GroqScraper {
       await this.updateHealth(env.DB);
       return result;
     } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
       const elapsed = Date.now() - startedAt;
+      if (/^[A-Z0-9_]+ not set$/.test(message)) {
+        this._health.lastRunAt = new Date().toISOString();
+        this._health.lastStatus = 'skipped';
+        this._health.lastError = message;
+        this._health.consecutiveFailures = 0;
+        await this.updateHealth(env.DB);
+        return { offerings: 0, scores: 0, quotas: 0, note: `skipped: ${message}` };
+      }
       this._health.lastRunAt = new Date().toISOString();
       this._health.lastStatus = elapsed > 30_000 ? 'timeout' : 'error';
-      this._health.lastError = err instanceof Error ? err.message : String(err);
+      this._health.lastError = message;
       this._health.consecutiveFailures += 1;
       await this.updateHealth(env.DB);
       throw err;
@@ -418,17 +427,13 @@ console.log('GroqScraper — error handling');
   const db = new MockDB();
 
   // Missing API key
-  try {
-    await scraper.handle(
-      { kind: 'groq', runId: 'r1', payload: {} },
-      { DB: db, CACHE: {} },
-    );
-    check('throws for missing API key', false, 'did not throw');
-  } catch (e) {
-    check('throws for missing API key', e.message === 'GROQ_API_KEY not set');
-    check('health status is error after missing key', scraper.health().lastStatus === 'error');
-    check('health consecutiveFailures is 1', scraper.health().consecutiveFailures === 1);
-  }
+  const skipped = await scraper.handle(
+    { kind: 'groq', runId: 'r1', payload: {} },
+    { DB: db, CACHE: {} },
+  );
+  check('missing key returns skipped', skipped.note === 'skipped: GROQ_API_KEY not set');
+  check('health status is skipped after missing key', scraper.health().lastStatus === 'skipped');
+  check('health consecutiveFailures stays 0', scraper.health().consecutiveFailures === 0);
 
   // API error
   const scraper2 = new GroqScraper();

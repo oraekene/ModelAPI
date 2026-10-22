@@ -38,12 +38,7 @@ export class NvidiaNimScraper extends BaseScraper {
     _msg: ScraperMessage,
     env: ScraperEnv,
   ): Promise<ScraperResult> {
-    const apiKey = env.NVIDIA_NIM_API_KEY as string | undefined;
-    if (!apiKey) throw new Error('NVIDIA_NIM_API_KEY not set');
-
-    const res = await fetch(`${NVIDIA_NIM_API}/models`, {
-      headers: { Authorization: `Bearer ${apiKey}` },
-    });
+    const res = await fetch(`${NVIDIA_NIM_API}/models`);
     if (!res.ok) throw new Error(`nvidia-nim /models: HTTP ${res.status}`);
     const catalog = (await res.json()) as NvidiaNimModelsResponse;
     const models = catalog.data ?? [];

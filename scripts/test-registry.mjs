@@ -268,10 +268,19 @@ console.log('BaseScraper — health state transitions');
         await this._updateHealth(env?.DB);
         return result;
       } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
         const elapsed = Date.now() - startedAt;
+        if (/^[A-Z0-9_]+ not set$/.test(message)) {
+          this._health.lastRunAt = new Date().toISOString();
+          this._health.lastStatus = 'skipped';
+          this._health.lastError = message;
+          this._health.consecutiveFailures = 0;
+          await this._updateHealth(env?.DB);
+          return { offerings: 0, scores: 0, quotas: 0, note: `skipped: ${message}` };
+        }
         this._health.lastRunAt = new Date().toISOString();
         this._health.lastStatus = elapsed > 30_000 ? 'timeout' : 'error';
-        this._health.lastError = err instanceof Error ? err.message : String(err);
+        this._health.lastError = message;
         this._health.consecutiveFailures += 1;
         await this._updateHealth(env?.DB);
         throw err;
@@ -336,6 +345,14 @@ console.log('BaseScraper — health state transitions');
   check('recovery resets consecutive failures', tracker.health().consecutiveFailures === 0);
   check('recovery preserves total models', tracker.health().modelsFound === 5);
   check('recovery adds new scores', tracker.health().scoresWritten === 1);
+
+  // Missing key is skipped, not failed
+  tracker._doHandle = async () => { throw new Error('GROQ_API_KEY not set'); };
+  const skipped = await tracker.handle({ kind: 'groq', runId: 'r6', payload: {} }, {});
+  check('missing key returns a skipped result', skipped.note === 'skipped: GROQ_API_KEY not set');
+  check('missing key sets skipped status', tracker.health().lastStatus === 'skipped');
+  check('missing key resets consecutive failures', tracker.health().consecutiveFailures === 0);
+  check('missing key preserves total models', tracker.health().modelsFound === 5);
 }
 
 console.log('');

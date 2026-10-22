@@ -39,12 +39,7 @@ export class DeepInfraScraper extends BaseScraper {
     _msg: ScraperMessage,
     env: ScraperEnv,
   ): Promise<ScraperResult> {
-    const apiKey = env.DEEPINFRA_API_KEY as string | undefined;
-    if (!apiKey) throw new Error('DEEPINFRA_API_KEY not set');
-
-    const res = await fetch(`${DEEPINFRA_API}/models`, {
-      headers: { Authorization: `Bearer ${apiKey}` },
-    });
+    const res = await fetch(`${DEEPINFRA_API}/models`);
     if (!res.ok) throw new Error(`deepinfra /models: HTTP ${res.status}`);
     const catalog = (await res.json()) as DeepInfraModelsResponse;
     const models = catalog.data ?? [];

@@ -48,7 +48,7 @@ export interface ScraperResult {
 // Health
 // ---------------------------------------------------------------------------
 
-export type SourceStatus = 'ok' | 'error' | 'timeout' | 'never_run';
+export type SourceStatus = 'ok' | 'error' | 'timeout' | 'skipped' | 'never_run';
 
 export interface SourceHealth {
   scraperId: string;

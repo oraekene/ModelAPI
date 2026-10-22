@@ -76,10 +76,22 @@ export abstract class BaseScraper implements Scraper {
       await this.updateHealth(env.DB);
       return result;
     } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
       const elapsed = Date.now() - startedAt;
+      // ponytail: every key check throws "<ENV_VAR> not set". Treat that shape
+      // as skipped so a missing optional key is not a health failure. Replace
+      // with a typed error if the messages stop following this pattern.
+      if (/^[A-Z0-9_]+ not set$/.test(message)) {
+        this._health.lastRunAt = new Date().toISOString();
+        this._health.lastStatus = 'skipped';
+        this._health.lastError = message;
+        this._health.consecutiveFailures = 0;
+        await this.updateHealth(env.DB);
+        return { offerings: 0, scores: 0, quotas: 0, note: `skipped: ${message}` };
+      }
       this._health.lastRunAt = new Date().toISOString();
       this._health.lastStatus = elapsed > 30_000 ? 'timeout' : 'error';
-      this._health.lastError = err instanceof Error ? err.message : String(err);
+      this._health.lastError = message;
       this._health.consecutiveFailures += 1;
       await this.updateHealth(env.DB);
       throw err;

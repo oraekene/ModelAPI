@@ -39,35 +39,12 @@ import { NvidiaNimScraper } from './nvidia-nim';
 import { ReplicateScraper } from './replicate';
 import { BasetenScraper } from './baseten';
 import { ModalScraper } from './modal';
-import { LeptonScraper } from './lepton';
-import { OctoAIScraper } from './octoai';
-import { AnyscaleScraper } from './anyscale';
-import { RunPodScraper } from './runpod';
-import { LambdaScraper } from './lambda';
-import { HfInferenceScraper } from './hf-inference';
-import { CloudflareScraper } from './cloudflare';
-import { FalScraper } from './fal';
-import { PuterScraper } from './puter';
 import { NebiusScraper } from './nebius';
-import { ScalewayScraper } from './scaleway';
-import { CoreWeaveScraper } from './coreweave';
-import { BeamScraper } from './beam';
-import { VastScraper } from './vast';
-import { CrusoeScraper } from './crusoe';
-import { InfercomScraper } from './infercom';
-import { LyceumScraper } from './lyceum';
 import { BergetScraper } from './berget';
-import { NscaleScraper } from './nscale';
-import { OvhcloudScraper } from './ovhcloud';
-import { LibertAIScraper } from './libert';
-import { TokenwareScraper } from './tokenware';
-import { IonRouterScraper } from './ionrouter';
-import { FerryAPIScraper } from './ferry';
 import { HfHubScraper } from './hf-hub';
 import { OpenAIScraper } from './openai';
 import { AnthropicScraper } from './anthropic';
 import { GeminiScraper } from './gemini';
-import { LlamaScraper } from './llama';
 import { MistralScraper } from './mistral';
 import { XAIScraper } from './xai';
 import { CohereScraper } from './cohere';
@@ -78,100 +55,9 @@ import { ZhipuGLMScraper } from './zhipu-glm';
 import { DoubaoScraper } from './doubao';
 import { MiniMaxScraper } from './minimax';
 import { ErnieScraper } from './ernie';
-import { YiScraper } from './yi';
 import { StabilityAIScraper } from './stability';
-import { MidjourneyScraper } from './midjourney';
-import { HunyuanScraper } from './hunyuan';
-import { NovaScraper } from './nova';
-import { PhiScraper } from './phi';
-import { AI21Scraper } from './ai21';
-import { PerplexityScraper } from './perplexity';
 import { StepFunScraper } from './stepfun';
 import { ZhipuAIScraper } from './zhipu-ai';
-import { CursorScraper } from './cursor';
-import { WindsurfScraper } from './windsurf';
-import { CopilotScraper } from './copilot';
-import { ClineScraper } from './cline';
-import { AiderScraper } from './aider';
-import { ContinueScraper } from './continue';
-import { CodyScraper } from './cody';
-import { TabnineScraper } from './tabnine';
-import { AmazonQScraper } from './amazon-q';
-import { JetBrainsScraper } from './jetbrains';
-import { ReplitScraper } from './replit';
-import { V0Scraper } from './v0';
-import { BoltScraper } from './bolt';
-import { LovableScraper } from './lovable';
-import { DevinScraper } from './devin';
-import { ZedScraper } from './zed';
-import { AugmentScraper } from './augment';
-import { FactoryScraper } from './factory';
-import { KiroScraper } from './kiro';
-import { WarpScraper } from './warp';
-import { JulesScraper } from './jules';
-import { CodexScraper } from './codex';
-import { VoidScraper } from './void';
-import { OpenClawScraper } from './openclaw';
-import { OpenCodeScraper } from './opencode';
-import { HermesScraper } from './hermes';
-import { AmpScraper } from './amp';
-import { GooseScraper } from './goose';
-import { CrushScraper } from './crush';
-import { CodexAgentScraper } from './codex-agent';
-import { NemoClawScraper } from './nemoclaw';
-import { CursorAgentScraper } from './cursor-agent';
-import { GeminiCLIScraper } from './gemini-cli';
-import { GrokBuildScraper } from './grok-build';
-import { AWSBedrockScraper } from './aws-bedrock';
-import { AzureOpenAIScraper } from './azure-openai';
-import { GoogleVertexAIScraper } from './google-vertex';
-import { IBMWatsonxScraper } from './ibm-watsonx';
-import { OracleCloudAIScraper } from './oracle-cloud';
-import { CloudflareAIGatewayScraper } from './cloudflare-ai-gateway';
-import { PuterImageScraper } from './puter-image';
-import { LiteLLMScraper } from './litellm';
-import { PortkeyScraper } from './portkey';
-import { LangSmithScraper } from './langsmith';
-import { PerplexitySearchScraper } from './perplexity-search';
-import { YouComScraper } from './you';
-import { CharacterAIScraper } from './character-ai';
-import { DoubaoChatScraper } from './doubao-chat';
-import { KimiChatScraper } from './kimi-chat';
-import { TongyiScraper } from './tongyi';
-import { ERNIEChatScraper } from './ernie-chat';
-import { GLMChatScraper } from './glm-chat';
-import { DeepSeekChatScraper } from './deepseek-chat';
-import { SWEAgentScraper } from './swe-agent';
-import { OpenHandsScraper } from './openhands';
-import { OnaScraper } from './ona';
-import { NxCodeScraper } from './nxcode';
-import { MastraScraper } from './mastra';
-import { CanvaAIScraper } from './canva';
-import { NotionAIScraper } from './notion';
-import { GrammarlyScraper } from './grammarly';
-import { JasperScraper } from './jasper';
-import { LinearScraper } from './linear';
-import { RunwayScraper } from './runway';
-import { PikaScraper } from './pika';
-import { KlingAIScraper } from './kling';
-import { LumaScraper } from './luma';
-import { SoraScraper } from './sora';
-import { SynthesiaScraper } from './synthesia';
-import { HeyGenScraper } from './heygen';
-import { DIDScraper } from './did';
-import { SeedanceScraper } from './seedance';
-import { ElevenLabsScraper } from './elevenlabs';
-import { SunoScraper } from './suno';
-import { UdioScraper } from './udio';
-import { StabilityAudioScraper } from './stability-audio';
-import { DescriptScraper } from './descript';
-import { MidjourneyImageScraper } from './midjourney-image';
-import { DALLEScraper } from './dall-e';
-import { StableDiffusionScraper } from './stable-diffusion';
-import { IdeogramScraper } from './ideogram';
-import { LeonardoAIScraper } from './leonardo';
-import { MagnificScraper } from './magnific';
-import { FalImageScraper } from './fal-image';
 // Web crawlers (no API key needed)
 import { OpenRouterCrawler } from './openrouter-crawl';
 import { GroqCrawler } from './groq-crawl';
@@ -204,35 +90,12 @@ export {
   ReplicateScraper,
   BasetenScraper,
   ModalScraper,
-  LeptonScraper,
-  OctoAIScraper,
-  AnyscaleScraper,
-  RunPodScraper,
-  LambdaScraper,
-  HfInferenceScraper,
-  CloudflareScraper,
-  FalScraper,
-  PuterScraper,
   NebiusScraper,
-  ScalewayScraper,
-  CoreWeaveScraper,
-  BeamScraper,
-  VastScraper,
-  CrusoeScraper,
-  InfercomScraper,
-  LyceumScraper,
   BergetScraper,
-  NscaleScraper,
-  OvhcloudScraper,
-  LibertAIScraper,
-  TokenwareScraper,
-  IonRouterScraper,
-  FerryAPIScraper,
   HfHubScraper,
   OpenAIScraper,
   AnthropicScraper,
   GeminiScraper,
-  LlamaScraper,
   MistralScraper,
   XAIScraper,
   CohereScraper,
@@ -243,100 +106,9 @@ export {
   DoubaoScraper,
   MiniMaxScraper,
   ErnieScraper,
-  YiScraper,
   StabilityAIScraper,
-  MidjourneyScraper,
-  HunyuanScraper,
-  NovaScraper,
-  PhiScraper,
-  AI21Scraper,
-  PerplexityScraper,
   StepFunScraper,
   ZhipuAIScraper,
-  CursorScraper,
-  WindsurfScraper,
-  CopilotScraper,
-  ClineScraper,
-  AiderScraper,
-  ContinueScraper,
-  CodyScraper,
-  TabnineScraper,
-  AmazonQScraper,
-  JetBrainsScraper,
-  ReplitScraper,
-  V0Scraper,
-  BoltScraper,
-  LovableScraper,
-  DevinScraper,
-  ZedScraper,
-  AugmentScraper,
-  FactoryScraper,
-  KiroScraper,
-  WarpScraper,
-  JulesScraper,
-  CodexScraper,
-  VoidScraper,
-  OpenClawScraper,
-  OpenCodeScraper,
-  HermesScraper,
-  AmpScraper,
-  GooseScraper,
-  CrushScraper,
-  CodexAgentScraper,
-  NemoClawScraper,
-  CursorAgentScraper,
-  GeminiCLIScraper,
-  GrokBuildScraper,
-  AWSBedrockScraper,
-  AzureOpenAIScraper,
-  GoogleVertexAIScraper,
-  IBMWatsonxScraper,
-  OracleCloudAIScraper,
-  CloudflareAIGatewayScraper,
-  PuterImageScraper,
-  LiteLLMScraper,
-  PortkeyScraper,
-  LangSmithScraper,
-  PerplexitySearchScraper,
-  YouComScraper,
-  CharacterAIScraper,
-  DoubaoChatScraper,
-  KimiChatScraper,
-  TongyiScraper,
-  ERNIEChatScraper,
-  GLMChatScraper,
-  DeepSeekChatScraper,
-  SWEAgentScraper,
-  OpenHandsScraper,
-  OnaScraper,
-  NxCodeScraper,
-  MastraScraper,
-  CanvaAIScraper,
-  NotionAIScraper,
-  GrammarlyScraper,
-  JasperScraper,
-  LinearScraper,
-  RunwayScraper,
-  PikaScraper,
-  KlingAIScraper,
-  LumaScraper,
-  SoraScraper,
-  SynthesiaScraper,
-  HeyGenScraper,
-  DIDScraper,
-  SeedanceScraper,
-  ElevenLabsScraper,
-  SunoScraper,
-  UdioScraper,
-  StabilityAudioScraper,
-  DescriptScraper,
-  MidjourneyImageScraper,
-  DALLEScraper,
-  StableDiffusionScraper,
-  IdeogramScraper,
-  LeonardoAIScraper,
-  MagnificScraper,
-  FalImageScraper,
   // Web crawlers
   OpenRouterCrawler,
   GroqCrawler,
