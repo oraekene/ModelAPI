@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-19T11:22:51.841Z",
+ "generated_at": "2026-10-22T10:44:20.256Z",
  "source": "https://models.dev/api.json",
  "provider_count": 232,
- "model_count": 9058,
+ "model_count": 9142,
  "slices": [
   {
    "file": "slice-000.json",
@@ -77,6 +77,7 @@
    "file": "slice-007.json",
    "models": 150,
    "providers": [
+    "amazon-bedrock",
     "ambient",
     "amd",
     "anthropic",
@@ -92,15 +93,15 @@
    "models": 150,
    "providers": [
     "azure",
-    "azure-cognitive-services",
-    "bailing",
-    "baseten"
+    "azure-cognitive-services"
    ]
   },
   {
    "file": "slice-009.json",
    "models": 150,
    "providers": [
+    "azure-cognitive-services",
+    "bailing",
     "baseten",
     "bee",
     "berget",
@@ -123,17 +124,16 @@
     "cloudflare-ai-gateway",
     "cloudflare-workers-ai",
     "cohere",
-    "commandcode",
-    "coralbricks",
-    "cortecs"
+    "commandcode"
    ]
   },
   {
    "file": "slice-011.json",
    "models": 150,
    "providers": [
+    "commandcode",
+    "coralbricks",
     "cortecs",
-    "crof",
     "crossmodel"
    ]
   },
@@ -184,28 +184,28 @@
     "empiriolabs",
     "engy",
     "evroc",
-    "fastrouter",
-    "fireworks-ai"
+    "fastrouter"
    ]
   },
   {
    "file": "slice-017.json",
    "models": 150,
    "providers": [
+    "fastrouter",
     "fireworks-ai",
     "freemodel",
     "friendli",
     "frogbot",
     "github-copilot",
-    "gitlab",
-    "gmicloud",
-    "google"
+    "gitlab"
    ]
   },
   {
    "file": "slice-018.json",
    "models": 150,
    "providers": [
+    "gitlab",
+    "gmicloud",
     "google",
     "google-vertex",
     "google-vertex-anthropic",
@@ -220,14 +220,14 @@
     "groq",
     "helicone",
     "hetzner",
-    "hpc-ai",
-    "huggingface"
+    "hpc-ai"
    ]
   },
   {
    "file": "slice-020.json",
    "models": 150,
    "providers": [
+    "hpc-ai",
     "huggingface",
     "hyper",
     "iflowcn",
@@ -286,6 +286,7 @@
     "kosmik",
     "kuae-cloud-coding-plan",
     "lilac",
+    "liquid",
     "llama",
     "llmgateway"
    ]
@@ -294,14 +295,14 @@
    "file": "slice-026.json",
    "models": 150,
    "providers": [
-    "llmgateway",
-    "llmgateway-providers"
+    "llmgateway"
    ]
   },
   {
    "file": "slice-027.json",
    "models": 150,
    "providers": [
+    "llmgateway",
     "llmgateway-providers"
    ]
   },
@@ -318,16 +319,16 @@
    "providers": [
     "llmgateway-providers",
     "llmtech",
-    "llmtr",
-    "lmstudio",
-    "longcat",
-    "lowrouter"
+    "llmtr"
    ]
   },
   {
    "file": "slice-030.json",
    "models": 150,
    "providers": [
+    "llmtr",
+    "lmstudio",
+    "longcat",
     "lowrouter",
     "lucidquery",
     "lynkr",
@@ -340,19 +341,19 @@
    "file": "slice-031.json",
    "models": 150,
    "providers": [
-    "merge-gateway",
-    "meta",
-    "minimax",
-    "minimax-cn",
-    "minimax-cn-coding-plan",
-    "minimax-coding-plan",
-    "mistral"
+    "merge-gateway"
    ]
   },
   {
    "file": "slice-032.json",
    "models": 150,
    "providers": [
+    "merge-gateway",
+    "meta",
+    "minimax",
+    "minimax-cn",
+    "minimax-cn-coding-plan",
+    "minimax-coding-plan",
     "mistral",
     "mixlayer",
     "moark",
@@ -363,14 +364,14 @@
     "moonshotai",
     "moonshotai-cn",
     "morph",
-    "nan",
-    "nano-gpt"
+    "nan"
    ]
   },
   {
    "file": "slice-033.json",
    "models": 150,
    "providers": [
+    "nan",
     "nano-gpt"
    ]
   },
@@ -392,25 +393,26 @@
    "file": "slice-036.json",
    "models": 150,
    "providers": [
-    "nano-gpt",
-    "nearai"
+    "nano-gpt"
    ]
   },
   {
    "file": "slice-037.json",
    "models": 150,
    "providers": [
+    "nano-gpt",
     "nearai",
     "nebius",
-    "neon",
-    "neosmith",
-    "neuralwatt"
+    "neon"
    ]
   },
   {
    "file": "slice-038.json",
    "models": 150,
    "providers": [
+    "neon",
+    "neosmith",
+    "neuralwatt",
     "nova",
     "novita-ai",
     "nvidia"
@@ -448,6 +450,7 @@
    "file": "slice-042.json",
    "models": 150,
    "providers": [
+    "openreason",
     "openrouter"
    ]
   },
@@ -484,14 +487,14 @@
    "models": 150,
    "providers": [
     "perplexity-agent",
-    "pioneer",
-    "poe"
+    "pioneer"
    ]
   },
   {
    "file": "slice-047.json",
    "models": 150,
    "providers": [
+    "pioneer",
     "poe",
     "poolside",
     "prime"
@@ -504,14 +507,14 @@
     "prime",
     "privatemode-ai",
     "qihang-ai",
-    "qiniu-ai",
-    "qvac"
+    "qiniu-ai"
    ]
   },
   {
    "file": "slice-049.json",
    "models": 150,
    "providers": [
+    "qiniu-ai",
     "qvac",
     "reflection",
     "regolo-ai",
@@ -528,28 +531,28 @@
     "sakana",
     "salad-cloud",
     "sambanova",
-    "sap-ai-core",
-    "sarvam",
-    "scaleway"
+    "sap-ai-core"
    ]
   },
   {
    "file": "slice-051.json",
    "models": 150,
    "providers": [
+    "sap-ai-core",
+    "sarvam",
     "scaleway",
     "scnet-token-plan",
     "scx-ai",
     "sensenova",
     "siliconflow",
-    "siliconflow-cn",
-    "snowflake-cortex"
+    "siliconflow-cn"
    ]
   },
   {
    "file": "slice-052.json",
    "models": 150,
    "providers": [
+    "siliconflow-cn",
     "snowflake-cortex",
     "stackit",
     "standardcompute",
@@ -573,16 +576,16 @@
     "tencent-tokenhub",
     "tensorx",
     "the-grid-ai",
-    "thinkingmachines",
-    "tinfoil",
-    "togetherai",
-    "tokengo"
+    "thinkingmachines"
    ]
   },
   {
    "file": "slice-054.json",
    "models": 150,
    "providers": [
+    "thinkingmachines",
+    "tinfoil",
+    "togetherai",
     "tokengo",
     "tokenrouter",
     "trustedrouter",
@@ -625,6 +628,13 @@
     "vivgrid",
     "volcengine",
     "volcengine-coding-plan",
+    "vultr"
+   ]
+  },
+  {
+   "file": "slice-059.json",
+   "models": 150,
+   "providers": [
     "vultr",
     "wafer.ai",
     "wallaby",
@@ -632,13 +642,7 @@
     "watsonx",
     "xai",
     "xiaomi",
-    "xiaomi-token-plan-ams"
-   ]
-  },
-  {
-   "file": "slice-059.json",
-   "models": 150,
-   "providers": [
+    "xiaomi-token-plan-ams",
     "xiaomi-token-plan-cn",
     "xiaomi-token-plan-sgp",
     "xpersona",
@@ -651,7 +655,7 @@
   },
   {
    "file": "slice-060.json",
-   "models": 58,
+   "models": 142,
    "providers": [
     "zenmux",
     "zhipuai",
