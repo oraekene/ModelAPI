@@ -23,6 +23,7 @@ import {
 } from './openrouter';
 import { observeFields, persistCapabilities } from './capabilities';
 import { requireAdmin } from './auth';
+import { mintPageToken, verifyPageToken } from './page-token';
 import {
   createKey,
   listKeys,
@@ -82,6 +83,10 @@ export interface Env {
   TELEGRAM_WEBHOOK_SECRET?: string;
   /** Public origin, used to build magic links. */
   PUBLIC_URL?: string;
+  /** Static app origin; receives the page token after /link. */
+  PAGE_URL?: string;
+  /** Comma-separated origins allowed to call /api/caps with a page token. */
+  PAGE_ORIGIN?: string;
   /** Models normalised per queue invocation. Lower if CPU budget is exceeded. */
   SLICE_SIZE?: string;
   /** Scraper registry — built-in scrapers + any dynamically registered ones. */
@@ -217,10 +222,11 @@ export default {
         return new Response('This link is invalid, expired, or already used.', { status: 400 });
       }
       await ensureUser(env.DB, userId);
+      const pageToken = await mintPageToken(userId, env.ADMIN_SECRET ?? '');
       return new Response(null, {
         status: 302,
         headers: {
-          location: '/',
+          location: pageLocation(env.PAGE_URL, pageToken),
           // Host-only, HTTP-only, strict: this cookie is the browser's proof of
           // identity and must not be readable by scripts or sent cross-site.
           'set-cookie': `mm_user=${encodeURIComponent(userId)}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=31536000`,
@@ -239,15 +245,25 @@ export default {
       });
     }
 
-    // ---- per-key free-tier caps (identity = the mm_user cookie) -----------
+    // ---- per-key free-tier caps (identity = cookie or page token) ---------
+    const wantsCaps = url.pathname === '/api/caps';
+    const capsCors = wantsCaps ? pageCors(req, env) : {};
+
+    if (wantsCaps && req.method === 'OPTIONS') {
+      if (!capsCors['access-control-allow-origin']) {
+        return new Response(null, { status: 403 });
+      }
+      return new Response(null, { status: 204, headers: capsCors });
+    }
+
     if (
       url.pathname === '/api/keys' ||
       url.pathname === '/api/keys/revoke' ||
       url.pathname === '/api/usage' ||
       url.pathname === '/api/caps'
     ) {
-      const userId = readUserId(req);
-      if (!userId) return notLinked();
+      const userId = await resolveUserId(req, env);
+      if (!userId) return notLinked(capsCors);
 
       if (url.pathname === '/api/keys' && req.method === 'GET') {
         return Response.json({ keys: await listKeys(env.DB, userId) });
@@ -300,7 +316,10 @@ export default {
       }
 
       if (url.pathname === '/api/caps' && req.method === 'GET') {
-        return Response.json({ keys: await userCaps(env.DB, userId, readPrefs(req)) });
+        return Response.json(
+          { keys: await userCaps(env.DB, userId, readPrefs(req)) },
+          { headers: capsCors },
+        );
       }
 
       return new Response('method not allowed', { status: 405 });
@@ -982,10 +1001,49 @@ function readUserId(req: Request): string | null {
   return /^[\w:.-]{1,64}$/.test(id) ? id : null;
 }
 
-function notLinked(): Response {
+async function resolveUserId(req: Request, env: Env): Promise<string | null> {
+  const cookieId = readUserId(req);
+  if (cookieId) return cookieId;
+
+  const match = /^Bearer\s+(\S+)$/i.exec(req.headers.get('authorization') ?? '');
+  if (!match) return null;
+  return verifyPageToken(match[1], env.ADMIN_SECRET ?? '');
+}
+
+function pageLocation(pageUrl: string | undefined, token: string | null): string {
+  if (!pageUrl) return '/';
+  try {
+    const target = new URL(pageUrl);
+    if (token) target.hash = `pt=${encodeURIComponent(token)}`;
+    return target.toString();
+  } catch {
+    return '/';
+  }
+}
+
+function pageCors(req: Request, env: Env): Record<string, string> {
+  const origin = req.headers.get('origin');
+  if (!origin) return {};
+
+  const allowed = (env.PAGE_ORIGIN ?? '')
+    .split(',')
+    .map((value) => value.trim())
+    .filter(Boolean);
+  if (!allowed.includes(origin)) return {};
+
+  return {
+    'access-control-allow-origin': origin,
+    'access-control-allow-methods': 'GET, POST, OPTIONS',
+    'access-control-allow-headers': 'authorization, content-type',
+    'access-control-max-age': '86400',
+    vary: 'Origin',
+  };
+}
+
+function notLinked(headers: HeadersInit = {}): Response {
   return Response.json(
     { error: 'not_linked', hint: 'Open the /link?t=... URL from the bot to connect this browser.' },
-    { status: 401 },
+    { status: 401, headers },
   );
 }
 
