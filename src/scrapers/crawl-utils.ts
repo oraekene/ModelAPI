@@ -196,12 +196,9 @@ export class AutoThrottle {
 const BLOCK_INDICATORS = [
   /captcha/i,
   /access denied/i,
-  /rate limit/i,
   /just a moment/i,
   /checking your browser/i,
   /cf-browser-verification/i,
-  /enable javascript/i,
-  /please wait/i,
   /verify you are human/i,
 ];
 
