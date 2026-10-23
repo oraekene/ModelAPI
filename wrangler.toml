@@ -13,8 +13,8 @@ SLICE_SIZE = "25"
 # Public origin, used to build magic links. Set after first deploy.
 PUBLIC_URL = "https://modelmap.solarsizer.workers.dev"
 # Static app; /link sends the page token here, and /api/caps allows this origin.
-PAGE_URL = "https://bestmodelpicker.netlify.app/"
-PAGE_ORIGIN = "https://bestmodelpicker.netlify.app"
+PAGE_URL = "https://bestmodelpicker.pages.dev/"
+PAGE_ORIGIN = "https://bestmodelpicker.pages.dev"
 
 [[d1_databases]]
 binding = "DB"
