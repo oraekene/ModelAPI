@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-22T10:44:20.256Z",
+ "generated_at": "2026-10-26T11:39:47.226Z",
  "source": "https://models.dev/api.json",
  "provider_count": 232,
- "model_count": 9142,
+ "model_count": 8936,
  "slices": [
   {
    "file": "slice-000.json",
@@ -70,15 +70,15 @@
    "file": "slice-006.json",
    "models": 150,
    "providers": [
-    "amazon-bedrock"
+    "amazon-bedrock",
+    "ambient",
+    "amd"
    ]
   },
   {
    "file": "slice-007.json",
    "models": 150,
    "providers": [
-    "amazon-bedrock",
-    "ambient",
     "amd",
     "anthropic",
     "anyapi",
@@ -93,17 +93,16 @@
    "models": 150,
    "providers": [
     "azure",
-    "azure-cognitive-services"
+    "azure-cognitive-services",
+    "bailing",
+    "baseten",
+    "bee"
    ]
   },
   {
    "file": "slice-009.json",
    "models": 150,
    "providers": [
-    "azure-cognitive-services",
-    "bailing",
-    "baseten",
-    "bee",
     "berget",
     "blueclaw",
     "bothub",
@@ -124,15 +123,15 @@
     "cloudflare-ai-gateway",
     "cloudflare-workers-ai",
     "cohere",
-    "commandcode"
+    "commandcode",
+    "coralbricks",
+    "cortecs"
    ]
   },
   {
    "file": "slice-011.json",
    "models": 150,
    "providers": [
-    "commandcode",
-    "coralbricks",
     "cortecs",
     "crossmodel"
    ]
@@ -145,15 +144,15 @@
     "crusoe",
     "daoxe",
     "databricks",
-    "deepinfra"
+    "deepinfra",
+    "deepseek",
+    "digitalocean"
    ]
   },
   {
    "file": "slice-013.json",
    "models": 150,
    "providers": [
-    "deepinfra",
-    "deepseek",
     "digitalocean",
     "dinference",
     "drun",
@@ -184,63 +183,62 @@
     "empiriolabs",
     "engy",
     "evroc",
-    "fastrouter"
+    "fastrouter",
+    "fireworks-ai"
    ]
   },
   {
    "file": "slice-017.json",
    "models": 150,
    "providers": [
-    "fastrouter",
     "fireworks-ai",
     "freemodel",
     "friendli",
     "frogbot",
     "github-copilot",
-    "gitlab"
+    "gitlab",
+    "gmicloud",
+    "google"
    ]
   },
   {
    "file": "slice-018.json",
    "models": 150,
    "providers": [
-    "gitlab",
-    "gmicloud",
     "google",
     "google-vertex",
     "google-vertex-anthropic",
-    "greenpt"
+    "greenpt",
+    "groq"
    ]
   },
   {
    "file": "slice-019.json",
    "models": 150,
    "providers": [
-    "greenpt",
     "groq",
     "helicone",
     "hetzner",
-    "hpc-ai"
+    "hpc-ai",
+    "huggingface"
    ]
   },
   {
    "file": "slice-020.json",
    "models": 150,
    "providers": [
-    "hpc-ai",
     "huggingface",
     "hyper",
-    "iflowcn",
-    "impossibl"
+    "impossibl",
+    "inception",
+    "inceptron",
+    "inco"
    ]
   },
   {
    "file": "slice-021.json",
    "models": 150,
    "providers": [
-    "impossibl",
-    "inception",
-    "inceptron",
     "inco",
     "infer",
     "inference",
@@ -249,14 +247,14 @@
     "io-net",
     "iteracompute",
     "jalapeno",
-    "jiekou"
+    "jiekou",
+    "kenari"
    ]
   },
   {
    "file": "slice-022.json",
    "models": 150,
    "providers": [
-    "jiekou",
     "kenari",
     "kilo"
    ]
@@ -279,7 +277,6 @@
    "file": "slice-025.json",
    "models": 150,
    "providers": [
-    "kilo",
     "kimi-code-plan-cn",
     "kimi-code-plan-global",
     "klokintegration",
@@ -287,7 +284,6 @@
     "kuae-cloud-coding-plan",
     "lilac",
     "liquid",
-    "llama",
     "llmgateway"
    ]
   },
@@ -295,14 +291,14 @@
    "file": "slice-026.json",
    "models": 150,
    "providers": [
-    "llmgateway"
+    "llmgateway",
+    "llmgateway-providers"
    ]
   },
   {
    "file": "slice-027.json",
    "models": 150,
    "providers": [
-    "llmgateway",
     "llmgateway-providers"
    ]
   },
@@ -319,19 +315,19 @@
    "providers": [
     "llmgateway-providers",
     "llmtech",
-    "llmtr"
-   ]
-  },
-  {
-   "file": "slice-030.json",
-   "models": 150,
-   "providers": [
     "llmtr",
     "lmstudio",
     "longcat",
     "lowrouter",
     "lucidquery",
     "lynkr",
+    "meganova"
+   ]
+  },
+  {
+   "file": "slice-030.json",
+   "models": 150,
+   "providers": [
     "meganova",
     "melious",
     "merge-gateway"
@@ -339,13 +335,6 @@
   },
   {
    "file": "slice-031.json",
-   "models": 150,
-   "providers": [
-    "merge-gateway"
-   ]
-  },
-  {
-   "file": "slice-032.json",
    "models": 150,
    "providers": [
     "merge-gateway",
@@ -356,6 +345,13 @@
     "minimax-coding-plan",
     "mistral",
     "mixlayer",
+    "moark"
+   ]
+  },
+  {
+   "file": "slice-032.json",
+   "models": 150,
+   "providers": [
     "moark",
     "modal",
     "model-oracle-ai",
@@ -364,14 +360,16 @@
     "moonshotai",
     "moonshotai-cn",
     "morph",
-    "nan"
+    "munito",
+    "munito-eu",
+    "nan",
+    "nano-gpt"
    ]
   },
   {
    "file": "slice-033.json",
    "models": 150,
    "providers": [
-    "nan",
     "nano-gpt"
    ]
   },
@@ -393,45 +391,45 @@
    "file": "slice-036.json",
    "models": 150,
    "providers": [
-    "nano-gpt"
+    "nano-gpt",
+    "nearai"
    ]
   },
   {
    "file": "slice-037.json",
    "models": 150,
    "providers": [
-    "nano-gpt",
     "nearai",
     "nebius",
-    "neon"
+    "neon",
+    "neosmith",
+    "neuralwatt",
+    "nova"
    ]
   },
   {
    "file": "slice-038.json",
    "models": 150,
    "providers": [
-    "neon",
-    "neosmith",
-    "neuralwatt",
     "nova",
     "novita-ai",
-    "nvidia"
+    "nvidia",
+    "oci"
    ]
   },
   {
    "file": "slice-039.json",
    "models": 150,
    "providers": [
-    "nvidia",
     "oci",
-    "ofox"
+    "ofox",
+    "ollama-cloud"
    ]
   },
   {
    "file": "slice-040.json",
    "models": 150,
    "providers": [
-    "ofox",
     "ollama-cloud",
     "openai",
     "opencode"
@@ -443,14 +441,14 @@
    "providers": [
     "opencode",
     "opencode-go",
-    "openreason"
+    "openreason",
+    "openrouter"
    ]
   },
   {
    "file": "slice-042.json",
    "models": 150,
    "providers": [
-    "openreason",
     "openrouter"
    ]
   },
@@ -479,29 +477,22 @@
     "pareto",
     "pendra",
     "perplexity",
-    "perplexity-agent"
+    "perplexity-agent",
+    "pioneer",
+    "poe"
    ]
   },
   {
    "file": "slice-046.json",
    "models": 150,
    "providers": [
-    "perplexity-agent",
-    "pioneer"
-   ]
-  },
-  {
-   "file": "slice-047.json",
-   "models": 150,
-   "providers": [
-    "pioneer",
     "poe",
     "poolside",
     "prime"
    ]
   },
   {
-   "file": "slice-048.json",
+   "file": "slice-047.json",
    "models": 150,
    "providers": [
     "prime",
@@ -511,7 +502,7 @@
    ]
   },
   {
-   "file": "slice-049.json",
+   "file": "slice-048.json",
    "models": 150,
    "providers": [
     "qiniu-ai",
@@ -522,7 +513,7 @@
    ]
   },
   {
-   "file": "slice-050.json",
+   "file": "slice-049.json",
    "models": 150,
    "providers": [
     "requesty",
@@ -535,7 +526,7 @@
    ]
   },
   {
-   "file": "slice-051.json",
+   "file": "slice-050.json",
    "models": 150,
    "providers": [
     "sap-ai-core",
@@ -549,7 +540,7 @@
    ]
   },
   {
-   "file": "slice-052.json",
+   "file": "slice-051.json",
    "models": 150,
    "providers": [
     "siliconflow-cn",
@@ -567,7 +558,7 @@
    ]
   },
   {
-   "file": "slice-053.json",
+   "file": "slice-052.json",
    "models": 150,
    "providers": [
     "tempr",
@@ -580,7 +571,7 @@
    ]
   },
   {
-   "file": "slice-054.json",
+   "file": "slice-053.json",
    "models": 150,
    "providers": [
     "thinkingmachines",
@@ -598,10 +589,17 @@
    ]
   },
   {
-   "file": "slice-055.json",
+   "file": "slice-054.json",
    "models": 150,
    "providers": [
     "venice",
+    "vercel"
+   ]
+  },
+  {
+   "file": "slice-055.json",
+   "models": 150,
+   "providers": [
     "vercel"
    ]
   },
@@ -616,28 +614,21 @@
    "file": "slice-057.json",
    "models": 150,
    "providers": [
-    "vercel"
+    "vercel",
+    "vispark",
+    "vivgrid",
+    "volcengine",
+    "volcengine-coding-plan",
+    "vultr",
+    "wafer.ai",
+    "wallaby",
+    "wandb"
    ]
   },
   {
    "file": "slice-058.json",
    "models": 150,
    "providers": [
-    "vercel",
-    "vispark",
-    "vivgrid",
-    "volcengine",
-    "volcengine-coding-plan",
-    "vultr"
-   ]
-  },
-  {
-   "file": "slice-059.json",
-   "models": 150,
-   "providers": [
-    "vultr",
-    "wafer.ai",
-    "wallaby",
     "wandb",
     "watsonx",
     "xai",
@@ -654,8 +645,8 @@
    ]
   },
   {
-   "file": "slice-060.json",
-   "models": 142,
+   "file": "slice-059.json",
+   "models": 86,
    "providers": [
     "zenmux",
     "zhipuai",
