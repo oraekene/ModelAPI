@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-29T11:51:56.251Z",
+ "generated_at": "2026-11-02T13:57:37.100Z",
  "source": "https://models.dev/api.json",
- "provider_count": 233,
- "model_count": 8909,
+ "provider_count": 235,
+ "model_count": 8928,
  "slices": [
   {
    "file": "slice-000.json",
@@ -39,14 +39,15 @@
    "file": "slice-003.json",
    "models": 150,
    "providers": [
-    "aimlapi",
-    "ainetcafe"
+    "aimlapi"
    ]
   },
   {
    "file": "slice-004.json",
    "models": 150,
    "providers": [
+    "aimlapi",
+    "ainetcafe",
     "aixy",
     "aki-io",
     "alibaba",
@@ -219,6 +220,7 @@
     "groq",
     "helicone",
     "hetzner",
+    "hopper",
     "hpc-ai",
     "huggingface"
    ]
@@ -323,14 +325,14 @@
     "lucidquery",
     "lynkr",
     "meganova",
-    "melious",
-    "merge-gateway"
+    "melious"
    ]
   },
   {
    "file": "slice-030.json",
    "models": 150,
    "providers": [
+    "melious",
     "merge-gateway"
    ]
   },
@@ -347,14 +349,14 @@
     "mistral",
     "mixlayer",
     "moark",
-    "modal",
-    "model-oracle-ai"
+    "modal"
    ]
   },
   {
    "file": "slice-032.json",
    "models": 150,
    "providers": [
+    "modal",
     "model-oracle-ai",
     "modelis",
     "modelscope",
@@ -425,14 +427,14 @@
    "models": 150,
    "providers": [
     "ofox",
-    "ollama-cloud",
-    "openai"
+    "ollama-cloud"
    ]
   },
   {
    "file": "slice-040.json",
    "models": 150,
    "providers": [
+    "ollama-cloud",
     "openai",
     "opencode"
    ]
@@ -465,6 +467,7 @@
    "file": "slice-044.json",
    "models": 150,
    "providers": [
+    "openrouter",
     "opper",
     "orcarouter"
    ]
@@ -500,15 +503,15 @@
     "privatemode-ai",
     "qihang-ai",
     "qiniu-ai",
-    "qvac",
-    "reflection",
-    "regolo-ai"
+    "qvac"
    ]
   },
   {
    "file": "slice-048.json",
    "models": 150,
    "providers": [
+    "qvac",
+    "reflection",
     "regolo-ai",
     "requesty"
    ]
@@ -623,15 +626,16 @@
     "vultr",
     "wafer.ai",
     "wallaby",
-    "wandb",
-    "watsonx",
-    "xai"
+    "wally",
+    "wandb"
    ]
   },
   {
    "file": "slice-058.json",
    "models": 150,
    "providers": [
+    "wandb",
+    "watsonx",
     "xai",
     "xiaomi",
     "xiaomi-token-plan-ams",
@@ -647,7 +651,7 @@
   },
   {
    "file": "slice-059.json",
-   "models": 59,
+   "models": 78,
    "providers": [
     "zenmux",
     "zhipuai",

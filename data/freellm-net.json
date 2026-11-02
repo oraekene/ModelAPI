@@ -1,29 +1,8 @@
 {
- "generated": "2026-10-29T11:51:57.266Z",
+ "generated": "2026-11-02T13:57:38.407Z",
  "source": "https://freellm.net/models/",
- "count": 302,
+ "count": 296,
  "rows": [
-  {
-   "name": "z-ai/glm-5.3",
-   "provider": "NVIDIA NIM",
-   "providerSlug": "nvidia-nim",
-   "modality": [
-    "text",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": "flagship glm model for long-horizon coding, agents, and complex project delivery",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 94,
-   "context": 1048576,
-   "released": 1787011200000,
-   "tierType": "permanent",
-   "href": "/models/nvidia-nim/z-ai-glm-5-3"
-  },
   {
    "name": "z-ai/glm-5.3-flash",
    "provider": "NVIDIA NIM",
@@ -49,27 +28,6 @@
    "href": "/models/nvidia-nim/z-ai-glm-5-3-flash"
   },
   {
-   "name": "deepseek-v4-pro",
-   "provider": "Ollama Cloud",
-   "providerSlug": "ollama-cloud",
-   "modality": [
-    "text",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": true,
-   "description": "flagship deepseek model for coding, reasoning, and agentic work",
-   "bestfor": "chat",
-   "tag": "deepseek-v4-pro",
-   "score": 89,
-   "context": 1000000,
-   "released": 1786579200000,
-   "tierType": "permanent",
-   "href": "/models/ollama-cloud/deepseek-v4-pro"
-  },
-  {
    "name": "deepseek-ai/deepseek-v4.1-flash",
    "provider": "NVIDIA NIM",
    "providerSlug": "nvidia-nim",
@@ -90,6 +48,27 @@
    "released": 1792195200000,
    "tierType": "permanent",
    "href": "/models/nvidia-nim/deepseek-ai-deepseek-v4-1-flash"
+  },
+  {
+   "name": "deepseek-v4-pro",
+   "provider": "Ollama Cloud",
+   "providerSlug": "ollama-cloud",
+   "modality": [
+    "text",
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": true,
+   "verified": true,
+   "description": "flagship deepseek model for coding, reasoning, and agentic work",
+   "bestfor": "chat",
+   "tag": "deepseek-v4-pro",
+   "score": 89,
+   "context": 1000000,
+   "released": 1786579200000,
+   "tierType": "permanent",
+   "href": "/models/ollama-cloud/deepseek-v4-pro"
   },
   {
    "name": "zai-org/glm-5.3-flash",
@@ -116,6 +95,29 @@
    "href": "/models/gonka-broker/zai-org-glm-5-3-flash"
   },
   {
+   "name": "minimaxai/minimax-m3.1-flash",
+   "provider": "NVIDIA NIM",
+   "providerSlug": "nvidia-nim",
+   "modality": [
+    "text",
+    "image",
+    "video",
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": "frontier multimodal coding model with 1m context window and tunable thinking depth",
+   "bestfor": "chat",
+   "tag": "minimax",
+   "score": 87,
+   "context": 1048576,
+   "released": 1792368000000,
+   "tierType": "permanent",
+   "href": "/models/nvidia-nim/minimaxai-minimax-m3-1-flash"
+  },
+  {
    "name": "gemini 3.8 flash",
    "provider": "Google Gemini",
    "providerSlug": "google-gemini",
@@ -139,29 +141,6 @@
    "released": 1788307200000,
    "tierType": "permanent",
    "href": "/models/google-gemini/gemini-3-8-flash"
-  },
-  {
-   "name": "minimaxai/minimax-m3.1-flash",
-   "provider": "NVIDIA NIM",
-   "providerSlug": "nvidia-nim",
-   "modality": [
-    "text",
-    "image",
-    "video",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": "frontier multimodal coding model with 1m context window and tunable thinking depth",
-   "bestfor": "chat",
-   "tag": "minimax",
-   "score": 87,
-   "context": 1048576,
-   "released": 1792368000000,
-   "tierType": "permanent",
-   "href": "/models/nvidia-nim/minimaxai-minimax-m3-1-flash"
   },
   {
    "name": "stepfun-ai/step-5-preview",
@@ -202,7 +181,7 @@
    "description": "multimodal reasoning model for visual analysis, planning, and tool use",
    "bestfor": "chat",
    "tag": "qwen3-8-27b",
-   "score": 87,
+   "score": 86,
    "context": 262000,
    "released": 1786665600000,
    "tierType": "permanent",
@@ -223,7 +202,7 @@
    "description": "free qwen3.8 max api.",
    "bestfor": "chat",
    "tag": "qwen3-8-max",
-   "score": 86,
+   "score": 85,
    "context": 1000000,
    "released": 1788307200000,
    "tierType": "permanent",
@@ -309,7 +288,7 @@
    "description": null,
    "bestfor": "chat",
    "tag": "unmapped",
-   "score": 84,
+   "score": 83,
    "context": 8192,
    "released": 1787702400000,
    "tierType": "permanent",
@@ -330,7 +309,7 @@
    "description": "free glm-5.3-flash api.",
    "bestfor": "chat",
    "tag": "glm-5-3-flash",
-   "score": 84,
+   "score": 83,
    "context": 1000000,
    "released": 1787702400000,
    "tierType": "permanent",
@@ -371,7 +350,7 @@
    "description": "free kimi k3 api.",
    "bestfor": "chat",
    "tag": "kimi-k3",
-   "score": 82,
+   "score": 81,
    "context": 1048576,
    "released": 1784160000000,
    "tierType": "permanent",
@@ -392,7 +371,7 @@
    "description": "`deepseek-ai/deepseek-v4-flash-0731` — free model from gonka broker.",
    "bestfor": "chat",
    "tag": "deepseek-v4-flash-0731",
-   "score": 82,
+   "score": 81,
    "context": 400000,
    "released": 1785456000000,
    "tierType": "permanent",
@@ -438,6 +417,24 @@
    "href": "/models/opencode/deepseek-v4-1-flash"
   },
   {
+   "name": "deepseek-ai/deepseek-v4.1-flash",
+   "provider": "ModelScope",
+   "providerSlug": "modelscope",
+   "modality": [],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": null,
+   "bestfor": "chat",
+   "tag": "deepseek-v4-1-flash",
+   "score": 79,
+   "context": 8192,
+   "released": 1792195200000,
+   "tierType": "permanent",
+   "href": "/models/modelscope/deepseek-ai-deepseek-v4-1-flash"
+  },
+  {
    "name": "thinking machines: inkling small (free)",
    "provider": "OpenRouter",
    "providerSlug": "openrouter",
@@ -459,24 +456,6 @@
    "released": 1785369600000,
    "tierType": "permanent",
    "href": "/models/openrouter/thinkingmachines-inkling-small"
-  },
-  {
-   "name": "deepseek-ai/deepseek-v4.1-flash",
-   "provider": "ModelScope",
-   "providerSlug": "modelscope",
-   "modality": [],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": null,
-   "bestfor": "chat",
-   "tag": "deepseek-v4-1-flash",
-   "score": 79,
-   "context": 8192,
-   "released": 1792195200000,
-   "tierType": "permanent",
-   "href": "/models/modelscope/deepseek-ai-deepseek-v4-1-flash"
   },
   {
    "name": "nvidia: nemotron 3.5 super vl (free)",
@@ -531,7 +510,7 @@
    "description": null,
    "bestfor": "chat",
    "tag": "deepseek-v4-pro-0813",
-   "score": 79,
+   "score": 78,
    "context": 8192,
    "released": 1786579200000,
    "tierType": "permanent",
@@ -574,6 +553,29 @@
    "released": 1786665600000,
    "tierType": "permanent",
    "href": "/models/modelscope/qwen-qwen3-8-27b"
+  },
+  {
+   "name": "nvidia/nemotron-3.5-super-vl:free",
+   "provider": "Kilo Code",
+   "providerSlug": "kilo-code",
+   "modality": [
+    "text",
+    "image",
+    "video",
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": true,
+   "verified": false,
+   "description": "nvidia nemotron 3.5 super vl is an open multimodal mixture-of-experts model from nvidia, with 12b active parameters out of 120b total. it takes text, images, documents, gui screenshots, and video... **terms of service** for nvidia free endpoints (super/ultra/etc): trial use only - do not submit personal or confidential data. your use is logged for security purposes and to improve nvidia products and services. the logged session data for improvement purposes is not linked to your identity or any persistent identifier. for more information about our data processing practices, see our [privacy policy](https://www.nvidia.com/en-us/about-nvidia/privacy-policy/). by interacting with this endpoint, you consent to our collection, recording, and use of such information and the [nvidia api trial terms of service](https://assets.ngc.nvidia.com/products/api-catalog/legal/nvidia%20api%20trial%20terms%20of%20service.pdf).",
+   "bestfor": "chat,reasoning",
+   "tag": "nemotron-3-5-super-vl",
+   "score": 78,
+   "context": 1000000,
+   "released": 1792022400000,
+   "tierType": "quota",
+   "href": "/models/kilo-code/nvidia-nemotron-3-5-super-vl-free"
   },
   {
    "name": "gemini 3.6 flash",
@@ -637,29 +639,6 @@
    "href": "/models/modelscope/deepseek-ai-deepseek-v4-pro-0813"
   },
   {
-   "name": "nvidia/nemotron-3.5-super-vl:free",
-   "provider": "Kilo Code",
-   "providerSlug": "kilo-code",
-   "modality": [
-    "text",
-    "image",
-    "video",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": false,
-   "description": "nvidia nemotron 3.5 super vl is an open multimodal mixture-of-experts model from nvidia, with 12b active parameters out of 120b total. it takes text, images, documents, gui screenshots, and video... **terms of service** for nvidia free endpoints (super/ultra/etc): trial use only - do not submit personal or confidential data. your use is logged for security purposes and to improve nvidia products and services. the logged session data for improvement purposes is not linked to your identity or any persistent identifier. for more information about our data processing practices, see our [privacy policy](https://www.nvidia.com/en-us/about-nvidia/privacy-policy/). by interacting with this endpoint, you consent to our collection, recording, and use of such information and the [nvidia api trial terms of service](https://assets.ngc.nvidia.com/products/api-catalog/legal/nvidia%20api%20trial%20terms%20of%20service.pdf).",
-   "bestfor": "chat,reasoning",
-   "tag": "nemotron-3-5-super-vl",
-   "score": 78,
-   "context": 1000000,
-   "released": 1792022400000,
-   "tierType": "quota",
-   "href": "/models/kilo-code/nvidia-nemotron-3-5-super-vl-free"
-  },
-  {
    "name": "thinking machines: inkling (free)",
    "provider": "OpenRouter",
    "providerSlug": "openrouter",
@@ -676,7 +655,7 @@
    "description": "multimodal reasoning model for visual analysis, planning, and tool use",
    "bestfor": "chat,reasoning",
    "tag": "unmapped",
-   "score": 78,
+   "score": 77,
    "context": 1048576,
    "released": 1784073600000,
    "tierType": "permanent",
@@ -732,7 +711,7 @@
    "description": null,
    "bestfor": "chat",
    "tag": "deepseek-v4-flash",
-   "score": 77,
+   "score": 76,
    "context": 8192,
    "released": 1785456000000,
    "tierType": "permanent",
@@ -795,7 +774,7 @@
    "description": "free glm-5.1 api.",
    "bestfor": "chat",
    "tag": "unmapped",
-   "score": 76,
+   "score": 75,
    "context": 1000000,
    "released": 1781568000000,
    "tierType": "permanent",
@@ -823,6 +802,26 @@
    "href": "/models/opencode/mistral-large-4"
   },
   {
+   "name": "glm-5.2",
+   "provider": "OpenCode Zen",
+   "providerSlug": "opencode",
+   "modality": [
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": "free glm-5.2 api.",
+   "bestfor": "chat",
+   "tag": "glm-5-2",
+   "score": 72,
+   "context": 1000000,
+   "released": 1781568000000,
+   "tierType": "permanent",
+   "href": "/models/opencode/glm-5-2"
+  },
+  {
    "name": "nvidia: nemotron 3 ultra (free)",
    "provider": "OpenRouter",
    "providerSlug": "openrouter",
@@ -837,31 +836,32 @@
    "description": "largest nemotron 3 model for maximum open-weight reasoning and agent accuracy",
    "bestfor": "chat,reasoning",
    "tag": "nemotron-3-ultra-550b-a55b",
-   "score": 73,
+   "score": 72,
    "context": 1000000,
    "released": 1780551208000,
    "tierType": "permanent",
    "href": "/models/openrouter/nvidia-nemotron-3-ultra-550b-a55b"
   },
   {
-   "name": "glm-5.2",
-   "provider": "OpenCode Zen",
-   "providerSlug": "opencode",
+   "name": "nemotron 3.5 super vl 120b a12b",
+   "provider": "NVIDIA NIM",
+   "providerSlug": "nvidia-nim",
    "modality": [
+    "vision",
     "reasoning"
    ],
    "free": true,
    "nocard": true,
    "nophone": false,
    "verified": true,
-   "description": "free glm-5.2 api.",
+   "description": "free nemotron 3.5 super vl 120b a12b api.",
    "bestfor": "chat",
-   "tag": "glm-5-2",
-   "score": 73,
-   "context": 1000000,
-   "released": 1781568000000,
+   "tag": "unmapped",
+   "score": 72,
+   "context": 1048576,
+   "released": 1792022400000,
    "tierType": "permanent",
-   "href": "/models/opencode/glm-5-2"
+   "href": "/models/nvidia-nim/nvidia-nemotron-3-5-super-vl-120b-a12b"
   },
   {
    "name": "gemini 3.5 flash",
@@ -887,27 +887,6 @@
    "released": 1779148800000,
    "tierType": "permanent",
    "href": "/models/google-gemini/gemini-3-5-flash"
-  },
-  {
-   "name": "nemotron 3.5 super vl 120b a12b",
-   "provider": "NVIDIA NIM",
-   "providerSlug": "nvidia-nim",
-   "modality": [
-    "vision",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": "free nemotron 3.5 super vl 120b a12b api.",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 72,
-   "context": 1048576,
-   "released": 1792022400000,
-   "tierType": "permanent",
-   "href": "/models/nvidia-nim/nvidia-nemotron-3-5-super-vl-120b-a12b"
   },
   {
    "name": "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -973,27 +952,6 @@
    "href": "/models/openrouter/xingchen-agi-xing4-0-29b-a4b"
   },
   {
-   "name": "minimax-m3",
-   "provider": "LLM7.io",
-   "providerSlug": "llm7-io",
-   "modality": [
-    "vision",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": "free minimax-m3 api.",
-   "bestfor": "chat",
-   "tag": "minimax-m3",
-   "score": 70,
-   "context": 1048576,
-   "released": 1780272000000,
-   "tierType": "permanent",
-   "href": "/models/llm7-io/minimax-m3"
-  },
-  {
    "name": "moonshotai/kimi-k2.6",
    "provider": "NVIDIA NIM",
    "providerSlug": "nvidia-nim",
@@ -1015,6 +973,27 @@
    "released": 1776643200000,
    "tierType": "permanent",
    "href": "/models/nvidia-nim/moonshotai-kimi-k2-6"
+  },
+  {
+   "name": "minimax-m3",
+   "provider": "LLM7.io",
+   "providerSlug": "llm7-io",
+   "modality": [
+    "vision",
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": "free minimax-m3 api.",
+   "bestfor": "chat",
+   "tag": "minimax-m3",
+   "score": 69,
+   "context": 1048576,
+   "released": 1780272000000,
+   "tierType": "permanent",
+   "href": "/models/llm7-io/minimax-m3"
   },
   {
    "name": "recursive/flint-v1.0:free",
@@ -1120,7 +1099,7 @@
    "description": "nemotron model for efficient reasoning, coding, and specialized ai agents",
    "bestfor": "chat,reasoning",
    "tag": "nemotron-3-5-lightning",
-   "score": 67,
+   "score": 66,
    "context": 1000000,
    "released": 1786406400000,
    "tierType": "permanent",
@@ -1203,7 +1182,7 @@
    "description": "free minimax-m3 api.",
    "bestfor": "chat",
    "tag": "minimax-m3",
-   "score": 66,
+   "score": 65,
    "context": 1048576,
    "released": 1780272000000,
    "tierType": "permanent",
@@ -1225,7 +1204,7 @@
    "description": "dots3-note preview is an open-weight mixture-of-experts model from dots studio, with 16b active parameters out of 280b total. it is the lightest model in the dots 3 family and is...",
    "bestfor": "chat",
    "tag": "unmapped",
-   "score": 66,
+   "score": 65,
    "context": 512000,
    "released": 1786665600000,
    "tierType": "quota",
@@ -1276,48 +1255,6 @@
    "href": "/models/kilo-code/nvidia-nemotron-3-5-lightning-free"
   },
   {
-   "name": "poolside: laguna s 2.1 (free)",
-   "provider": "OpenRouter",
-   "providerSlug": "openrouter",
-   "modality": [
-    "text",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": true,
-   "description": "free provider route for experiments, demos, and cost-sensitive chat workloads",
-   "bestfor": "chat",
-   "tag": "laguna",
-   "score": 65,
-   "context": 262144,
-   "released": 1784652683000,
-   "tierType": "permanent",
-   "href": "/models/openrouter/poolside-laguna-s-2-1"
-  },
-  {
-   "name": "minimax-m2.7",
-   "provider": "LLM7.io",
-   "providerSlug": "llm7-io",
-   "modality": [
-    "text",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": true,
-   "description": "minimax-m2.7 — free model from llm7.io.",
-   "bestfor": "chat",
-   "tag": "minimax-m2-7",
-   "score": 64,
-   "context": 180000,
-   "released": 1773792000000,
-   "tierType": "permanent",
-   "href": "/models/llm7-io/minimax-m2-7"
-  },
-  {
    "name": "minimax-m3",
    "provider": "ModelScope",
    "providerSlug": "modelscope",
@@ -1352,7 +1289,7 @@
    "description": "free glm-5 api.",
    "bestfor": "chat",
    "tag": "glm-5-turbo",
-   "score": 64,
+   "score": 63,
    "context": 204800,
    "released": 1773532800000,
    "tierType": "permanent",
@@ -1380,27 +1317,6 @@
    "href": "/models/kilo-code/poolside-laguna-s-2-1-free"
   },
   {
-   "name": "poolside: laguna xs 2.1 (free)",
-   "provider": "OpenRouter",
-   "providerSlug": "openrouter",
-   "modality": [
-    "text",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": true,
-   "description": "free provider route for experiments, demos, and cost-sensitive chat workloads",
-   "bestfor": "chat",
-   "tag": "laguna",
-   "score": 63,
-   "context": 262144,
-   "released": 1783002429000,
-   "tierType": "permanent",
-   "href": "/models/openrouter/poolside-laguna-xs-2-1"
-  },
-  {
    "name": "poolside/laguna-xs-2.1:free",
    "provider": "Kilo Code",
    "providerSlug": "kilo-code",
@@ -1415,7 +1331,7 @@
    "description": "laguna xs 2.1 is the latest coding agent model in the 33b-a3b category from [poolside](https://poolside.ai/) and a step forward from their laguna xs.2 model (released in april 2026). it combines...",
    "bestfor": "chat",
    "tag": "laguna",
-   "score": 62,
+   "score": 61,
    "context": 262000,
    "released": 1782950400000,
    "tierType": "quota",
@@ -1437,7 +1353,7 @@
    "description": "cohere coding model for practical software engineering and agentic edits",
    "bestfor": "chat,coding",
    "tag": "north-mini-code",
-   "score": 62,
+   "score": 61,
    "context": 256000,
    "released": 1780963200000,
    "tierType": "permanent",
@@ -1481,7 +1397,7 @@
    "description": "free qwen3.6 plus api.",
    "bestfor": "chat",
    "tag": "qwen3-6-plus",
-   "score": 61,
+   "score": 60,
    "context": 1000000,
    "released": 1775088000000,
    "tierType": "permanent",
@@ -1509,6 +1425,27 @@
    "href": "/models/z-ai-zhipu-ai/glm-4-7-flash"
   },
   {
+   "name": "kimi k2.6",
+   "provider": "OpenCode Zen",
+   "providerSlug": "opencode",
+   "modality": [
+    "vision",
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": "free kimi k2.6 api.",
+   "bestfor": "chat",
+   "tag": "kimi-k2-6",
+   "score": 60,
+   "context": 262144,
+   "released": 1776643200000,
+   "tierType": "permanent",
+   "href": "/models/opencode/kimi-k2-6"
+  },
+  {
    "name": "google: gemma 4 26b a4b  (free)",
    "provider": "OpenRouter",
    "providerSlug": "openrouter",
@@ -1530,27 +1467,6 @@
    "released": 1775088000000,
    "tierType": "permanent",
    "href": "/models/openrouter/google-gemma-4-26b-a4b-it"
-  },
-  {
-   "name": "kimi k2.6",
-   "provider": "OpenCode Zen",
-   "providerSlug": "opencode",
-   "modality": [
-    "vision",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": "free kimi k2.6 api.",
-   "bestfor": "chat",
-   "tag": "kimi-k2-6",
-   "score": 60,
-   "context": 262144,
-   "released": 1776643200000,
-   "tierType": "permanent",
-   "href": "/models/opencode/kimi-k2-6"
   },
   {
    "name": "cohere/north-mini-code:free",
@@ -1630,32 +1546,11 @@
    "description": "agentic coding model from poolside in the xs size class for local deployment",
    "bestfor": "chat",
    "tag": "laguna",
-   "score": 60,
+   "score": 59,
    "context": 262144,
    "released": 1782950400000,
    "tierType": "permanent",
    "href": "/models/nvidia-nim/poolside-laguna-xs-2-1"
-  },
-  {
-   "name": "liquidai: lfm2.5-2.6b (free)",
-   "provider": "OpenRouter",
-   "providerSlug": "openrouter",
-   "modality": [
-    "text",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": true,
-   "description": "free provider route for experiments, demos, and cost-sensitive chat workloads",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 60,
-   "context": 65536,
-   "released": 1785801600000,
-   "tierType": "permanent",
-   "href": "/models/openrouter/liquid-lfm-2-5-2-6b"
   },
   {
    "name": "01-ai/yi-large",
@@ -1798,25 +1693,25 @@
    "href": "/models/opencode/minimax-m2-5"
   },
   {
-   "name": "qwen3.8 flash",
-   "provider": "OpenCode Zen",
-   "providerSlug": "opencode",
+   "name": "liquidai: lfm2.5-2.6b (free)",
+   "provider": "OpenRouter",
+   "providerSlug": "openrouter",
    "modality": [
-    "vision",
+    "text",
     "reasoning"
    ],
    "free": true,
    "nocard": true,
-   "nophone": false,
+   "nophone": true,
    "verified": true,
-   "description": "free qwen3.8 flash api.",
+   "description": "free provider route for experiments, demos, and cost-sensitive chat workloads",
    "bestfor": "chat",
-   "tag": "qwen3-8-flash",
+   "tag": "unmapped",
    "score": 59,
-   "context": 1000000,
-   "released": 1787702400000,
+   "context": 65536,
+   "released": 1785801600000,
    "tierType": "permanent",
-   "href": "/models/opencode/qwen3-8-flash"
+   "href": "/models/openrouter/liquid-lfm-2-5-2-6b"
   },
   {
    "name": "qwen3.5-397b-a17b",
@@ -1860,6 +1755,45 @@
    "released": 1775520000000,
    "tierType": "permanent",
    "href": "/models/opencode/glm-5-1"
+  },
+  {
+   "name": "mistralai/mistral-large-4-1t-a52b",
+   "provider": "NVIDIA NIM",
+   "providerSlug": "nvidia-nim",
+   "modality": [],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": null,
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 59,
+   "context": 8192,
+   "released": 0,
+   "tierType": "permanent",
+   "href": "/models/nvidia-nim/mistralai-mistral-large-4-1t-a52b"
+  },
+  {
+   "name": "qwen3.8 flash",
+   "provider": "OpenCode Zen",
+   "providerSlug": "opencode",
+   "modality": [
+    "vision",
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": "free qwen3.8 flash api.",
+   "bestfor": "chat",
+   "tag": "qwen3-8-flash",
+   "score": 58,
+   "context": 1000000,
+   "released": 1787702400000,
+   "tierType": "permanent",
+   "href": "/models/opencode/qwen3-8-flash"
   },
   {
    "name": "nvidia: nemotron 3 nano omni (free)",
@@ -1949,27 +1883,6 @@
    "href": "/models/kilo-code/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning-free"
   },
   {
-   "name": "cline-free/nemotron-3.5-super-vl",
-   "provider": "Cline",
-   "providerSlug": "cline",
-   "modality": [
-    "text",
-    "vision"
-   ],
-   "free": true,
-   "nocard": false,
-   "nophone": false,
-   "verified": true,
-   "description": "cline-free/nemotron-3.5-super-vl is a free model available from cline.",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 57,
-   "context": 0,
-   "released": 1792022400000,
-   "tierType": "permanent",
-   "href": "/models/cline/cline-free-nemotron-3-5-super-vl"
-  },
-  {
    "name": "nvidia/nemotron-3-super-120b-a12b:free",
    "provider": "Kilo Code",
    "providerSlug": "kilo-code",
@@ -1984,11 +1897,32 @@
    "description": "nemotron middle tier for collaborative agents and high-volume reasoning workloads",
    "bestfor": "chat,reasoning",
    "tag": "nemotron-3-super-120b-a12b",
-   "score": 57,
+   "score": 56,
    "context": 262000,
    "released": 1773187200000,
    "tierType": "quota",
    "href": "/models/kilo-code/nvidia-nemotron-3-super-120b-a12b-free"
+  },
+  {
+   "name": "cline-free/nemotron-3.5-super-vl",
+   "provider": "Cline",
+   "providerSlug": "cline",
+   "modality": [
+    "text",
+    "vision"
+   ],
+   "free": true,
+   "nocard": false,
+   "nophone": false,
+   "verified": true,
+   "description": "cline-free/nemotron-3.5-super-vl is a free model available from cline.",
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 56,
+   "context": 0,
+   "released": 1792022400000,
+   "tierType": "permanent",
+   "href": "/models/cline/cline-free-nemotron-3-5-super-vl"
   },
   {
    "name": "@cf/moonshotai/kimi-k2.7-code",
@@ -2008,7 +1942,7 @@
    "description": "coding-focused kimi model, stronger on long-horizon repo work with less overthinking",
    "bestfor": "chat,coding",
    "tag": "kimi-k2",
-   "score": 56,
+   "score": 55,
    "context": 262000,
    "released": 1781222400000,
    "tierType": "permanent",
@@ -2069,7 +2003,7 @@
    "description": "free minimax-m2.7 api.",
    "bestfor": "chat",
    "tag": "minimax-m2-7",
-   "score": 55,
+   "score": 54,
    "context": 204800,
    "released": 1773792000000,
    "tierType": "permanent",
@@ -2098,26 +2032,6 @@
    "href": "/models/cloudflare-workers-ai/cf-google-gemma-4-26b-a4b-it"
   },
   {
-   "name": "solar mini 4",
-   "provider": "Cline",
-   "providerSlug": "cline",
-   "modality": [
-    "text"
-   ],
-   "free": true,
-   "nocard": false,
-   "nophone": false,
-   "verified": true,
-   "description": "solar mini 4 is a free model available from cline.",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 54,
-   "context": 0,
-   "released": 1790035200000,
-   "tierType": "permanent",
-   "href": "/models/cline/cline-free-solar-mini4"
-  },
-  {
    "name": "agnes-1.5-flash",
    "provider": "Agnes AI",
    "providerSlug": "agnes-ai",
@@ -2137,6 +2051,26 @@
    "released": 0,
    "tierType": "permanent",
    "href": "/models/agnes-ai/agnes-1-5-flash"
+  },
+  {
+   "name": "solar mini 4",
+   "provider": "Cline",
+   "providerSlug": "cline",
+   "modality": [
+    "text"
+   ],
+   "free": true,
+   "nocard": false,
+   "nophone": false,
+   "verified": true,
+   "description": "solar mini 4 is a free model available from cline.",
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 53,
+   "context": 0,
+   "released": 1790035200000,
+   "tierType": "permanent",
+   "href": "/models/cline/cline-free-solar-mini4"
   },
   {
    "name": "kimi k2.5",
@@ -2607,27 +2541,6 @@
    "href": "/models/mistral-ai/mistral-medium-3-5-128b"
   },
   {
-   "name": "gemma 4 31b it",
-   "provider": "LLM7.io",
-   "providerSlug": "llm7-io",
-   "modality": [
-    "vision",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": "free gemma 4 31b it api.",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 52,
-   "context": 262144,
-   "released": 1775088000000,
-   "tierType": "permanent",
-   "href": "/models/llm7-io/gemma4-31b"
-  },
-  {
    "name": "nemotron 3 nano omni 30b a3b reasoning",
    "provider": "NVIDIA NIM",
    "providerSlug": "nvidia-nim",
@@ -2650,25 +2563,25 @@
    "href": "/models/nvidia-nim/nvidia-nemotron-3-nano-omni-30b-a3b-reasoning"
   },
   {
-   "name": "google/diffusiongemma-26b-a4b-it",
-   "provider": "NVIDIA NIM",
-   "providerSlug": "nvidia-nim",
+   "name": "gemma 4 31b it",
+   "provider": "LLM7.io",
+   "providerSlug": "llm7-io",
    "modality": [
-    "text",
-    "vision"
+    "vision",
+    "reasoning"
    ],
    "free": true,
    "nocard": true,
    "nophone": false,
    "verified": true,
-   "description": null,
+   "description": "free gemma 4 31b it api.",
    "bestfor": "chat",
    "tag": "unmapped",
    "score": 52,
-   "context": 8192,
-   "released": 1781049600000,
+   "context": 262144,
+   "released": 1775088000000,
    "tierType": "permanent",
-   "href": "/models/nvidia-nim/google-diffusiongemma-26b-a4b-it"
+   "href": "/models/llm7-io/gemma4-31b"
   },
   {
    "name": "@cf/nvidia/nemotron-3-120b-a12b",
@@ -2728,6 +2641,27 @@
    "href": "/models/kilo-code/reflection-beam-free"
   },
   {
+   "name": "google/diffusiongemma-26b-a4b-it",
+   "provider": "NVIDIA NIM",
+   "providerSlug": "nvidia-nim",
+   "modality": [
+    "text",
+    "vision"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": null,
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 52,
+   "context": 8192,
+   "released": 1781049600000,
+   "tierType": "permanent",
+   "href": "/models/nvidia-nim/google-diffusiongemma-26b-a4b-it"
+  },
+  {
    "name": "nemotron 3 super 120b a12b",
    "provider": "NVIDIA NIM",
    "providerSlug": "nvidia-nim",
@@ -2746,6 +2680,24 @@
    "released": 1773245239000,
    "tierType": "permanent",
    "href": "/models/nvidia-nim/nvidia-nemotron-3-super-120b-a12b"
+  },
+  {
+   "name": "nex-agi/nex-n2.5-pro",
+   "provider": "ModelScope",
+   "providerSlug": "modelscope",
+   "modality": [],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": null,
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 51,
+   "context": 8192,
+   "released": 0,
+   "tierType": "permanent",
+   "href": "/models/modelscope/nex-agi-nex-n2-5-pro"
   },
   {
    "name": "@cf/zai-org/glm-4.7-flash",
@@ -2788,24 +2740,6 @@
    "released": 1771200000000,
    "tierType": "permanent",
    "href": "/models/opencode/qwen3-5-plus"
-  },
-  {
-   "name": "nex-agi/nex-n2.5-pro",
-   "provider": "ModelScope",
-   "providerSlug": "modelscope",
-   "modality": [],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": null,
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 51,
-   "context": 8192,
-   "released": 0,
-   "tierType": "permanent",
-   "href": "/models/modelscope/nex-agi-nex-n2-5-pro"
   },
   {
    "name": "qwen3.5-9b",
@@ -3149,7 +3083,7 @@
    "description": null,
    "bestfor": "chat",
    "tag": "qwen3-5-397b-a17b",
-   "score": 51,
+   "score": 50,
    "context": 8192,
    "released": 1771200000000,
    "tierType": "permanent",
@@ -3278,6 +3212,27 @@
    "href": "/models/agnes-ai/agnes-video-v2-0"
   },
   {
+   "name": "mistral-small-3.2-24b-instruct",
+   "provider": "OVHcloud AI Endpoints",
+   "providerSlug": "ovhcloud-ai-endpoints",
+   "modality": [
+    "text",
+    "image"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": true,
+   "verified": false,
+   "description": "mistral-small-3.2-24b-instruct — free model from ovhcloud ai endpoints.",
+   "bestfor": "chat",
+   "tag": "mistral-small-3-2-24b-instruct",
+   "score": 48,
+   "context": 128000,
+   "released": 1750377600000,
+   "tierType": "permanent",
+   "href": "/models/ovhcloud-ai-endpoints/mistral-small-3-2-24b-instruct"
+  },
+  {
    "name": "nvidia/cosmos-reason2-8b",
    "provider": "NVIDIA NIM",
    "providerSlug": "nvidia-nim",
@@ -3320,49 +3275,6 @@
    "released": 1716940800000,
    "tierType": "permanent",
    "href": "/models/llm7-io/codestral-latest"
-  },
-  {
-   "name": "mistral-small-3.2-24b-instruct",
-   "provider": "OVHcloud AI Endpoints",
-   "providerSlug": "ovhcloud-ai-endpoints",
-   "modality": [
-    "text",
-    "image"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": false,
-   "description": "mistral-small-3.2-24b-instruct — free model from ovhcloud ai endpoints.",
-   "bestfor": "chat",
-   "tag": "mistral-small-3-2-24b-instruct",
-   "score": 48,
-   "context": 128000,
-   "released": 1750377600000,
-   "tierType": "permanent",
-   "href": "/models/ovhcloud-ai-endpoints/mistral-small-3-2-24b-instruct"
-  },
-  {
-   "name": "nvidia: nemotron 3.5 content safety (free)",
-   "provider": "OpenRouter",
-   "providerSlug": "openrouter",
-   "modality": [
-    "text",
-    "image",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": true,
-   "description": "safety model for policy screening, moderation, and risk-aware routing workflows",
-   "bestfor": "chat,reasoning",
-   "tag": "nemotron-3-5-content-safety",
-   "score": 48,
-   "context": 128000,
-   "released": 1780581864000,
-   "tierType": "permanent",
-   "href": "/models/openrouter/nvidia-nemotron-3-5-content-safety"
   },
   {
    "name": "@cf/zai-org/glm-5.3-flash",
@@ -3471,6 +3383,28 @@
    "released": 0,
    "tierType": "permanent",
    "href": "/models/nvidia-nim/nvidia-nemotron-3-5-bolt-e4b"
+  },
+  {
+   "name": "nvidia: nemotron 3.5 content safety (free)",
+   "provider": "OpenRouter",
+   "providerSlug": "openrouter",
+   "modality": [
+    "text",
+    "image",
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": true,
+   "verified": true,
+   "description": "safety model for policy screening, moderation, and risk-aware routing workflows",
+   "bestfor": "chat,reasoning",
+   "tag": "nemotron-3-5-content-safety",
+   "score": 47,
+   "context": 128000,
+   "released": 1780581864000,
+   "tierType": "permanent",
+   "href": "/models/openrouter/nvidia-nemotron-3-5-content-safety"
   },
   {
    "name": "codestral",
@@ -3701,28 +3635,6 @@
    "href": "/models/mistral-ai/mistral-small-4"
   },
   {
-   "name": "nvidia/nemotron-3.5-content-safety:free",
-   "provider": "Kilo Code",
-   "providerSlug": "kilo-code",
-   "modality": [
-    "text",
-    "image",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": false,
-   "description": "nvidia nemotron 3.5 content safety is a compact 4b-parameter multimodal guardrail model from nvidia, fine-tuned from google gemma-3-4b. it moderates both inputs to and responses from llms and vlms, accepting... **terms of service** for nvidia free endpoints (super/ultra/etc): trial use only - do not submit personal or confidential data. your use is logged for security purposes and to improve nvidia products and services. the logged session data for improvement purposes is not linked to your identity or any persistent identifier. for more information about our data processing practices, see our [privacy policy](https://www.nvidia.com/en-us/about-nvidia/privacy-policy/). by interacting with this endpoint, you consent to our collection, recording, and use of such information and the [nvidia api trial terms of service](https://assets.ngc.nvidia.com/products/api-catalog/legal/nvidia%20api%20trial%20terms%20of%20service.pdf).",
-   "bestfor": "chat,reasoning",
-   "tag": "nemotron-3-5-content-safety",
-   "score": 46,
-   "context": 128000,
-   "released": 1780358400000,
-   "tierType": "quota",
-   "href": "/models/kilo-code/nvidia-nemotron-3-5-content-safety-free"
-  },
-  {
    "name": "gpt-oss:20b",
    "provider": "Ollama Cloud",
    "providerSlug": "ollama-cloud",
@@ -3802,6 +3714,28 @@
    "released": 0,
    "tierType": "permanent",
    "href": "/models/cohere/command-r7b-arabic"
+  },
+  {
+   "name": "nvidia/nemotron-3.5-content-safety:free",
+   "provider": "Kilo Code",
+   "providerSlug": "kilo-code",
+   "modality": [
+    "text",
+    "image",
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": true,
+   "verified": false,
+   "description": "nvidia nemotron 3.5 content safety is a compact 4b-parameter multimodal guardrail model from nvidia, fine-tuned from google gemma-3-4b. it moderates both inputs to and responses from llms and vlms, accepting... **terms of service** for nvidia free endpoints (super/ultra/etc): trial use only - do not submit personal or confidential data. your use is logged for security purposes and to improve nvidia products and services. the logged session data for improvement purposes is not linked to your identity or any persistent identifier. for more information about our data processing practices, see our [privacy policy](https://www.nvidia.com/en-us/about-nvidia/privacy-policy/). by interacting with this endpoint, you consent to our collection, recording, and use of such information and the [nvidia api trial terms of service](https://assets.ngc.nvidia.com/products/api-catalog/legal/nvidia%20api%20trial%20terms%20of%20service.pdf).",
+   "bestfor": "chat,reasoning",
+   "tag": "nemotron-3-5-content-safety",
+   "score": 46,
+   "context": 128000,
+   "released": 1780358400000,
+   "tierType": "quota",
+   "href": "/models/kilo-code/nvidia-nemotron-3-5-content-safety-free"
   },
   {
    "name": "@cf/meta/llama-4-scout-17b-16e-instruct",
@@ -4200,7 +4134,7 @@
    "description": "`aion-labs/aion-3.0-mini` — free model from aion labs.",
    "bestfor": "chat",
    "tag": "unmapped",
-   "score": 45,
+   "score": 44,
    "context": 128000,
    "released": 1778716800000,
    "tierType": "permanent",
@@ -4547,27 +4481,6 @@
    "href": "/models/google-gemini/gemini-2-5-flash-lite"
   },
   {
-   "name": "nvidia/nemotron-nano-3-30b-a3b",
-   "provider": "NVIDIA NIM",
-   "providerSlug": "nvidia-nim",
-   "modality": [
-    "text",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": "nvidia/nemotron-nano-3-30b-a3b — free model from nvidia nim (nvidia).",
-   "bestfor": "chat,reasoning",
-   "tag": "nemotron",
-   "score": 43,
-   "context": 131072,
-   "released": 1765756800000,
-   "tierType": "permanent",
-   "href": "/models/nvidia-nim/nvidia-nemotron-nano-3-30b-a3b"
-  },
-  {
    "name": "mistralai/mistral-large-2-instruct",
    "provider": "NVIDIA NIM",
    "providerSlug": "nvidia-nim",
@@ -4643,6 +4556,27 @@
    "released": 1743984000000,
    "tierType": "permanent",
    "href": "/models/nvidia-nim/nvidia-llama-3-1-nemotron-ultra-253b-v1"
+  },
+  {
+   "name": "nvidia/nemotron-nano-3-30b-a3b",
+   "provider": "NVIDIA NIM",
+   "providerSlug": "nvidia-nim",
+   "modality": [
+    "text",
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": "nvidia/nemotron-nano-3-30b-a3b — free model from nvidia nim (nvidia).",
+   "bestfor": "chat,reasoning",
+   "tag": "nemotron",
+   "score": 43,
+   "context": 131072,
+   "released": 1765756800000,
+   "tierType": "permanent",
+   "href": "/models/nvidia-nim/nvidia-nemotron-nano-3-30b-a3b"
   },
   {
    "name": "deepseek-r1",
@@ -4727,68 +4661,6 @@
    "href": "/models/cohere/command-a-reasoning"
   },
   {
-   "name": "whisper-large-v3",
-   "provider": "Groq",
-   "providerSlug": "groq",
-   "modality": [
-    "text"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": true,
-   "description": "whisper-large-v3 — free model from groq.",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 43,
-   "context": 131072,
-   "released": 0,
-   "tierType": "permanent",
-   "href": "/models/groq/whisper-large-v3"
-  },
-  {
-   "name": "whisper-large-v3-turbo",
-   "provider": "Groq",
-   "providerSlug": "groq",
-   "modality": [
-    "text"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": true,
-   "description": "whisper-large-v3-turbo — free model from groq.",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 43,
-   "context": 131072,
-   "released": 0,
-   "tierType": "permanent",
-   "href": "/models/groq/whisper-large-v3-turbo"
-  },
-  {
-   "name": "free models router",
-   "provider": "OpenRouter",
-   "providerSlug": "openrouter",
-   "modality": [
-    "text",
-    "image",
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": true,
-   "verified": true,
-   "description": "multimodal reasoning model for visual analysis, planning, and tool use",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 43,
-   "context": 200000,
-   "released": 1769917427000,
-   "tierType": "permanent",
-   "href": "/models/openrouter/openrouter-free"
-  },
-  {
    "name": "mixtral 8x7b",
    "provider": "Glhf.chat",
    "providerSlug": "glhf-chat",
@@ -4827,6 +4699,68 @@
    "released": 1728950400000,
    "tierType": "permanent",
    "href": "/models/nvidia-nim/nvidia-llama-3-1-nemotron-70b-instruct"
+  },
+  {
+   "name": "whisper-large-v3",
+   "provider": "Groq",
+   "providerSlug": "groq",
+   "modality": [
+    "text"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": true,
+   "verified": true,
+   "description": "whisper-large-v3 — free model from groq.",
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 42,
+   "context": 131072,
+   "released": 0,
+   "tierType": "permanent",
+   "href": "/models/groq/whisper-large-v3"
+  },
+  {
+   "name": "whisper-large-v3-turbo",
+   "provider": "Groq",
+   "providerSlug": "groq",
+   "modality": [
+    "text"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": true,
+   "verified": true,
+   "description": "whisper-large-v3-turbo — free model from groq.",
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 42,
+   "context": 131072,
+   "released": 0,
+   "tierType": "permanent",
+   "href": "/models/groq/whisper-large-v3-turbo"
+  },
+  {
+   "name": "free models router",
+   "provider": "OpenRouter",
+   "providerSlug": "openrouter",
+   "modality": [
+    "text",
+    "image",
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": true,
+   "verified": true,
+   "description": "multimodal reasoning model for visual analysis, planning, and tool use",
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 42,
+   "context": 200000,
+   "released": 1769917427000,
+   "tierType": "permanent",
+   "href": "/models/openrouter/openrouter-free"
   },
   {
    "name": "mixtral 8x7b",
@@ -5048,27 +4982,6 @@
    "href": "/models/nvidia-nim/mistralai-mistral-7b-instruct-v0-3"
   },
   {
-   "name": "mistral large 3",
-   "provider": "Mistral AI",
-   "providerSlug": "mistral-ai",
-   "modality": [
-    "text",
-    "pdf"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": false,
-   "description": "mistral large 3 — free model from mistral ai.",
-   "bestfor": "chat",
-   "tag": "mistral-large",
-   "score": 41,
-   "context": 256000,
-   "released": 1764633600000,
-   "tierType": "quota",
-   "href": "/models/mistral-ai/mistral-large-3"
-  },
-  {
    "name": "meta/llama-3.2-11b-vision-instruct",
    "provider": "NVIDIA NIM",
    "providerSlug": "nvidia-nim",
@@ -5090,25 +5003,25 @@
    "href": "/models/nvidia-nim/meta-llama-3-2-11b-vision-instruct"
   },
   {
-   "name": "aion-labs/aion-2.0",
-   "provider": "Aion Labs",
-   "providerSlug": "aion-labs",
+   "name": "mistral large 3",
+   "provider": "Mistral AI",
+   "providerSlug": "mistral-ai",
    "modality": [
     "text",
-    "reasoning"
+    "pdf"
    ],
    "free": true,
    "nocard": true,
-   "nophone": true,
+   "nophone": false,
    "verified": false,
-   "description": "`aion-labs/aion-2.0` — free model from aion labs.",
+   "description": "mistral large 3 — free model from mistral ai.",
    "bestfor": "chat",
-   "tag": "unmapped",
+   "tag": "mistral-large",
    "score": 41,
-   "context": 128000,
-   "released": 1766275200000,
-   "tierType": "permanent",
-   "href": "/models/aion-labs/aion-labs-aion-2-0"
+   "context": 256000,
+   "released": 1764633600000,
+   "tierType": "quota",
+   "href": "/models/mistral-ai/mistral-large-3"
   },
   {
    "name": "mistral 7b",
@@ -5147,6 +5060,27 @@
    "released": 0,
    "tierType": "permanent",
    "href": "/models/opencode/big-pickle"
+  },
+  {
+   "name": "aion-labs/aion-2.0",
+   "provider": "Aion Labs",
+   "providerSlug": "aion-labs",
+   "modality": [
+    "text",
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": true,
+   "verified": false,
+   "description": "`aion-labs/aion-2.0` — free model from aion labs.",
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 41,
+   "context": 128000,
+   "released": 1766275200000,
+   "tierType": "permanent",
+   "href": "/models/aion-labs/aion-labs-aion-2-0"
   },
   {
    "name": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
@@ -5188,26 +5122,6 @@
    "href": "/models/modelscope/meituan-longcat-longcat-flash-lite"
   },
   {
-   "name": "allam-2-7b",
-   "provider": "Groq",
-   "providerSlug": "groq",
-   "modality": [
-    "text"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": null,
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 40,
-   "context": 8192,
-   "released": 1737590400000,
-   "tierType": "permanent",
-   "href": "/models/groq/allam-2-7b"
-  },
-  {
    "name": "command a translate",
    "provider": "Cohere",
    "providerSlug": "cohere",
@@ -5226,6 +5140,26 @@
    "released": 1741824000000,
    "tierType": "permanent",
    "href": "/models/cohere/command-a-translate"
+  },
+  {
+   "name": "allam-2-7b",
+   "provider": "Groq",
+   "providerSlug": "groq",
+   "modality": [
+    "text"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": null,
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 40,
+   "context": 8192,
+   "released": 1737590400000,
+   "tierType": "permanent",
+   "href": "/models/groq/allam-2-7b"
   },
   {
    "name": "nvidia/embed-qa-4",
@@ -5389,26 +5323,6 @@
    "href": "/models/nvidia-nim/snowflake-arctic-embed-l"
   },
   {
-   "name": "gpt oss 20b",
-   "provider": "LLM7.io",
-   "providerSlug": "llm7-io",
-   "modality": [
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": "free gpt oss 20b api.",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 39,
-   "context": 131072,
-   "released": 1754352000000,
-   "tierType": "permanent",
-   "href": "/models/llm7-io/gpt-oss-20b"
-  },
-  {
    "name": "nemotron 3.5 lightning 30b a3b",
    "provider": "OpenCode Zen",
    "providerSlug": "opencode",
@@ -5427,6 +5341,26 @@
    "released": 0,
    "tierType": "permanent",
    "href": "/models/opencode/nemotron-3-5-lightning-free"
+  },
+  {
+   "name": "gpt oss 20b",
+   "provider": "LLM7.io",
+   "providerSlug": "llm7-io",
+   "modality": [
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": "free gpt oss 20b api.",
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 39,
+   "context": 131072,
+   "released": 1754352000000,
+   "tierType": "permanent",
+   "href": "/models/llm7-io/gpt-oss-20b"
   },
   {
    "name": "grok-2 mini",
@@ -5530,26 +5464,6 @@
    "href": "/models/cloudflare-workers-ai/cf-meta-llama-3-3-70b-instruct-fp8-fast"
   },
   {
-   "name": "nemotron 3 nano 30b a3b",
-   "provider": "LLM7.io",
-   "providerSlug": "llm7-io",
-   "modality": [
-    "reasoning"
-   ],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": "free nemotron 3 nano 30b a3b api.",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 38,
-   "context": 262144,
-   "released": 1765756800000,
-   "tierType": "permanent",
-   "href": "/models/llm7-io/nemotron-3-nano-30b"
-  },
-  {
    "name": "llama 3.1 70b",
    "provider": "Glhf.chat",
    "providerSlug": "glhf-chat",
@@ -5568,6 +5482,26 @@
    "released": 1721692800000,
    "tierType": "permanent",
    "href": "/models/glhf-chat/meta-llama-meta-llama-3-1-70b-instruct-2"
+  },
+  {
+   "name": "nemotron 3 nano 30b a3b",
+   "provider": "LLM7.io",
+   "providerSlug": "llm7-io",
+   "modality": [
+    "reasoning"
+   ],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": "free nemotron 3 nano 30b a3b api.",
+   "bestfor": "chat",
+   "tag": "unmapped",
+   "score": 38,
+   "context": 262144,
+   "released": 1765756800000,
+   "tierType": "permanent",
+   "href": "/models/llm7-io/nemotron-3-nano-30b"
   },
   {
    "name": "minimax/minimax-m1-80k",
@@ -5601,7 +5535,7 @@
    "description": "ministral 3 8b — free model from mistral ai.",
    "bestfor": "chat",
    "tag": "unmapped",
-   "score": 38,
+   "score": 37,
    "context": 256000,
    "released": 1764633600000,
    "tierType": "quota",
@@ -5802,6 +5736,24 @@
    "href": "/models/nvidia-nim/nvidia-llama-3-1-nemoguard-8b-content-safety"
   },
   {
+   "name": "@cf/qwen/qwen2.5-coder-32b-instruct",
+   "provider": "Cloudflare Workers AI",
+   "providerSlug": "cloudflare-workers-ai",
+   "modality": [],
+   "free": true,
+   "nocard": true,
+   "nophone": false,
+   "verified": true,
+   "description": null,
+   "bestfor": "chat",
+   "tag": "qwen-2-5-coder-32b-instruct",
+   "score": 35,
+   "context": 8192,
+   "released": 1731283200000,
+   "tierType": "permanent",
+   "href": "/models/cloudflare-workers-ai/cf-qwen-qwen2-5-coder-32b-instruct"
+  },
+  {
    "name": "beam",
    "provider": "Cline",
    "providerSlug": "cline",
@@ -5815,7 +5767,7 @@
    "description": "beam is a free model available from cline.",
    "bestfor": "chat",
    "tag": "unmapped",
-   "score": 35,
+   "score": 34,
    "context": 0,
    "released": 0,
    "tierType": "permanent",
@@ -5835,49 +5787,11 @@
    "description": "nemotron 3.5 lightning is a free model available from cline.",
    "bestfor": "chat",
    "tag": "unmapped",
-   "score": 35,
+   "score": 34,
    "context": 0,
    "released": 0,
    "tierType": "permanent",
    "href": "/models/cline/nvidia-nemotron-3-5-lightning-free"
-  },
-  {
-   "name": "laguna s 2.1",
-   "provider": "Cline",
-   "providerSlug": "cline",
-   "modality": [
-    "text"
-   ],
-   "free": true,
-   "nocard": false,
-   "nophone": false,
-   "verified": true,
-   "description": "laguna s 2.1 is a free model available from cline.",
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 35,
-   "context": 0,
-   "released": 0,
-   "tierType": "permanent",
-   "href": "/models/cline/poolside-laguna-s-2-1-free"
-  },
-  {
-   "name": "@cf/qwen/qwen2.5-coder-32b-instruct",
-   "provider": "Cloudflare Workers AI",
-   "providerSlug": "cloudflare-workers-ai",
-   "modality": [],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": null,
-   "bestfor": "chat",
-   "tag": "qwen-2-5-coder-32b-instruct",
-   "score": 35,
-   "context": 8192,
-   "released": 1731283200000,
-   "tierType": "permanent",
-   "href": "/models/cloudflare-workers-ai/cf-qwen-qwen2-5-coder-32b-instruct"
   },
   {
    "name": "@cf/meta/llama-3.2-3b-instruct",
@@ -5896,42 +5810,6 @@
    "released": 1727222400000,
    "tierType": "permanent",
    "href": "/models/cloudflare-workers-ai/cf-meta-llama-3-2-3b-instruct"
-  },
-  {
-   "name": "meta-llama/llama-prompt-guard-2-22m",
-   "provider": "Groq",
-   "providerSlug": "groq",
-   "modality": [],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": null,
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 33,
-   "context": 8192,
-   "released": 0,
-   "tierType": "permanent",
-   "href": "/models/groq/meta-llama-llama-prompt-guard-2-22m"
-  },
-  {
-   "name": "meta-llama/llama-prompt-guard-2-86m",
-   "provider": "Groq",
-   "providerSlug": "groq",
-   "modality": [],
-   "free": true,
-   "nocard": true,
-   "nophone": false,
-   "verified": true,
-   "description": null,
-   "bestfor": "chat",
-   "tag": "unmapped",
-   "score": 33,
-   "context": 8192,
-   "released": 0,
-   "tierType": "permanent",
-   "href": "/models/groq/meta-llama-llama-prompt-guard-2-86m"
   },
   {
    "name": "@cf/meta/llama-3.1-8b-instruct-fp8",
