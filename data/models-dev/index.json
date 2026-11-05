@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-02T13:57:37.100Z",
+ "generated_at": "2026-11-05T13:35:13.831Z",
  "source": "https://models.dev/api.json",
  "provider_count": 235,
- "model_count": 8928,
+ "model_count": 8937,
  "slices": [
   {
    "file": "slice-000.json",
@@ -39,15 +39,14 @@
    "file": "slice-003.json",
    "models": 150,
    "providers": [
-    "aimlapi"
+    "aimlapi",
+    "ainetcafe"
    ]
   },
   {
    "file": "slice-004.json",
    "models": 150,
    "providers": [
-    "aimlapi",
-    "ainetcafe",
     "aixy",
     "aki-io",
     "alibaba",
@@ -348,14 +347,14 @@
     "minimax-coding-plan",
     "mistral",
     "mixlayer",
-    "moark",
-    "modal"
+    "moark"
    ]
   },
   {
    "file": "slice-032.json",
    "models": 150,
    "providers": [
+    "moark",
     "modal",
     "model-oracle-ai",
     "modelis",
@@ -502,8 +501,7 @@
     "prime",
     "privatemode-ai",
     "qihang-ai",
-    "qiniu-ai",
-    "qvac"
+    "qiniu-ai"
    ]
   },
   {
@@ -527,8 +525,7 @@
     "salad-cloud",
     "sambanova",
     "sap-ai-core",
-    "sarvam",
-    "scaleway"
+    "sarvam"
    ]
   },
   {
@@ -572,14 +569,14 @@
     "tensorx",
     "the-grid-ai",
     "thinkingmachines",
-    "tinfoil",
-    "togetherai"
+    "tinfoil"
    ]
   },
   {
    "file": "slice-053.json",
    "models": 150,
    "providers": [
+    "tinfoil",
     "togetherai",
     "tokengo",
     "tokenrouter",
@@ -651,7 +648,7 @@
   },
   {
    "file": "slice-059.json",
-   "models": 78,
+   "models": 87,
    "providers": [
     "zenmux",
     "zhipuai",
