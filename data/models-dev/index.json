@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-05T13:35:13.831Z",
+ "generated_at": "2026-11-09T14:29:23.017Z",
  "source": "https://models.dev/api.json",
  "provider_count": 235,
- "model_count": 8937,
+ "model_count": 8940,
  "slices": [
   {
    "file": "slice-000.json",
@@ -40,7 +40,8 @@
    "models": 150,
    "providers": [
     "aimlapi",
-    "ainetcafe"
+    "ainetcafe",
+    "aixy"
    ]
   },
   {
@@ -183,14 +184,14 @@
     "empiriolabs",
     "engy",
     "evroc",
-    "fastrouter"
+    "fastrouter",
+    "fireworks-ai"
    ]
   },
   {
    "file": "slice-017.json",
    "models": 150,
    "providers": [
-    "fastrouter",
     "fireworks-ai",
     "freemodel",
     "friendli",
@@ -204,7 +205,6 @@
    "file": "slice-018.json",
    "models": 150,
    "providers": [
-    "gmicloud",
     "google",
     "google-vertex",
     "google-vertex-anthropic",
@@ -230,14 +230,14 @@
    "providers": [
     "huggingface",
     "hyper",
-    "impossibl"
+    "impossibl",
+    "inception"
    ]
   },
   {
    "file": "slice-021.json",
    "models": 150,
    "providers": [
-    "impossibl",
     "inception",
     "inceptron",
     "inco",
@@ -271,15 +271,15 @@
    "file": "slice-024.json",
    "models": 150,
    "providers": [
-    "kilo"
+    "kilo",
+    "kimi-code-plan-cn",
+    "kimi-code-plan-global"
    ]
   },
   {
    "file": "slice-025.json",
    "models": 150,
    "providers": [
-    "kilo",
-    "kimi-code-plan-cn",
     "kimi-code-plan-global",
     "klokintegration",
     "kosmik",
@@ -324,14 +324,14 @@
     "lucidquery",
     "lynkr",
     "meganova",
-    "melious"
+    "melious",
+    "merge-gateway"
    ]
   },
   {
    "file": "slice-030.json",
    "models": 150,
    "providers": [
-    "melious",
     "merge-gateway"
    ]
   },
@@ -347,15 +347,14 @@
     "minimax-coding-plan",
     "mistral",
     "mixlayer",
-    "moark"
+    "moark",
+    "modal"
    ]
   },
   {
    "file": "slice-032.json",
    "models": 150,
    "providers": [
-    "moark",
-    "modal",
     "model-oracle-ai",
     "modelis",
     "modelscope",
@@ -508,6 +507,7 @@
    "file": "slice-048.json",
    "models": 150,
    "providers": [
+    "qiniu-ai",
     "qvac",
     "reflection",
     "regolo-ai",
@@ -524,27 +524,28 @@
     "sakana",
     "salad-cloud",
     "sambanova",
-    "sap-ai-core",
-    "sarvam"
+    "sap-ai-core"
    ]
   },
   {
    "file": "slice-050.json",
    "models": 150,
    "providers": [
+    "sap-ai-core",
+    "sarvam",
     "scaleway",
     "scnet-token-plan",
     "scx-ai",
     "sensenova",
     "siliconflow",
-    "siliconflow-cn",
-    "snowflake-cortex"
+    "siliconflow-cn"
    ]
   },
   {
    "file": "slice-051.json",
    "models": 150,
    "providers": [
+    "siliconflow-cn",
     "snowflake-cortex",
     "stackit",
     "standardcompute",
@@ -623,14 +624,14 @@
     "vultr",
     "wafer.ai",
     "wallaby",
-    "wally",
-    "wandb"
+    "wally"
    ]
   },
   {
    "file": "slice-058.json",
    "models": 150,
    "providers": [
+    "wally",
     "wandb",
     "watsonx",
     "xai",
@@ -648,7 +649,7 @@
   },
   {
    "file": "slice-059.json",
-   "models": 87,
+   "models": 90,
    "providers": [
     "zenmux",
     "zhipuai",
