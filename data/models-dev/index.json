@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-09T14:29:23.017Z",
+ "generated_at": "2026-11-12T14:04:33.333Z",
  "source": "https://models.dev/api.json",
  "provider_count": 235,
- "model_count": 8940,
+ "model_count": 8989,
  "slices": [
   {
    "file": "slice-000.json",
@@ -96,14 +96,14 @@
     "azure-cognitive-services",
     "bailing",
     "baseten",
-    "bee",
-    "berget"
+    "bee"
    ]
   },
   {
    "file": "slice-009.json",
    "models": 150,
    "providers": [
+    "bee",
     "berget",
     "blueclaw",
     "bothub",
@@ -146,14 +146,14 @@
     "daoxe",
     "databricks",
     "deepinfra",
-    "deepseek",
-    "digitalocean"
+    "deepseek"
    ]
   },
   {
    "file": "slice-013.json",
    "models": 150,
    "providers": [
+    "deepseek",
     "digitalocean",
     "dinference",
     "drun",
@@ -184,27 +184,28 @@
     "empiriolabs",
     "engy",
     "evroc",
-    "fastrouter",
-    "fireworks-ai"
+    "fastrouter"
    ]
   },
   {
    "file": "slice-017.json",
    "models": 150,
    "providers": [
+    "fastrouter",
     "fireworks-ai",
     "freemodel",
     "friendli",
     "frogbot",
     "github-copilot",
-    "gitlab",
-    "gmicloud"
+    "gitlab"
    ]
   },
   {
    "file": "slice-018.json",
    "models": 150,
    "providers": [
+    "gitlab",
+    "gmicloud",
     "google",
     "google-vertex",
     "google-vertex-anthropic",
@@ -230,14 +231,14 @@
    "providers": [
     "huggingface",
     "hyper",
-    "impossibl",
-    "inception"
+    "impossibl"
    ]
   },
   {
    "file": "slice-021.json",
    "models": 150,
    "providers": [
+    "impossibl",
     "inception",
     "inceptron",
     "inco",
@@ -271,15 +272,15 @@
    "file": "slice-024.json",
    "models": 150,
    "providers": [
-    "kilo",
-    "kimi-code-plan-cn",
-    "kimi-code-plan-global"
+    "kilo"
    ]
   },
   {
    "file": "slice-025.json",
    "models": 150,
    "providers": [
+    "kilo",
+    "kimi-code-plan-cn",
     "kimi-code-plan-global",
     "klokintegration",
     "kosmik",
@@ -320,18 +321,18 @@
     "llmtr",
     "lmstudio",
     "longcat",
-    "lowrouter",
-    "lucidquery",
-    "lynkr",
-    "meganova",
-    "melious",
-    "merge-gateway"
+    "lowrouter"
    ]
   },
   {
    "file": "slice-030.json",
    "models": 150,
    "providers": [
+    "lowrouter",
+    "lucidquery",
+    "lynkr",
+    "meganova",
+    "melious",
     "merge-gateway"
    ]
   },
@@ -345,16 +346,17 @@
     "minimax-cn",
     "minimax-cn-coding-plan",
     "minimax-coding-plan",
-    "mistral",
-    "mixlayer",
-    "moark",
-    "modal"
+    "mistral"
    ]
   },
   {
    "file": "slice-032.json",
    "models": 150,
    "providers": [
+    "mistral",
+    "mixlayer",
+    "moark",
+    "modal",
     "model-oracle-ai",
     "modelis",
     "modelscope",
@@ -393,45 +395,45 @@
    "file": "slice-036.json",
    "models": 150,
    "providers": [
-    "nano-gpt",
-    "nearai"
+    "nano-gpt"
    ]
   },
   {
    "file": "slice-037.json",
    "models": 150,
    "providers": [
+    "nano-gpt",
     "nearai",
     "nebius",
     "neon",
-    "neosmith",
-    "neuralwatt",
-    "nova",
-    "novita-ai"
+    "neosmith"
    ]
   },
   {
    "file": "slice-038.json",
    "models": 150,
    "providers": [
+    "neosmith",
+    "neuralwatt",
+    "nova",
     "novita-ai",
-    "nvidia",
-    "oci",
-    "ofox"
+    "nvidia"
    ]
   },
   {
    "file": "slice-039.json",
    "models": 150,
    "providers": [
-    "ofox",
-    "ollama-cloud"
+    "nvidia",
+    "oci",
+    "ofox"
    ]
   },
   {
    "file": "slice-040.json",
    "models": 150,
    "providers": [
+    "ofox",
     "ollama-cloud",
     "openai",
     "opencode"
@@ -479,24 +481,24 @@
     "pareto",
     "pendra",
     "perplexity",
-    "perplexity-agent",
-    "pioneer",
-    "poe"
+    "perplexity-agent"
    ]
   },
   {
    "file": "slice-046.json",
    "models": 150,
    "providers": [
-    "poe",
-    "poolside",
-    "prime"
+    "perplexity-agent",
+    "pioneer",
+    "poe"
    ]
   },
   {
    "file": "slice-047.json",
    "models": 150,
    "providers": [
+    "poe",
+    "poolside",
     "prime",
     "privatemode-ai",
     "qihang-ai",
@@ -537,14 +539,14 @@
     "scnet-token-plan",
     "scx-ai",
     "sensenova",
-    "siliconflow",
-    "siliconflow-cn"
+    "siliconflow"
    ]
   },
   {
    "file": "slice-051.json",
    "models": 150,
    "providers": [
+    "siliconflow",
     "siliconflow-cn",
     "snowflake-cortex",
     "stackit",
@@ -554,29 +556,29 @@
     "stepfun-ai-step-plan",
     "stepfun-step-plan",
     "subconscious",
-    "submodel",
-    "synthetic",
-    "tempr"
+    "submodel"
    ]
   },
   {
    "file": "slice-052.json",
    "models": 150,
    "providers": [
+    "submodel",
+    "synthetic",
     "tempr",
     "tencent-coding-plan",
     "tencent-token-plan",
     "tencent-tokenhub",
     "tensorx",
-    "the-grid-ai",
-    "thinkingmachines",
-    "tinfoil"
+    "the-grid-ai"
    ]
   },
   {
    "file": "slice-053.json",
    "models": 150,
    "providers": [
+    "the-grid-ai",
+    "thinkingmachines",
     "tinfoil",
     "togetherai",
     "tokengo",
@@ -585,15 +587,15 @@
     "umans-ai",
     "umans-ai-coding-plan",
     "unorouter",
-    "upstage",
-    "vancine",
-    "venice"
+    "upstage"
    ]
   },
   {
    "file": "slice-054.json",
    "models": 150,
    "providers": [
+    "upstage",
+    "vancine",
     "venice",
     "vercel"
    ]
@@ -619,18 +621,18 @@
     "vercel",
     "vispark",
     "vivgrid",
-    "volcengine",
-    "volcengine-coding-plan",
-    "vultr",
-    "wafer.ai",
-    "wallaby",
-    "wally"
+    "volcengine"
    ]
   },
   {
    "file": "slice-058.json",
    "models": 150,
    "providers": [
+    "volcengine",
+    "volcengine-coding-plan",
+    "vultr",
+    "wafer.ai",
+    "wallaby",
     "wally",
     "wandb",
     "watsonx",
@@ -641,16 +643,16 @@
     "xiaomi-token-plan-sgp",
     "xpersona",
     "zai",
-    "zai-coding-plan",
-    "zeldoc",
-    "zenifra",
-    "zenmux"
+    "zai-coding-plan"
    ]
   },
   {
    "file": "slice-059.json",
-   "models": 90,
+   "models": 139,
    "providers": [
+    "zai-coding-plan",
+    "zeldoc",
+    "zenifra",
     "zenmux",
     "zhipuai",
     "zhipuai-coding-plan"
